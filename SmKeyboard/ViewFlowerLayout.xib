@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F2411" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewFlowerLayout" customModule="SmKeyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-zk-Tdu">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29U-1D-J9Q">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="358"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-geel" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-Bx-43a">
+                                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.3411764706" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-tulp-geel"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-oranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-hl-XBM" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="68" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-oranje"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-paars" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61f-8Q-x8h" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="128" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.3411764706" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-paars"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-rood-wit-blauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeB-fc-AxR" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="188" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-rood-wit-blauw"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-rood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-5s-9YB" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="248" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-rood"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-roze" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cug-vl-Xhd" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="8" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-roze"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-wit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEr-1K-TKK" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="68" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulp-wit"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-tulp-tulpenbol" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eD-So-Whf" colorLabel="IBBuiltInLabel-Orange">
+                                    <rect key="frame" x="128" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.3921568627" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" hint="" label=""/>
+                                    <state key="normal" image="thumb-tulpenbol"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.81960784313725488" green="0.82745098039215681" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="358" id="bcB-cr-DHd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="29U-1D-J9Q" secondAttribute="trailing" id="0Bf-Jm-ExT"/>
+                        <constraint firstItem="29U-1D-J9Q" firstAttribute="top" secondItem="aZh-zk-Tdu" secondAttribute="top" id="5ZU-Uc-apQ"/>
+                        <constraint firstAttribute="bottom" secondItem="29U-1D-J9Q" secondAttribute="bottom" constant="24" id="eA6-ij-aj9"/>
+                        <constraint firstAttribute="centerX" secondItem="29U-1D-J9Q" secondAttribute="centerX" id="kKf-g5-bA1"/>
+                        <constraint firstItem="29U-1D-J9Q" firstAttribute="leading" secondItem="aZh-zk-Tdu" secondAttribute="leading" id="ol0-VP-NCB"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="aZh-zk-Tdu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2HN-jU-Fzb"/>
+                <constraint firstAttribute="trailing" secondItem="aZh-zk-Tdu" secondAttribute="trailing" id="KRG-D4-avU"/>
+                <constraint firstAttribute="bottom" secondItem="aZh-zk-Tdu" secondAttribute="bottom" id="KoB-6w-xwP"/>
+                <constraint firstItem="aZh-zk-Tdu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vq4-cl-euZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="uiScrollView" destination="aZh-zk-Tdu" id="woQ-iS-QLj"/>
+            </connections>
+            <point key="canvasLocation" x="264" y="281"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5hW-1i-w11">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
+            <state key="normal" image="emoticon-001.png">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <point key="canvasLocation" x="304" y="216"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="emoticon-001.png" width="1024" height="1024"/>
+        <image name="thumb-tulp-geel" width="40" height="40"/>
+        <image name="thumb-tulp-oranje" width="40" height="40"/>
+        <image name="thumb-tulp-paars" width="40" height="40"/>
+        <image name="thumb-tulp-rood" width="40" height="40"/>
+        <image name="thumb-tulp-rood-wit-blauw" width="40" height="40"/>
+        <image name="thumb-tulp-roze" width="40" height="40"/>
+        <image name="thumb-tulp-wit" width="40" height="40"/>
+        <image name="thumb-tulpenbol" width="40" height="40"/>
+    </resources>
+</document>

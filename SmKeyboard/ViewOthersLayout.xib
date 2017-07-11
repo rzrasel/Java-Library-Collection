@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F2411" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewOthersLayout" customModule="SmKeyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="637"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-oa-ErK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="637"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-PF-l2v">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="608"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-bakfietsblauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEl-J0-DhI">
+                                    <rect key="frame" x="12" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-bakfietsblauw">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-bakfietsgroen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNC-1f-u02">
+                                    <rect key="frame" x="71" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-bakfietsgroen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-bakfietsoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-fG-jtt">
+                                    <rect key="frame" x="130" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-bakfietsoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-bakfietsrood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-Tr-2t3">
+                                    <rect key="frame" x="190" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-bakfietsrood">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-bakfietszwart" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCc-Ba-Uk0">
+                                    <rect key="frame" x="250" y="8" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-bakfietszwart">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsblauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-Ty-d4z">
+                                    <rect key="frame" x="12" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-damesfietsblauw">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsgroen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G24-fy-pSr">
+                                    <rect key="frame" x="71" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsgroen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsmetmandjeblauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK9-zx-inG">
+                                    <rect key="frame" x="130" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsmetmandjeblauw">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsmetmandjegroen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-sF-kUD">
+                                    <rect key="frame" x="190" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsmetmandjegroen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsmetmandjeoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl6-Nm-p68">
+                                    <rect key="frame" x="250" y="68" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsmetmandjeoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsmetmandjezwart" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-zg-DjD">
+                                    <rect key="frame" x="71" y="128" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsmetmandjezwart">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsmetmandjerood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3g-8Z-e7B">
+                                    <rect key="frame" x="12" y="128" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsmetmandjerood">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llU-LZ-ZQ9">
+                                    <rect key="frame" x="130" y="128" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietsoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietsrood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O0-Rd-7AQ">
+                                    <rect key="frame" x="190" y="128" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-damesfietsrood">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-damesfietszwart" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-9J-3xW">
+                                    <rect key="frame" x="250" y="128" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-damesfietszwart">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-draaiorgelgeelgoud" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-Da-NaY">
+                                    <rect key="frame" x="12" y="188" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-draaiorgelgeelgoud">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-gierig" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmH-qV-H08">
+                                    <rect key="frame" x="71" y="188" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-gierig">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenfietsblauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMQ-0O-NqH">
+                                    <rect key="frame" x="190" y="188" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-herenfietsblauw">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenfietsgroen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAX-Mb-N96">
+                                    <rect key="frame" x="250" y="188" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-herenfietsgroen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-godutch" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83c-nn-uDR">
+                                    <rect key="frame" x="130" y="188" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-godutch">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenfietsoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-7T-76f">
+                                    <rect key="frame" x="12" y="248" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-herenfietsoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenfietsrood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-9h-vV3">
+                                    <rect key="frame" x="71" y="248" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-herenfietsrood">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenschaatsen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-ct-ds9">
+                                    <rect key="frame" x="190" y="248" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-herenschaatsen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-herenfietszwart" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leN-nY-aqn">
+                                    <rect key="frame" x="130" y="248" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-herenfietszwart">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-kunstschaatsen" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-7d-kfc">
+                                    <rect key="frame" x="250" y="248" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-kunstschaatsen">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-leeuwwapengoud" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yC-g4-nSb">
+                                    <rect key="frame" x="12" y="308" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-leeuwwapengoud">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-leeuwwapenoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUv-qr-zck">
+                                    <rect key="frame" x="71" y="308" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-leeuwwapenoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-schaatsennoren" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDT-Ak-KoK">
+                                    <rect key="frame" x="130" y="308" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-schaatsennoren">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-spaarvarken" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sB-hs-Etj">
+                                    <rect key="frame" x="190" y="308" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-spaarvarken">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulpenbol" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UJ-pq-nCE">
+                                    <rect key="frame" x="250" y="308" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-tulpenbol">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulpenbos" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txb-HY-s9K">
+                                    <rect key="frame" x="12" y="368" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulpenbos">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulpgeel" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPn-0I-kkb">
+                                    <rect key="frame" x="71" y="368" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulpgeel">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulporanje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D91-7d-vxm">
+                                    <rect key="frame" x="130" y="368" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulporanje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulppaars" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KM-kF-lxt">
+                                    <rect key="frame" x="190" y="368" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-tulppaars">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulprood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-YB-Gca">
+                                    <rect key="frame" x="250" y="368" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulprood">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulproodwitblauw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-Y4-HQc">
+                                    <rect key="frame" x="12" y="429" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulproodwitblauw">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulproze" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRG-ak-Sqg">
+                                    <rect key="frame" x="71" y="429" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-tulproze">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-vlag" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtX-Cb-j5J">
+                                    <rect key="frame" x="190" y="429" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-vlag">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-vlagleeuworanjezwartwit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBC-aX-ZZq">
+                                    <rect key="frame" x="250" y="429" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.060655730599999999" blue="0.86691857059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-vlagleeuworanjezwartwit">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-tulpwit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVs-b5-FM1">
+                                    <rect key="frame" x="130" y="429" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-tulpwit">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-vlagleeuwwitoranje" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-YG-0yj">
+                                    <rect key="frame" x="12" y="489" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.1498154874" blue="0.1924378055" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-vlagleeuwwitoranje">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-vlagmetwimpel" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vt-cC-rF5">
+                                    <rect key="frame" x="71" y="489" width="60" height="60"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="thumb-misc-vlagmetwimpel">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sticker-misc-wietblad2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLY-If-WYR">
+                                    <rect key="frame" x="130" y="489" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.56470588239999997" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="thumb-misc-wietblad2">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.70980392160000005" green="0.3921568627" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="608" id="Jw7-hB-pKx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.60360415359999997" green="0.73561796989999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="SqH-PF-l2v" secondAttribute="bottom" constant="29" id="TMK-xf-beT"/>
+                        <constraint firstAttribute="trailing" secondItem="SqH-PF-l2v" secondAttribute="trailing" id="V0y-wB-u6x"/>
+                        <constraint firstItem="SqH-PF-l2v" firstAttribute="top" secondItem="aVN-oa-ErK" secondAttribute="top" id="WMg-XH-6ux"/>
+                        <constraint firstAttribute="centerX" secondItem="SqH-PF-l2v" secondAttribute="centerX" id="ggV-Jt-KRc"/>
+                        <constraint firstItem="SqH-PF-l2v" firstAttribute="leading" secondItem="aVN-oa-ErK" secondAttribute="leading" id="nhS-zo-Asn"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.55294117649999996" green="0.70980392160000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aVN-oa-ErK" secondAttribute="bottom" id="3g1-ci-fSS"/>
+                <constraint firstItem="aVN-oa-ErK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iA3-Ae-RL1"/>
+                <constraint firstAttribute="trailing" secondItem="aVN-oa-ErK" secondAttribute="trailing" id="jgH-5i-SfT"/>
+                <constraint firstItem="aVN-oa-ErK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ul1-gZ-qYp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="uiScrollView" destination="aVN-oa-ErK" id="ama-jc-wPc"/>
+            </connections>
+            <point key="canvasLocation" x="280" y="417.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="thumb-misc-bakfietsblauw" width="40" height="40"/>
+        <image name="thumb-misc-bakfietsgroen" width="40" height="40"/>
+        <image name="thumb-misc-bakfietsoranje" width="40" height="40"/>
+        <image name="thumb-misc-bakfietsrood" width="40" height="40"/>
+        <image name="thumb-misc-bakfietszwart" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsblauw" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsgroen" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsmetmandjeblauw" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsmetmandjegroen" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsmetmandjeoranje" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsmetmandjerood" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsmetmandjezwart" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsoranje" width="40" height="40"/>
+        <image name="thumb-misc-damesfietsrood" width="40" height="40"/>
+        <image name="thumb-misc-damesfietszwart" width="40" height="40"/>
+        <image name="thumb-misc-draaiorgelgeelgoud" width="40" height="40"/>
+        <image name="thumb-misc-gierig" width="40" height="40"/>
+        <image name="thumb-misc-godutch" width="40" height="40"/>
+        <image name="thumb-misc-herenfietsblauw" width="40" height="40"/>
+        <image name="thumb-misc-herenfietsgroen" width="40" height="40"/>
+        <image name="thumb-misc-herenfietsoranje" width="40" height="40"/>
+        <image name="thumb-misc-herenfietsrood" width="40" height="40"/>
+        <image name="thumb-misc-herenfietszwart" width="40" height="40"/>
+        <image name="thumb-misc-herenschaatsen" width="40" height="40"/>
+        <image name="thumb-misc-kunstschaatsen" width="40" height="40"/>
+        <image name="thumb-misc-leeuwwapengoud" width="40" height="40"/>
+        <image name="thumb-misc-leeuwwapenoranje" width="40" height="40"/>
+        <image name="thumb-misc-schaatsennoren" width="40" height="40"/>
+        <image name="thumb-misc-spaarvarken" width="40" height="40"/>
+        <image name="thumb-misc-tulpenbol" width="40" height="40"/>
+        <image name="thumb-misc-tulpenbos" width="40" height="40"/>
+        <image name="thumb-misc-tulpgeel" width="40" height="40"/>
+        <image name="thumb-misc-tulporanje" width="40" height="40"/>
+        <image name="thumb-misc-tulppaars" width="40" height="40"/>
+        <image name="thumb-misc-tulprood" width="40" height="40"/>
+        <image name="thumb-misc-tulproodwitblauw" width="40" height="40"/>
+        <image name="thumb-misc-tulproze" width="40" height="40"/>
+        <image name="thumb-misc-tulpwit" width="40" height="40"/>
+        <image name="thumb-misc-vlag" width="40" height="40"/>
+        <image name="thumb-misc-vlagleeuworanjezwartwit" width="40" height="40"/>
+        <image name="thumb-misc-vlagleeuwwitoranje" width="40" height="40"/>
+        <image name="thumb-misc-vlagmetwimpel" width="40" height="40"/>
+        <image name="thumb-misc-wietblad2" width="40" height="40"/>
+    </resources>
+</document>
