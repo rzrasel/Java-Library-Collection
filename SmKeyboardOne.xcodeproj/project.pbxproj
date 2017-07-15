@@ -17,8 +17,8 @@
 		8B15A39B1F0BA3DC00A85B93 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15A39A1F0BA3DC00A85B93 /* KeyboardViewController.swift */; };
 		8B15A39E1F0BA3DC00A85B93 /* SmKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8B15A3961F0BA3DC00A85B93 /* SmKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B15A3A41F0BA62500A85B93 /* ViewMainKeyboardLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3A31F0BA62500A85B93 /* ViewMainKeyboardLayout.xib */; };
-		8B15A3A61F0BA8F900A85B93 /* ViewFlowerLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3A51F0BA8F900A85B93 /* ViewFlowerLayout.xib */; };
-		8B15A3A81F0BA90500A85B93 /* ViewFlowerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15A3A71F0BA90500A85B93 /* ViewFlowerLayout.swift */; };
+		8B15A3A61F0BA8F900A85B93 /* ViewFarmLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3A51F0BA8F900A85B93 /* ViewFarmLayout.xib */; };
+		8B15A3A81F0BA90500A85B93 /* ViewFarmLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15A3A71F0BA90500A85B93 /* ViewFarmLayout.swift */; };
 		8B15A3AA1F0BA92900A85B93 /* ViewSmiliesLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3A91F0BA92900A85B93 /* ViewSmiliesLayout.xib */; };
 		8B15A3AC1F0BA93A00A85B93 /* ViewSmiliesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15A3AB1F0BA93A00A85B93 /* ViewSmiliesLayout.swift */; };
 		8B15A3AE1F0BA97F00A85B93 /* ViewFoodLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3AD1F0BA97F00A85B93 /* ViewFoodLayout.xib */; };
@@ -26,6 +26,12 @@
 		8B15A3B11F0BAA5600A85B93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B15A3791F0BA36200A85B93 /* Images.xcassets */; };
 		8B1700E31F0E398300CFA293 /* ViewOthersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1700E21F0E398300CFA293 /* ViewOthersLayout.swift */; };
 		8B1700E51F0E399500CFA293 /* ViewOthersLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1700E41F0E399500CFA293 /* ViewOthersLayout.xib */; };
+		8BB067FA1F15FB5D004B6663 /* ViewHolidaysLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB067F91F15FB5D004B6663 /* ViewHolidaysLayout.xib */; };
+		8BB067FC1F15FCC8004B6663 /* ViewHolidaysLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB067FB1F15FCC8004B6663 /* ViewHolidaysLayout.swift */; };
+		8BC395501F161E0E009EC02D /* ViewPlaceLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3954F1F161E0E009EC02D /* ViewPlaceLayout.xib */; };
+		8BC395521F1621D4009EC02D /* ViewPlaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC395511F1621D4009EC02D /* ViewPlaceLayout.swift */; };
+		8BC395541F1632CD009EC02D /* ViewTilesLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC395531F1632CD009EC02D /* ViewTilesLayout.xib */; };
+		8BC395561F163559009EC02D /* ViewTilesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC395551F163559009EC02D /* ViewTilesLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,14 +81,20 @@
 		8B15A3991F0BA3DC00A85B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B15A39A1F0BA3DC00A85B93 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		8B15A3A31F0BA62500A85B93 /* ViewMainKeyboardLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewMainKeyboardLayout.xib; sourceTree = "<group>"; };
-		8B15A3A51F0BA8F900A85B93 /* ViewFlowerLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewFlowerLayout.xib; sourceTree = "<group>"; };
-		8B15A3A71F0BA90500A85B93 /* ViewFlowerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFlowerLayout.swift; sourceTree = "<group>"; };
+		8B15A3A51F0BA8F900A85B93 /* ViewFarmLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewFarmLayout.xib; sourceTree = "<group>"; };
+		8B15A3A71F0BA90500A85B93 /* ViewFarmLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFarmLayout.swift; sourceTree = "<group>"; };
 		8B15A3A91F0BA92900A85B93 /* ViewSmiliesLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewSmiliesLayout.xib; sourceTree = "<group>"; };
 		8B15A3AB1F0BA93A00A85B93 /* ViewSmiliesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSmiliesLayout.swift; sourceTree = "<group>"; };
 		8B15A3AD1F0BA97F00A85B93 /* ViewFoodLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewFoodLayout.xib; sourceTree = "<group>"; };
 		8B15A3AF1F0BA98C00A85B93 /* ViewFoodLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFoodLayout.swift; sourceTree = "<group>"; };
 		8B1700E21F0E398300CFA293 /* ViewOthersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOthersLayout.swift; sourceTree = "<group>"; };
 		8B1700E41F0E399500CFA293 /* ViewOthersLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewOthersLayout.xib; sourceTree = "<group>"; };
+		8BB067F91F15FB5D004B6663 /* ViewHolidaysLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewHolidaysLayout.xib; sourceTree = "<group>"; };
+		8BB067FB1F15FCC8004B6663 /* ViewHolidaysLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHolidaysLayout.swift; sourceTree = "<group>"; };
+		8BC3954F1F161E0E009EC02D /* ViewPlaceLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPlaceLayout.xib; sourceTree = "<group>"; };
+		8BC395511F1621D4009EC02D /* ViewPlaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPlaceLayout.swift; sourceTree = "<group>"; };
+		8BC395531F1632CD009EC02D /* ViewTilesLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewTilesLayout.xib; sourceTree = "<group>"; };
+		8BC395551F163559009EC02D /* ViewTilesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTilesLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,12 +186,18 @@
 			children = (
 				8B15A39A1F0BA3DC00A85B93 /* KeyboardViewController.swift */,
 				8B15A3A31F0BA62500A85B93 /* ViewMainKeyboardLayout.xib */,
-				8B15A3A51F0BA8F900A85B93 /* ViewFlowerLayout.xib */,
-				8B15A3A71F0BA90500A85B93 /* ViewFlowerLayout.swift */,
+				8B15A3A51F0BA8F900A85B93 /* ViewFarmLayout.xib */,
+				8B15A3A71F0BA90500A85B93 /* ViewFarmLayout.swift */,
 				8B15A3AD1F0BA97F00A85B93 /* ViewFoodLayout.xib */,
 				8B15A3AF1F0BA98C00A85B93 /* ViewFoodLayout.swift */,
+				8BB067F91F15FB5D004B6663 /* ViewHolidaysLayout.xib */,
+				8BB067FB1F15FCC8004B6663 /* ViewHolidaysLayout.swift */,
 				8B1700E41F0E399500CFA293 /* ViewOthersLayout.xib */,
 				8B1700E21F0E398300CFA293 /* ViewOthersLayout.swift */,
+				8BC3954F1F161E0E009EC02D /* ViewPlaceLayout.xib */,
+				8BC395511F1621D4009EC02D /* ViewPlaceLayout.swift */,
+				8BC395531F1632CD009EC02D /* ViewTilesLayout.xib */,
+				8BC395551F163559009EC02D /* ViewTilesLayout.swift */,
 				8B15A3A91F0BA92900A85B93 /* ViewSmiliesLayout.xib */,
 				8B15A3AB1F0BA93A00A85B93 /* ViewSmiliesLayout.swift */,
 				8B15A3981F0BA3DC00A85B93 /* Supporting Files */,
@@ -315,12 +333,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC395541F1632CD009EC02D /* ViewTilesLayout.xib in Resources */,
 				8B15A3B11F0BAA5600A85B93 /* Images.xcassets in Resources */,
 				8B1700E51F0E399500CFA293 /* ViewOthersLayout.xib in Resources */,
+				8BC395501F161E0E009EC02D /* ViewPlaceLayout.xib in Resources */,
 				8B15A3AE1F0BA97F00A85B93 /* ViewFoodLayout.xib in Resources */,
 				8B15A3AA1F0BA92900A85B93 /* ViewSmiliesLayout.xib in Resources */,
+				8BB067FA1F15FB5D004B6663 /* ViewHolidaysLayout.xib in Resources */,
 				8B15A3A41F0BA62500A85B93 /* ViewMainKeyboardLayout.xib in Resources */,
-				8B15A3A61F0BA8F900A85B93 /* ViewFlowerLayout.xib in Resources */,
+				8B15A3A61F0BA8F900A85B93 /* ViewFarmLayout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,9 +371,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B15A3B01F0BA98C00A85B93 /* ViewFoodLayout.swift in Sources */,
+				8BC395521F1621D4009EC02D /* ViewPlaceLayout.swift in Sources */,
+				8BC395561F163559009EC02D /* ViewTilesLayout.swift in Sources */,
 				8B15A39B1F0BA3DC00A85B93 /* KeyboardViewController.swift in Sources */,
 				8B1700E31F0E398300CFA293 /* ViewOthersLayout.swift in Sources */,
-				8B15A3A81F0BA90500A85B93 /* ViewFlowerLayout.swift in Sources */,
+				8BB067FC1F15FCC8004B6663 /* ViewHolidaysLayout.swift in Sources */,
+				8B15A3A81F0BA90500A85B93 /* ViewFarmLayout.swift in Sources */,
 				8B15A3AC1F0BA93A00A85B93 /* ViewSmiliesLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

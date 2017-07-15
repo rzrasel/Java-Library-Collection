@@ -5,3 +5,7 @@ git pull https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-key
 git add .
 git commit -m "add new"
 git push https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-keyboard.git --all
+
+
+git pull <remote> <branch>
+git pull https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-keyboard.git Demo-Typical-Dutch-Emoji-Keyboard-Backup

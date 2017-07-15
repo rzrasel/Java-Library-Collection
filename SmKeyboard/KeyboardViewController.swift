@@ -38,8 +38,11 @@ class KeyboardViewController: UIInputViewController {
     var heightConstraint: NSLayoutConstraint?
     var viewMainKeyboard: UIView!
     var xibSmiliesLayout: UIView!
-    var xibFlowerLayout: UIView!
+    var xibFarmLayout: UIView!
     var xibFoodLayout: UIView!
+    var xibHolidaysLayout: UIView!
+    var xibPlaceLayout: UIView!
+    var xibTilesLayout: UIView!
     var xibOtherLayout: UIView!
     
     @IBOutlet weak var mainKeyLayoutContainer: UIView!
@@ -49,8 +52,11 @@ class KeyboardViewController: UIInputViewController {
     
     enum onScreenKeyboard {
         case SmiliesKeyboard
-        case FlowerKeyboard
+        case FarmKeyboard
         case FoodKeyboard
+        case HolidaysKeyboard
+        case PlaceLayout
+        case TilesLayout
         case OthersKeyboard
     }
     struct onColorSet {
@@ -137,18 +143,18 @@ class KeyboardViewController: UIInputViewController {
         //|--------------------|ViewAlphabetLayout
     }
     
-    func onAttachedFlowerKeyboard() {
+    func onAttachedFarmKeyboard() {
         //|--------------------|FLOWER KEYBOARD LAYOUT ATTACHED WITH MAIN KEYBOARD LAYOUT CONTAINER
         //|--------------------|ViewFlowerLayout
-        self.xibFlowerLayout = onLoadViewFromXibFile("ViewFlowerLayout")
-        xibFlowerLayout.frame = self.mainKeyLayoutContainer.bounds
-        self.mainKeyLayoutContainer.addSubview(xibFlowerLayout)
-        var uiScrollFlowerView = xibFlowerLayout as! ViewFlowerLayout
-        uiScrollFlowerView.uiScrollView.contentSize.height = 178
+        self.xibFarmLayout = onLoadViewFromXibFile("ViewFarmLayout")
+        xibFarmLayout.frame = self.mainKeyLayoutContainer.bounds
+        self.mainKeyLayoutContainer.addSubview(xibFarmLayout)
+        var uiScrollFarmView = xibFarmLayout as! ViewFarmLayout
+        uiScrollFarmView.uiScrollView.contentSize.height = 178
         //|--------------------|
-        xibFlowerLayout.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
-        uiScrollFlowerView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
-        onGetFlowersBtnLis(xibFlowerLayout)
+        xibFarmLayout.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        uiScrollFarmView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        onGetFlowersBtnLis(xibFarmLayout)
         //|--------------------|ViewAlphabetLayout
     }
     func onAttachedFoodKeyboard() {
@@ -164,6 +170,54 @@ class KeyboardViewController: UIInputViewController {
         uiScrollFoodView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
         onGetFoodsBtnLis(xibFoodLayout)
         //|--------------------|ViewAlphabetLayout
+    }
+    func onAttachedHolidaysKeyboard() {
+        //|--------------------|HOLIDAYS KEYBOARD LAYOUT ATTACHED WITH MAIN KEYBOARD LAYOUT CONTAINER
+        //|--------------------|ViewHolidaysLayout
+        /*let proxy = self.textDocumentProxy as! UIKeyInput
+        proxy.insertText(" HO ")*/
+        self.xibHolidaysLayout = onLoadViewFromXibFile("ViewHolidaysLayout")
+        xibHolidaysLayout.frame = self.mainKeyLayoutContainer.bounds
+        self.mainKeyLayoutContainer.addSubview(xibHolidaysLayout)
+        var uiScrollHolidaysView = xibHolidaysLayout as! ViewHolidaysLayout
+        uiScrollHolidaysView.uiScrollView.contentSize.height = 178
+        //|--------------------|
+        xibHolidaysLayout.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        uiScrollHolidaysView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        onGetHolidaysBtnLis(xibHolidaysLayout)
+        //|--------------------|ViewHolidaysLayout
+    }
+    func onAttachedPlaceKeyboard() {
+        //|--------------------|HOLIDAYS KEYBOARD LAYOUT ATTACHED WITH MAIN KEYBOARD LAYOUT CONTAINER
+        //|--------------------|ViewHolidaysLayout
+        /*let proxy = self.textDocumentProxy as! UIKeyInput
+        proxy.insertText(" HO ")*/
+        self.xibPlaceLayout = onLoadViewFromXibFile("ViewPlaceLayout")
+        xibPlaceLayout.frame = self.mainKeyLayoutContainer.bounds
+        self.mainKeyLayoutContainer.addSubview(xibPlaceLayout)
+        var uiScrollPlaceView = xibPlaceLayout as! ViewPlaceLayout
+        uiScrollPlaceView.uiScrollView.contentSize.height = 178
+        //|--------------------|
+        xibPlaceLayout.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        uiScrollPlaceView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        onGetPlaceBtnLis(xibPlaceLayout)
+        //|--------------------|ViewHolidaysLayout
+    }
+    func onAttachedTilesKeyboard() {
+        //|--------------------|HOLIDAYS KEYBOARD LAYOUT ATTACHED WITH MAIN KEYBOARD LAYOUT CONTAINER
+        //|--------------------|ViewHolidaysLayout
+        /*let proxy = self.textDocumentProxy as! UIKeyInput
+        proxy.insertText(" HO ")*/
+        self.xibTilesLayout = onLoadViewFromXibFile("ViewTilesLayout")
+        xibTilesLayout.frame = self.mainKeyLayoutContainer.bounds
+        self.mainKeyLayoutContainer.addSubview(xibTilesLayout)
+        var uiScrollTilesView = xibTilesLayout as! ViewTilesLayout
+        uiScrollTilesView.uiScrollView.contentSize.height = 178
+        //|--------------------|
+        xibTilesLayout.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        uiScrollTilesView.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+        onGetTilesBtnLis(xibTilesLayout)
+        //|--------------------|ViewHolidaysLayout
     }
     func onAttachedOthersKeyboard() {
         //|--------------------|OTHERS KEYBOARD LAYOUT ATTACHED WITH MAIN KEYBOARD LAYOUT CONTAINER
@@ -256,6 +310,75 @@ class KeyboardViewController: UIInputViewController {
             }
         }
     }
+    func onGetHolidaysBtnLis(xibHolidaysView : UIView) {
+        //var subViewsScroll = xibSmiliesView.subviews as! [UIScrollView]
+        for subViewsScroll in xibHolidaysView.subviews as! [UIScrollView] {
+            subViewsScroll.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+            for subViews in subViewsScroll.subviews {
+                if let vBtn = subViews as? UIButton
+                {
+                    vBtn.addTarget(self, action: "btnPressedHolidaysKey:", forControlEvents: .TouchUpInside)
+                }
+                else
+                {
+                    var subViewOne: UIView = subViews as! UIView
+                    subViewOne.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+                    for subViewsBtn in subViewOne.subviews {
+                        if let vBtn = subViewsBtn as? UIButton {
+                            vBtn.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyboardKeyDefault, alpha: 1.0)
+                            vBtn.addTarget(self, action: "btnPressedHolidaysKey:", forControlEvents: .TouchUpInside)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    func onGetPlaceBtnLis(xibPlaceView : UIView) {
+        //var subViewsScroll = xibSmiliesView.subviews as! [UIScrollView]
+        for subViewsScroll in xibPlaceView.subviews as! [UIScrollView] {
+            subViewsScroll.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+            for subViews in subViewsScroll.subviews {
+                if let vBtn = subViews as? UIButton
+                {
+                    vBtn.addTarget(self, action: "btnPressedPlaceKey:", forControlEvents: .TouchUpInside)
+                }
+                else
+                {
+                    var subViewOne: UIView = subViews as! UIView
+                    subViewOne.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+                    for subViewsBtn in subViewOne.subviews {
+                        if let vBtn = subViewsBtn as? UIButton {
+                            vBtn.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyboardKeyDefault, alpha: 1.0)
+                            vBtn.addTarget(self, action: "btnPressedPlaceKey:", forControlEvents: .TouchUpInside)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    func onGetTilesBtnLis(xibTilesView : UIView) {
+        //var subViewsScroll = xibSmiliesView.subviews as! [UIScrollView]
+        for subViewsScroll in xibTilesView.subviews as! [UIScrollView] {
+            subViewsScroll.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+            for subViews in subViewsScroll.subviews {
+                if let vBtn = subViews as? UIButton
+                {
+                    vBtn.addTarget(self, action: "btnPressedTilesKey:", forControlEvents: .TouchUpInside)
+                }
+                else
+                {
+                    var subViewOne: UIView = subViews as! UIView
+                    subViewOne.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyBodyPanel, alpha: 1.0)
+                    for subViewsBtn in subViewOne.subviews {
+                        if let vBtn = subViewsBtn as? UIButton {
+                            vBtn.backgroundColor = UIColor().HexToColor(onKeyboardColorSet.KeyboardKeyDefault, alpha: 1.0)
+                            vBtn.addTarget(self, action: "btnPressedTilesKey:", forControlEvents: .TouchUpInside)
+                        }
+                    }
+                }
+            }
+        }
+    }
     func onGetOthersBtnLis(xibOtherLayout : UIView) {
         //var subViewsScroll = xibSmiliesView.subviews as! [UIScrollView]
         for subViewsScroll in xibOtherLayout.subviews as! [UIScrollView] {
@@ -308,6 +431,27 @@ class KeyboardViewController: UIInputViewController {
         let proxy = self.textDocumentProxy as! UIKeyInput
         //println("Pressed")
         //proxy.insertText(" FOOD ")
+        onPastBoardData(btn)
+    }
+    func btnPressedHolidaysKey(sender: AnyObject) {
+        var btn = sender as! UIButton
+        let proxy = self.textDocumentProxy as! UIKeyInput
+        //println("Pressed")
+        //proxy.insertText(" HOLIDAY ")
+        onPastBoardData(btn)
+    }
+    func btnPressedPlaceKey(sender: AnyObject) {
+        var btn = sender as! UIButton
+        let proxy = self.textDocumentProxy as! UIKeyInput
+        //println("Pressed")
+        //proxy.insertText(" PLACE ")
+        onPastBoardData(btn)
+    }
+    func btnPressedTilesKey(sender: AnyObject) {
+        var btn = sender as! UIButton
+        let proxy = self.textDocumentProxy as! UIKeyInput
+        //println("Pressed")
+        //proxy.insertText(" TILES ")
         onPastBoardData(btn)
     }
     func btnPressedOthersKey(sender: AnyObject) {
@@ -420,9 +564,9 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         else if(btn.tag == 4) {
-            if(onScreenDefaultKeyboard != onScreenKeyboard.FlowerKeyboard) {
-                onAttachedFlowerKeyboard()
-                onScreenDefaultKeyboard = onScreenKeyboard.FlowerKeyboard
+            if(onScreenDefaultKeyboard != onScreenKeyboard.FarmKeyboard) {
+                onAttachedFarmKeyboard()
+                onScreenDefaultKeyboard = onScreenKeyboard.FarmKeyboard
                 onResetBottomCtrlBtnColor(btn)
             }
         }
@@ -434,6 +578,30 @@ class KeyboardViewController: UIInputViewController {
             }
         }
         else if(btn.tag == 6) {
+            if(onScreenDefaultKeyboard != onScreenKeyboard.HolidaysKeyboard) {
+                onAttachedHolidaysKeyboard()
+                //proxy.insertText(" HOLIDAY ")
+                onScreenDefaultKeyboard = onScreenKeyboard.HolidaysKeyboard
+                onResetBottomCtrlBtnColor(btn)
+            }
+        }
+        else if(btn.tag == 7) {
+            if(onScreenDefaultKeyboard != onScreenKeyboard.PlaceLayout) {
+                onAttachedPlaceKeyboard()
+                //proxy.insertText(" PLACE ")
+                onScreenDefaultKeyboard = onScreenKeyboard.PlaceLayout
+                onResetBottomCtrlBtnColor(btn)
+            }
+        }
+        else if(btn.tag == 8) {
+            if(onScreenDefaultKeyboard != onScreenKeyboard.TilesLayout) {
+                onAttachedTilesKeyboard()
+                //proxy.insertText(" TILES ")
+                onScreenDefaultKeyboard = onScreenKeyboard.TilesLayout
+                onResetBottomCtrlBtnColor(btn)
+            }
+        }
+        else if(btn.tag == 9) {
             if(onScreenDefaultKeyboard != onScreenKeyboard.OthersKeyboard) {
                 onAttachedOthersKeyboard()
                 onScreenDefaultKeyboard = onScreenKeyboard.OthersKeyboard
