@@ -9,3 +9,6 @@ git push https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-key
 
 git pull <remote> <branch>
 git pull https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-keyboard.git Demo-Typical-Dutch-Emoji-Keyboard-Backup
+
+git push <remote> <branch>
+git push https://rzbucket@bitbucket.org/rzbucket/sm-demo-typical-dutch-emoji-keyboard.git Demo-Typical-Dutch-Emoji-Keyboard-Backup
