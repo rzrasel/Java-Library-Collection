@@ -1,4 +1,4 @@
 # Java-Library-Collection
 Java Library Collection
 
-Package: com.rz.Library
+Package: com.rz.Libraries
