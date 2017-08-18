@@ -8,24 +8,6 @@ import java.util.Random;
  */
 public class Libs {
 
-    public static int randInt(int argMin, int argMax) {
-        Random rand = new Random();
-
-        // nextInt is normally exclusive of the top value,
-        // so add 1 to make it inclusive
-        int randomNum = rand.nextInt((argMax - argMin) + 1) + argMin;
-
-        return randomNum;
-    }
-
-    public static long longId() {
-        //Long.valueOf((String)map.get("time")).longValue() ;
-        long id = 0l;
-        String idValue = System.currentTimeMillis() / 1000 + "" + randInt(11, 99);
-        id = Long.parseLong(idValue);
-        return id;
-    }
-
     public static String toTitleCase(String argLine) {
         argLine = argLine.trim().toLowerCase();
         argLine = argLine.replaceAll("\\s+", " ");
