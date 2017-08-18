@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package sqlitejdbcdriverconnection;
+package com.rz.Libraries.DBConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -46,7 +41,7 @@ public class SQLiteConnection {
         } catch (ClassNotFoundException e) {
             System.err.println("Could not init JDBC driver - driver not found");
         } catch (SQLException ex) {
-            Logger.getLogger(SQLiteJDBCDriverConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SQLiteConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         return connection;
     }
