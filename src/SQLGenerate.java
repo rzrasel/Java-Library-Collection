@@ -175,8 +175,8 @@ public class SQLGenerate {
             sqlQuery = "SELECT * FROM tbl_constraint_property AS tcon_pro "
                     + " JOIN tbl_column_property As tcol_pro ON tcol_pro.tcpro_id = tcon_pro.tcpro_id "
                     + " JOIN tbl_table_property As ttbl_pro ON ttbl_pro.ttpro_id = tcol_pro.ttpro_id "
-                    + " WHERE ttbl_pro.ttpro_id = '" + argTblId + "' "
-                    + " ORDER BY tcon_pro.tconp_key DESC ";
+                    + " WHERE ttbl_pro.ttpro_id = '" + argTblId + "'; ";
+                    //+ " ORDER BY tcon_pro.tconp_key ASC ";
             //System.out.println("SQL: " + sqlQuery);
             resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {

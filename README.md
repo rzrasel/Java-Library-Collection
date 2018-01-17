@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS tbl_userrole
     usrol_role_is_default           BOOLEAN           NULL,
     usrol_role_create_date          DATETIME          NULL,
     usrol_role_modify_date          DATETIME          NULL,
-    CONSTRAINT                      uk_userr_usrol_role_title UNIQUE (usrol_role_title),
-    CONSTRAINT                      pk_userr_usrol_role_id PRIMARY KEY (usrol_role_id)
+    CONSTRAINT                      pk_userr_usrol_role_id PRIMARY KEY (usrol_role_id),
+    CONSTRAINT                      uk_userr_usrol_role_title UNIQUE (usrol_role_title)
 );
 ```
