@@ -177,7 +177,7 @@ public class SQLGenerate {
                     + " JOIN tbl_table_property As ttbl_pro ON ttbl_pro.ttpro_id = tcol_pro.ttpro_id "
                     + " WHERE ttbl_pro.ttpro_id = '" + argTblId + "' "
                     + " ORDER BY tcon_pro.tconp_key DESC ";
-            System.out.println("SQL: " + sqlQuery);
+            //System.out.println("SQL: " + sqlQuery);
             resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {
                 while (resultSet.next()) {
@@ -396,7 +396,7 @@ INSERT INTO tbl_table_property VALUES ('15161836774627', 'user_profile', 'tbl', 
 INSERT INTO tbl_table_property VALUES ('15161836775101', 'userrole', 'tbl', 'usrol', '');
 SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name;
 
-
+##|----|----TABLE USER PROFILE
 DELETE FROM tbl_column_property;
 INSERT INTO tbl_column_property
 VALUES ('15161836774627', '15161837756926', 'user_id', 'BIGINT', '20', '0', '', '');
@@ -408,20 +408,25 @@ INSERT INTO tbl_column_property
 VALUES ('15161836774627', '15161840676471', 'last_name', 'VARCHAR', '255', '1', '', '');
 SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
 
-
-;
-CREATE TABLE IF NOT EXISTS tbl_constraint_property
-(
-    tcpro_id            BIGINT(20) NOT NULL,
-    tconp_id            BIGINT(20) NOT NULL,
-    tconp_key           TEXT NOT NULL,
-    -- tconp_value         TEXT NOT NULL,
-    tconp_ref_tbl       TEXT NULL,
-    tconp_con_prefix    TEXT NULL,
-    CONSTRAINT pk_tconp_tconp_id PRIMARY KEY (tconp_id),
-    CONSTRAINT fk_tconp_tcpro_id FOREIGN KEY (tcpro_id) REFERENCES tbl_column_property(tcpro_id)
-);
 DELETE FROM tbl_constraint_property;
 INSERT INTO tbl_constraint_property VALUES ('15161837756926', '15161842565701', 'PRIMARY', '', '');
 SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
+##|----|----TABLE END
+
+##|----|----TABLE USER ROLE
+DELETE FROM tbl_column_property;
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161860599845', 'role_id', 'BIGINT', '20', '0', '', '');
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161860597350', 'role_title', 'VARCHAR', '255', '0', '', '');
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161860597802', 'role_priority', 'INT', '3', '0', '', '');
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161860732762', 'role_is_default', 'BOOLEAN', '', '0', '', '');
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161860735276', 'role_create_date', 'DATETIME', '', '0', '', '');
+INSERT INTO tbl_column_property
+VALUES ('15161836775101', '15161861391734', 'role_modify_date', 'DATETIME', '', '0', '', '');
+SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
+##|----|----TABLE END
 */
