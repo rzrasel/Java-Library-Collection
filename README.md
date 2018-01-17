@@ -22,20 +22,22 @@ CREATE TABLE IF NOT EXISTS tbl_registration_temp
 DROP TABLE IF EXISTS tbl_user_profile;
 CREATE TABLE IF NOT EXISTS tbl_user_profile
 (
-    uspro_user_id           BIGINT(20)        NOT NULL,
-    uspro_first_name        VARCHAR(255)      NOT NULL,
-    uspro_mid_name          VARCHAR(255)      NULL,
-    uspro_last_name         VARCHAR(255)      NULL,
-    CONSTRAINT              pk_userp_uspro_user_id PRIMARY KEY (uspro_user_id)
+    uspro_user_id                   BIGINT(20)        NOT NULL,
+    uspro_first_name                VARCHAR(255)      NOT NULL,
+    uspro_mid_name                  VARCHAR(255)      NULL,
+    uspro_last_name                 VARCHAR(255)      NULL,
+    CONSTRAINT                      pk_userp_uspro_user_id PRIMARY KEY (uspro_user_id)
 );
 DROP TABLE IF EXISTS tbl_userrole;
 CREATE TABLE IF NOT EXISTS tbl_userrole
 (
-    usrol_role_id           BIGINT(20)        NULL,
-    usrol_role_title        VARCHAR(255)      NULL,
-    usrol_role_priority     INT(3)            NULL,
-    usrol_role_is_default   BOOLEAN           NULL,
-    usrol_role_create_date  DATETIME          NULL,
-    usrol_role_modify_date  DATETIME          NULL
+    usrol_role_id                   BIGINT(20)        NULL,
+    usrol_role_title                VARCHAR(255)      NULL,
+    usrol_role_priority             INT(3)            NULL,
+    usrol_role_is_default           BOOLEAN           NULL,
+    usrol_role_create_date          DATETIME          NULL,
+    usrol_role_modify_date          DATETIME          NULL,
+    CONSTRAINT                      uk_userr_usrol_role_title UNIQUE (usrol_role_title),
+    CONSTRAINT                      pk_userr_usrol_role_id PRIMARY KEY (usrol_role_id)
 );
 ```

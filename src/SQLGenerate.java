@@ -140,7 +140,7 @@ public class SQLGenerate {
                         colType = colType + colLength;
                         partOfSqlQuery = repeat(":", 4)
                                 + colName
-                                + repeat(":", 24 - colName.length())
+                                + repeat(":", 32 - colName.length())
                                 + colType
                                 + repeat(":", 18 - colType.length())
                                 + defaultIsNull;
@@ -202,7 +202,7 @@ public class SQLGenerate {
                     }
                     System.out.println("KEY: " + colConPrefix);
                     String sqlData = "";
-                    String constGap = repeat(":", 24 - "CONSTRAINT".length());
+                    String constGap = repeat(":", 32 - "CONSTRAINT".length());
                     if (colConKey.equalsIgnoreCase("PRIMARY")) {
                         sqlData = "    CONSTRAINT" + constGap + "pk_%s_%s PRIMARY KEY (%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
@@ -428,5 +428,10 @@ VALUES ('15161836775101', '15161860735276', 'role_create_date', 'DATETIME', '', 
 INSERT INTO tbl_column_property
 VALUES ('15161836775101', '15161861391734', 'role_modify_date', 'DATETIME', '', '0', '', '');
 SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
+
+DELETE FROM tbl_constraint_property;
+INSERT INTO tbl_constraint_property VALUES ('15161860599845', '15161863063756', 'PRIMARY', '', '');
+INSERT INTO tbl_constraint_property VALUES ('15161860597350', '15161863064221', 'UNIQUE', '', '');
+SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
 ##|----|----TABLE END
 */
