@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -61,11 +63,12 @@ public class DBRawData {
                         String colColPrefix = resultSet.getString("ttpro_col_prefix");
                         String colTblComment = resultSet.getString("ttpro_comment");
                         newId = RandomValue.getRandId(1111, 9999);
+                        newId = getDbFormat(newId);
                         colTblName = getDbFormat(colTblName);
                         colTblPrefix = getDbFormat(colTblPrefix);
                         colColPrefix = getDbFormat(colColPrefix);
                         colTblComment = getDbFormat(colTblComment);
-                        tmpSql = "INSERT INTO tbl_table_property VALUES ('%s', '%s', '%s', '%s', %s);";
+                        tmpSql = "INSERT INTO tbl_table_property VALUES (%s, %s, %s, %s, %s);";
                         tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
                         System.out.println(tmpSql);
                         //tblProIdList.add(rowId + "");
@@ -85,14 +88,15 @@ public class DBRawData {
             getTableProperty();
         }
         if (mapTblProId.size() > 0) {
+            System.out.println("");
+            System.out.println("DELETE FROM tbl_column_property;");
             //for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) -FOR LIST<STRING>
             //for (Map.Entry<String, String> entry : gfg.entrySet())
             for (Iterator<Map.Entry<String, String>> iterator = mapTblProId.entrySet().iterator(); iterator.hasNext();) {
                 Map.Entry<String, String> element = iterator.next();
-                //System.out.println(element);
                 getColumnProperty(element.getKey(), element.getValue());
             }
-            System.out.println(mapTblProId.size());
+            //System.out.println(mapTblProId.size());
         }
     }
 
@@ -100,17 +104,40 @@ public class DBRawData {
         if (sQLiteConnection == null) {
             openDatabase();
             sqlQuery = "SELECT * FROM tbl_column_property WHERE ttpro_id = '" + argOldId + "';";
-            System.out.println("SQL: " + sqlQuery);
+            //System.out.println("SQL: " + sqlQuery);
             ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {
                 if (resultSet != null) {
-                    System.out.println("");
-                    System.out.println("DELETE FROM tbl_column_property;");
+                    //System.out.println("");
+                    //System.out.println("DELETE FROM tbl_column_property;");
                     while (resultSet.next()) {
+                        String tmpSql = "";
+                        String newId = "";
+                        newId = RandomValue.getRandId(1111, 9999);
+                        long rowId = resultSet.getLong("ttpro_id");
+                        String colColName = resultSet.getString("tcpro_col_name");
+                        String colColDataType = resultSet.getString("tcpro_col_dtype");
+                        String colLength = resultSet.getString("tcpro_length");
+                        String colIsNull = resultSet.getString("tcpro_is_null");
+                        String colNoPrefix = resultSet.getString("tcpro_no_prefix");
+                        String colComment = resultSet.getString("tcpro_col_comment");
+                        newId = getDbFormat(newId);
+                        colColName = getDbFormat(colColName);
+                        colColDataType = getDbFormat(colColDataType).toUpperCase();
+                        colLength = getDbFormat(colLength);
+                        colIsNull = getDbFormat(colIsNull);
+                        colNoPrefix = getDbFormat(colNoPrefix);
+                        colComment = getDbFormat(colComment);
+                        tmpSql = "INSERT INTO tbl_column_property VALUES (%s, %s, %s, %s, %s, %s, %s, %s);";
+                        tmpSql = String.format(tmpSql, argNewId, newId, colColName, colColDataType, colLength, colIsNull, colNoPrefix, colComment);
+                        System.out.println(tmpSql);
+                        Thread.sleep(20);
                     }
                 }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
+            } catch (InterruptedException ex) {
+                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
             }
             sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
@@ -127,7 +154,7 @@ public class DBRawData {
             if (argData.isEmpty()) {
                 retVal = null;
             } else {
-                retVal = "'" + argData + "'";
+                retVal = "'" + argData.trim() + "'";
             }
         } else {
             retVal = null;
