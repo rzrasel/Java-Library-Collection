@@ -4,8 +4,11 @@ import com.rz.librarycore.dbhandler.SQLiteConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -35,9 +38,12 @@ public class DBRawData {
     private void closeDatabase() {
         sQLiteConnection.onCloseStatement();
         sQLiteConnection.onClose();
+        sQLiteConnection = null;
     }
 
     private void getTableProperty() {
+        List<String> tblProIdList = new ArrayList<String>();
+        HashMap<String, String> mapTblProId = new HashMap<String, String>();
         if (sQLiteConnection == null) {
             openDatabase();
             sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
@@ -55,30 +61,77 @@ public class DBRawData {
                         String colColPrefix = resultSet.getString("ttpro_col_prefix");
                         String colTblComment = resultSet.getString("ttpro_comment");
                         newId = RandomValue.getRandId(1111, 9999);
-                        if (colTblComment != null) {
-                            if (colTblComment.isEmpty()) {
-                                colTblComment = null;
-                            } else {
-                                colTblComment = "'" + colTblComment + "'";
-                            }
-                        } else {
-                            colTblComment = null;
-                        }
+                        colTblName = getDbFormat(colTblName);
+                        colTblPrefix = getDbFormat(colTblPrefix);
+                        colColPrefix = getDbFormat(colColPrefix);
+                        colTblComment = getDbFormat(colTblComment);
                         tmpSql = "INSERT INTO tbl_table_property VALUES ('%s', '%s', '%s', '%s', %s);";
                         tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
                         System.out.println(tmpSql);
+                        //tblProIdList.add(rowId + "");
+                        mapTblProId.put(rowId + "", newId);
                         Thread.sleep(20);
                     }
                 }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
-            } catch (InterruptedException ex) {
-                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException e) {
+                System.out.println("SQLException: " + e.toString());
             }
+            sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
         } else {
             closeDatabase();
             getTableProperty();
         }
+        if (mapTblProId.size() > 0) {
+            //for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) -FOR LIST<STRING>
+            //for (Map.Entry<String, String> entry : gfg.entrySet())
+            for (Iterator<Map.Entry<String, String>> iterator = mapTblProId.entrySet().iterator(); iterator.hasNext();) {
+                Map.Entry<String, String> element = iterator.next();
+                //System.out.println(element);
+                getColumnProperty(element.getKey(), element.getValue());
+            }
+            System.out.println(mapTblProId.size());
+        }
+    }
+
+    private void getColumnProperty(String argOldId, String argNewId) {
+        if (sQLiteConnection == null) {
+            openDatabase();
+            sqlQuery = "SELECT * FROM tbl_column_property WHERE ttpro_id = '" + argOldId + "';";
+            System.out.println("SQL: " + sqlQuery);
+            ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+            try {
+                if (resultSet != null) {
+                    System.out.println("");
+                    System.out.println("DELETE FROM tbl_column_property;");
+                    while (resultSet.next()) {
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println("SQLException: " + e.toString());
+            }
+            sQLiteConnection.onCloseResultSet(resultSet);
+            closeDatabase();
+        } else {
+            closeDatabase();
+            getColumnProperty(argOldId, argNewId);
+        }
+    }
+
+    public String getDbFormat(String argData) {
+        String retVal = null;
+        if (argData != null) {
+            argData = argData.trim();
+            if (argData.isEmpty()) {
+                retVal = null;
+            } else {
+                retVal = "'" + argData + "'";
+            }
+        } else {
+            retVal = null;
+        }
+        return retVal;
     }
 }
