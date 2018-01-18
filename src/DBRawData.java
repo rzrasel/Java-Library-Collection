@@ -4,6 +4,8 @@ import com.rz.librarycore.dbhandler.SQLiteConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -43,18 +45,35 @@ public class DBRawData {
             try {
                 if (resultSet != null) {
                     System.out.println("");
+                    System.out.println("DELETE FROM tbl_table_property;");
                     while (resultSet.next()) {
                         String tmpSql = "";
                         String newId = "";
                         long rowId = resultSet.getLong("ttpro_id");
                         String colTblName = resultSet.getString("ttpro_tbl_name");
+                        String colTblPrefix = resultSet.getString("ttpro_tbl_prefix");
+                        String colColPrefix = resultSet.getString("ttpro_col_prefix");
+                        String colTblComment = resultSet.getString("ttpro_comment");
                         newId = RandomValue.getRandId(1111, 9999);
-                        tmpSql = "INSERT INTO tbl_table_property VALUES ('%l', 'registration_temp', 'tbl', 'regtm', '');";
-                        System.out.println("DATA: " + rowId);
+                        if (colTblComment != null) {
+                            if (colTblComment.isEmpty()) {
+                                colTblComment = null;
+                            } else {
+                                colTblComment = "'" + colTblComment + "'";
+                            }
+                        } else {
+                            colTblComment = null;
+                        }
+                        tmpSql = "INSERT INTO tbl_table_property VALUES ('%s', '%s', '%s', '%s', %s);";
+                        tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
+                        System.out.println(tmpSql);
+                        Thread.sleep(20);
                     }
                 }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
+            } catch (InterruptedException ex) {
+                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
             }
             closeDatabase();
         } else {
