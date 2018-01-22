@@ -133,7 +133,11 @@ public class SQLGenerate {
                         if (colLength != null) {
                             if (!colLength.isEmpty()) {
                                 colLength = "(" + colLength + ")";
+                            } else {
+                                colLength = "";
                             }
+                        } else {
+                            colLength = "";
                         }
                         if (colIsNull) {
                             defaultIsNull = "NULL";
