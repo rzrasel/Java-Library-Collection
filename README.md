@@ -75,7 +75,7 @@ INSERT INTO tbl_constraint_property VALUES ('15166061105117', '15166061107359', 
 
 
 -- -|START- REGISTRATION_TEMP table property started
-INSERT INTO tbl_column_property VALUES (15166061107235, '15166061104236', 'rgi_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15166061104236', '15166061105117', 'PRIMARY', null, null);
+INSERT INTO tbl_column_property VALUES (15166061107235, '95166061104236', 'rgi_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_constraint_property VALUES ('95166061104236', '85166061105117', 'PRIMARY', null, null);
 -- -|END- REGISTRATION_TEMP table property end
 ```

@@ -374,8 +374,8 @@ CREATE TABLE IF NOT EXISTS tbl_column_property
     tcpro_no_prefix     BOOLEAN NULL,
     tcpro_col_comment   TEXT NULL,
     CONSTRAINT pk_tcp_tcpro_id PRIMARY KEY (tcpro_id),
-    CONSTRAINT fk_tcp_ttpro_id FOREIGN KEY (ttpro_id) REFERENCES tbl_table_property(ttpro_id),
-    CONSTRAINT uk_tcp_ttpro_col_name UNIQUE (tcpro_col_name)
+    CONSTRAINT fk_tcp_ttpro_id FOREIGN KEY (ttpro_id) REFERENCES tbl_table_property(ttpro_id)
+    -- CONSTRAINT uk_tcp_ttpro_col_name UNIQUE (tcpro_col_name)
 );
 
 DROP TABLE IF EXISTS tbl_constraint_property;
