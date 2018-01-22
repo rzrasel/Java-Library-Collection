@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS tbtmp_userrole
 );
 ```
 ```sql_query_insert
+-- Forgot, Change,
 DELETE FROM tbl_table_property;
 INSERT INTO tbl_table_property VALUES ('15166153195124', 'registration_temp', 'tbtmp', 'regi', null);
 INSERT INTO tbl_table_property VALUES ('15166153191485', 'user_profile', 'tbtmp', 'usrpro', null);
@@ -82,6 +83,8 @@ INSERT INTO tbl_column_property VALUES (15166153195124, '15166153201591', 'rgi_i
 -- DELETE FROM tbl_constraint_property;
 INSERT INTO tbl_constraint_property VALUES ('15166153204322', '15166153203467', 'PRIMARY', null, null);
 INSERT INTO tbl_constraint_property VALUES ('15166153204322', '15166153207512', 'UNIQUE', null, null);
+-- Device Id, Fcm Key, Regi Package, Regi Version, Verify Code
+-- ip for device, ip for visiting
 -- -|END- REGISTRATION_TEMP table property end
 
 
