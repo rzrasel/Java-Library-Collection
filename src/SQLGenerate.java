@@ -130,8 +130,10 @@ public class SQLGenerate {
                         }
                         colName = colName.toLowerCase();
                         //-----System.out.println("DATA: " + colName);
-                        if (!colLength.isEmpty()) {
-                            colLength = "(" + colLength + ")";
+                        if (colLength != null) {
+                            if (!colLength.isEmpty()) {
+                                colLength = "(" + colLength + ")";
+                            }
                         }
                         if (colIsNull) {
                             defaultIsNull = "NULL";
@@ -176,7 +178,7 @@ public class SQLGenerate {
                     + " JOIN tbl_column_property As tcol_pro ON tcol_pro.tcpro_id = tcon_pro.tcpro_id "
                     + " JOIN tbl_table_property As ttbl_pro ON ttbl_pro.ttpro_id = tcol_pro.ttpro_id "
                     + " WHERE ttbl_pro.ttpro_id = '" + argTblId + "'; ";
-                    //+ " ORDER BY tcon_pro.tconp_key ASC ";
+            //+ " ORDER BY tcon_pro.tconp_key ASC ";
             //System.out.println("SQL: " + sqlQuery);
             resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {
@@ -367,10 +369,10 @@ CREATE TABLE IF NOT EXISTS tbl_column_property
     tcpro_id            BIGINT(20) NOT NULL,
     tcpro_col_name      TEXT NOT NULL,
     tcpro_col_dtype     TEXT NOT NULL,
-    tcpro_length        TEXT NOT NULL,
+    tcpro_length        TEXT NULL,
     tcpro_is_null       BOOLEAN NOT NULL,
     tcpro_no_prefix     BOOLEAN NULL,
-    tcpro_col_comment   TEXT NOT NULL,
+    tcpro_col_comment   TEXT NULL,
     CONSTRAINT pk_tcp_tcpro_id PRIMARY KEY (tcpro_id),
     CONSTRAINT fk_tcp_ttpro_id FOREIGN KEY (ttpro_id) REFERENCES tbl_table_property(ttpro_id),
     CONSTRAINT uk_tcp_ttpro_col_name UNIQUE (tcpro_col_name)
@@ -389,7 +391,7 @@ CREATE TABLE IF NOT EXISTS tbl_constraint_property
     CONSTRAINT fk_tconp_tcpro_id FOREIGN KEY (tcpro_id) REFERENCES tbl_column_property(tcpro_id)
 );
  */
-/*
+ /*
 DELETE FROM tbl_table_property;
 INSERT INTO tbl_table_property VALUES ('15161836772723', 'registration_temp', 'tbl', 'regtm', '');
 INSERT INTO tbl_table_property VALUES ('15161836774627', 'user_profile', 'tbl', 'uspro', '');
@@ -434,4 +436,4 @@ INSERT INTO tbl_constraint_property VALUES ('15161860599845', '15161863063756', 
 INSERT INTO tbl_constraint_property VALUES ('15161860597350', '15161863064221', 'UNIQUE', '', '');
 SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
 ##|----|----TABLE END
-*/
+ */

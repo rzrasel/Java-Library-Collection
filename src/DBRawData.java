@@ -61,7 +61,7 @@ public class DBRawData {
                         String colTblName = resultSet.getString("ttpro_tbl_name");
                         String colTblPrefix = resultSet.getString("ttpro_tbl_prefix");
                         String colColPrefix = resultSet.getString("ttpro_col_prefix");
-                        String colTblComment = resultSet.getString("ttpro_comment");
+                        String colTblComment = resultSet.getString("ttpro_tbl_comment");
                         newId = RandomValue.getRandId(1111, 9999);
                         newId = getDbFormat(newId);
                         colTblName = getDbFormat(colTblName);
@@ -72,7 +72,7 @@ public class DBRawData {
                         tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
                         System.out.println(tmpSql);
                         //tblProIdList.add(rowId + "");
-                        mapTblProId.put(rowId + "", newId);
+                        mapTblProId.put(rowId + "", newId + "-" + colTblName);
                         Thread.sleep(20);
                     }
                 }
@@ -94,13 +94,23 @@ public class DBRawData {
             //for (Map.Entry<String, String> entry : gfg.entrySet())
             for (Iterator<Map.Entry<String, String>> iterator = mapTblProId.entrySet().iterator(); iterator.hasNext();) {
                 Map.Entry<String, String> element = iterator.next();
-                getColumnProperty(element.getKey(), element.getValue());
+                String oldId = element.getKey();
+                String newId = element.getValue();
+                newId = newId.replaceAll("'", "");
+                String[] arrOfStr = newId.split("-");
+                //newId = arrOfStr[0];
+                //System.out.println("-- -|----|START- " + arrOfStr[1].toUpperCase() + " table's column property started");
+                System.out.println("-- -|START- " + arrOfStr[1].toUpperCase() + " table property started");
+                getColumnProperty(oldId, newId);
+                System.out.println("-- -|END- " + arrOfStr[1].toUpperCase() + " table property end");
+                System.out.println("\n\n");
             }
             //System.out.println(mapTblProId.size());
         }
     }
 
     private void getColumnProperty(String argOldId, String argNewId) {
+        HashMap<String, String> mapColProId = new HashMap<String, String>();
         if (sQLiteConnection == null) {
             openDatabase();
             sqlQuery = "SELECT * FROM tbl_column_property WHERE ttpro_id = '" + argOldId + "';";
@@ -110,11 +120,13 @@ public class DBRawData {
                 if (resultSet != null) {
                     //System.out.println("");
                     //System.out.println("DELETE FROM tbl_column_property;");
+                    String[] arrOfStr = argNewId.split("-");
                     while (resultSet.next()) {
                         String tmpSql = "";
                         String newId = "";
                         newId = RandomValue.getRandId(1111, 9999);
-                        long rowId = resultSet.getLong("ttpro_id");
+                        long rowTblId = resultSet.getLong("ttpro_id");
+                        long rowId = resultSet.getLong("tcpro_id");
                         String colColName = resultSet.getString("tcpro_col_name");
                         String colColDataType = resultSet.getString("tcpro_col_dtype");
                         String colLength = resultSet.getString("tcpro_length");
@@ -128,8 +140,69 @@ public class DBRawData {
                         colIsNull = getDbFormat(colIsNull);
                         colNoPrefix = getDbFormat(colNoPrefix);
                         colComment = getDbFormat(colComment);
+                        argNewId = arrOfStr[0];
                         tmpSql = "INSERT INTO tbl_column_property VALUES (%s, %s, %s, %s, %s, %s, %s, %s);";
                         tmpSql = String.format(tmpSql, argNewId, newId, colColName, colColDataType, colLength, colIsNull, colNoPrefix, colComment);
+                        System.out.println(tmpSql);
+                        mapColProId.put(rowId + "", newId + "-" + arrOfStr[1]);
+                        Thread.sleep(20);
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println("SQLException: " + e.toString());
+            } catch (InterruptedException ex) {
+                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sQLiteConnection.onCloseResultSet(resultSet);
+            closeDatabase();
+        } else {
+            closeDatabase();
+            getColumnProperty(argOldId, argNewId);
+        }
+        if (mapColProId.size() > 0) {
+            System.out.println("");
+            System.out.println("-- DELETE FROM tbl_constraint_property;");
+            //for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) -FOR LIST<STRING>
+            //for (Map.Entry<String, String> entry : gfg.entrySet())
+            for (Iterator<Map.Entry<String, String>> iterator = mapColProId.entrySet().iterator(); iterator.hasNext();) {
+                Map.Entry<String, String> element = iterator.next();
+                String oldId = element.getKey();
+                String newId = element.getValue();
+                String[] arrOfStr = newId.split("-");
+                newId = arrOfStr[0];
+                //System.out.println("-- -|" + arrOfStr[1].toUpperCase() + " table's constraint property started");
+                getConstraintProperty(oldId, newId);
+                //System.out.println("-- -|" + arrOfStr[1].toUpperCase() + " table's constraint property end");
+                //System.out.println(element.getKey());
+            }
+            //System.out.println(mapTblProId.size());
+        }
+    }
+
+    private void getConstraintProperty(String argOldId, String argNewId) {
+        if (sQLiteConnection == null) {
+            openDatabase();
+            sqlQuery = "SELECT * FROM tbl_constraint_property WHERE tcpro_id = '" + argOldId + "';";
+            //System.out.println("SQL: " + sqlQuery);
+            ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+            try {
+                if (resultSet != null) {
+                    //System.out.println("");
+                    //System.out.println("DELETE FROM tbl_column_property;");
+                    while (resultSet.next()) {
+                        String tmpSql = "";
+                        String newId = "";
+                        newId = RandomValue.getRandId(1111, 9999);
+                        long rowId = resultSet.getLong("tconp_id");
+                        String colKey = resultSet.getString("tconp_key");
+                        String colRefTbl = resultSet.getString("tconp_ref_tbl");
+                        String colConPrefix = resultSet.getString("tconp_con_prefix");
+                        newId = getDbFormat(newId);
+                        colKey = getDbFormat(colKey);
+                        colRefTbl = getDbFormat(colRefTbl);
+                        colConPrefix = getDbFormat(colConPrefix);
+                        tmpSql = "INSERT INTO tbl_constraint_property VALUES (%s, %s, %s, %s, %s);";
+                        tmpSql = String.format(tmpSql, argNewId, newId, colKey, colRefTbl, colConPrefix);
                         System.out.println(tmpSql);
                         Thread.sleep(20);
                     }
