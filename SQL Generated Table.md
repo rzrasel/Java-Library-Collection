@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS tbtmp_registration_temp
 (
     regi_rgi_id                     BIGINT(20)        NOT NULL,
     regi_rgi_email                  VARCHAR(255)      NOT NULL,
-    regi_rgi_password               VARCHAR(255)      NOT NULL,
+    regi_rgi_password               TEXT              NOT NULL,
     regi_rgi_wifi_ip                VARCHAR(255)      NOT NULL,
     regi_rgi_device_ip              VARCHAR(255)      NOT NULL,
     regi_rgi_host_trace_ip          VARCHAR(255)      NOT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE IF NOT EXISTS tbtmp_userrole
     usrro_role_is_default           BOOLEAN           NULL,
     usrro_role_create_date          DATETIME          NULL,
     usrro_role_modify_date          DATETIME          NULL,
-    CONSTRAINT                      pk_userr_usrro_role_id PRIMARY KEY (usrro_role_id),
-    CONSTRAINT                      uk_userr_usrro_role_title UNIQUE (usrro_role_title)
+    CONSTRAINT                      uk_userr_usrro_role_title UNIQUE (usrro_role_title),
+    CONSTRAINT                      pk_userr_usrro_role_id PRIMARY KEY (usrro_role_id)
 );
 ```
 ```sql_query_insert
@@ -71,7 +71,7 @@ INSERT INTO tbl_constraint_property VALUES ('15170679167528', '15170679169352', 
 -- -|START- REGISTRATION_TEMP table property started
 INSERT INTO tbl_column_property VALUES (15170679167369, '15170679164631', 'rgi_id', 'BIGINT', '20', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15170679167369, '15170679161399', 'rgi_email', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15170679167369, '15170679167843', 'rgi_password', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170679167369, '15170679167843', 'rgi_password', 'TEXT', null, '0', null, null);
 INSERT INTO tbl_column_property VALUES (15170679167369, '15170679165828', 'rgi_wifi_ip', 'VARCHAR', '255', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15170679167369, '15170679179063', 'rgi_device_ip', 'VARCHAR', '255', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15170679167369, '15170679177408', 'rgi_host_trace_ip', 'VARCHAR', '255', '0', null, null);
