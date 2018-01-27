@@ -38,6 +38,7 @@ public class SQLGenerate {
         String appId = "";
         appId = RandomValue.getRandId(1111, 9999);
         System.out.println("New ID: " + appId);
+        SQLiteConnection.isLogPrint = false;
         new SQLGenerate().populatTable();
         appId = RandomValue.getRandId(1111, 9999);
         System.out.println("New ID: " + appId);
