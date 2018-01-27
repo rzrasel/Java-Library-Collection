@@ -37,50 +37,48 @@ CREATE TABLE IF NOT EXISTS tbtmp_userrole
 ```sql_query_insert
 -- Forgot, Change,
 DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15166153195124', 'registration_temp', 'tbtmp', 'regi', null);
-INSERT INTO tbl_table_property VALUES ('15166153191485', 'user_profile', 'tbtmp', 'usrpro', null);
-INSERT INTO tbl_table_property VALUES ('15166153197107', 'userrole', 'tbtmp', 'usrro', null);
+INSERT INTO tbl_table_property VALUES ('15170386003021', 'registration_temp', 'tbtmp', 'regi', null);
+INSERT INTO tbl_table_property VALUES ('15170386005146', 'user_profile', 'tbtmp', 'usrpro', null);
+INSERT INTO tbl_table_property VALUES ('15170386007914', 'userrole', 'tbtmp', 'usrro', null);
 
 DELETE FROM tbl_column_property;
 -- -|START- USERROLE table property started
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153192862', 'role_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153194554', 'role_title', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153198784', 'role_priority', 'INT', '3', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153192680', 'role_is_default', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153197013', 'role_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153197107, '15166153207736', 'role_modify_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386012174', 'role_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386015004', 'role_title', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386014489', 'role_priority', 'INT', '3', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386018028', 'role_is_default', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386011637', 'role_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386007914, '15170386017855', 'role_modify_date', 'DATETIME', null, '0', null, null);
 
 DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15166153192862', '15166153206291', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15166153194554', '15166153208167', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15170386012174', '15170386014232', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15170386015004', '15170386018746', 'UNIQUE', null, null);
 -- -|END- USERROLE table property end
 
 
 
 -- -|START- REGISTRATION_TEMP table property started
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153204322', 'rgi_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153201177', 'rgi_email', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153202130', 'rgi_type', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153208447', 'rgi_password', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153201294', 'rgi_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153195124, '15166153201591', 'rgi_ip', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386013692', 'rgi_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386018785', 'rgi_email', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386011805', 'rgi_type', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386013335', 'rgi_password', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386016020', 'rgi_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386003021, '15170386011262', 'rgi_ip', 'DATETIME', null, '0', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15166153204322', '15166153203467', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15166153204322', '15166153207512', 'UNIQUE', null, null);
--- Device Id, Fcm Key, Regi Package, Regi Version, Verify Code
--- ip for device, ip for visiting
+INSERT INTO tbl_constraint_property VALUES ('15170386013692', '15170386017720', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15170386013692', '15170386019100', 'UNIQUE', null, null);
 -- -|END- REGISTRATION_TEMP table property end
 
 
 
 -- -|START- USER_PROFILE table property started
-INSERT INTO tbl_column_property VALUES (15166153191485, '15166153209613', 'user_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153191485, '15166153204664', 'first_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15166153191485, '15166153204432', 'mid_name', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15166153191485, '15166153209664', 'last_name', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15170386005146, '15170386014227', 'user_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386005146, '15170386013980', 'first_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15170386005146, '15170386014941', 'mid_name', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15170386005146, '15170386015272', 'last_name', 'VARCHAR', '255', '1', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15166153209613', '15166153202688', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15170386014227', '15170386014713', 'PRIMARY', null, null);
 -- -|END- USER_PROFILE table property end
 ```
