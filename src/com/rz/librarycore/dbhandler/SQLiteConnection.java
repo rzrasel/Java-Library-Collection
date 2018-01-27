@@ -80,7 +80,7 @@ public class SQLiteConnection {
     private Connection connection = null;
     private Statement statement = null;
     private ResultSet resultSet = null;
-    public boolean isLogPrint = false;
+    public static boolean isLogPrint = false;
 
     /**
      * <p>
