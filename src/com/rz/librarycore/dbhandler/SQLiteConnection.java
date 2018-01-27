@@ -80,6 +80,7 @@ public class SQLiteConnection {
     private Connection connection = null;
     private Statement statement = null;
     private ResultSet resultSet = null;
+    public boolean isLogPrint = false;
 
     /**
      * <p>
@@ -121,11 +122,12 @@ public class SQLiteConnection {
             //String url = "jdbc:sqlite:test.sqlite3";
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(DB_URL);
-            System.out.println("Connection to SQLite has been established.");
+            onLogPrint("Connection to SQLite has been established. " + DB_URL);
         } catch (ClassNotFoundException e) {
-            System.err.println("Could not init JDBC driver - driver not found");
-        } catch (SQLException ex) {
-            Logger.getLogger(SQLiteConnection.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println();
+            onLogPrint("ClassNotFoundException. " + e);
+        } catch (SQLException e) {
+            onLogPrint("SQLException. " + e);
         }
         return connection;
     }
@@ -207,6 +209,12 @@ public class SQLiteConnection {
         //onCloseResultSet(resultSet);
         onCloseStatement();
         onCloseConnection();
+    }
+
+    private void onLogPrint(String argMessage) {
+        if (isLogPrint) {
+            System.out.println("DEBUG LOG PRINT: " + argMessage);
+        }
     }
 }
 /*
