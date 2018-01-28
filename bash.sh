@@ -7,7 +7,7 @@ commit="git commit -m"
 gitcommit="$commit \"$input - $dateTime\""
 echo "$gitcommit"
 git add .
-$gitcommit
+git commit -m "$input - $dateTime"
 git pull
 git push --all
 echo Process Complete Press Enter...
