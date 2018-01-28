@@ -26,6 +26,7 @@ public class DBRawData {
     public static final String DB_NAME = "app-jar-libs/app-system.sqlite3";
     private SQLiteConnection sQLiteConnection;
     private String sqlQuery = "";
+    private boolean isFirstConst = true;
 
     public static void main(String args[]) {
         SQLiteConnection.isLogPrint = false;
@@ -162,7 +163,12 @@ public class DBRawData {
         }
         if (mapColProId.size() > 0) {
             System.out.println("");
-            System.out.println("-- DELETE FROM tbl_constraint_property;");
+            if (isFirstConst) {
+                System.out.println("DELETE FROM tbl_constraint_property;");
+                isFirstConst = false;
+            } else {
+                System.out.println("-- DELETE FROM tbl_constraint_property;");
+            }
             //for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) -FOR LIST<STRING>
             //for (Map.Entry<String, String> entry : gfg.entrySet())
             for (Iterator<Map.Entry<String, String>> iterator = mapColProId.entrySet().iterator(); iterator.hasNext();) {
