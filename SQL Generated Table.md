@@ -145,3 +145,5 @@ CREATE TABLE `app_countries` (
 	KEY `cc` (`country_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+Country Codes List
+http://www.nationsonline.org/oneworld/country_code_list.htm
