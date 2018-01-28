@@ -28,6 +28,7 @@ public class DBRawData {
     private String sqlQuery = "";
 
     public static void main(String args[]) {
+        SQLiteConnection.isLogPrint = false;
         DBRawData dbRawData = new DBRawData();
         dbRawData.getTableProperty();
     }
