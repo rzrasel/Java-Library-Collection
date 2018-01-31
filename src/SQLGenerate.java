@@ -143,6 +143,10 @@ public class SQLGenerate {
                         if (colIsNull) {
                             defaultIsNull = "NULL";
                         }
+                        else
+                        {
+                            defaultIsNull = "NOT NULL";
+                        }
                         //gapSeparatorLen
                         colType = colType + colLength;
                         partOfSqlQuery = repeat(":", 4)
