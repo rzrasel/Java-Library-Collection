@@ -75,7 +75,7 @@ public class DBRawData {
                         System.out.println(tmpSql);
                         //tblProIdList.add(rowId + "");
                         mapTblProId.put(rowId + "", newId + "-" + colTblName);
-                        Thread.sleep(20);
+                        Thread.sleep(100);
                     }
                 }
             } catch (SQLException e) {
@@ -147,7 +147,7 @@ public class DBRawData {
                         tmpSql = String.format(tmpSql, argNewId, newId, colColName, colColDataType, colLength, colIsNull, colNoPrefix, colComment);
                         System.out.println(tmpSql);
                         mapColProId.put(rowId + "", newId + "-" + arrOfStr[1]);
-                        Thread.sleep(20);
+                        Thread.sleep(100);
                     }
                 }
             } catch (SQLException e) {
@@ -211,7 +211,7 @@ public class DBRawData {
                         tmpSql = "INSERT INTO tbl_constraint_property VALUES (%s, %s, %s, %s, %s);";
                         tmpSql = String.format(tmpSql, argNewId, newId, colKey, colRefTbl, colConPrefix);
                         System.out.println(tmpSql);
-                        Thread.sleep(20);
+                        Thread.sleep(100);
                     }
                 }
             } catch (SQLException e) {
