@@ -84,7 +84,7 @@ public class SQLGenerate {
                         finalSqlQuery += partOfSqlQuery;
                         //----System.out.println("DATA: " + colName);
                         populatColumn(rowId, colColPrefix);
-                        partOfSqlQuery = ");";
+                        partOfSqlQuery = ") ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;";
                         queryList.add(partOfSqlQuery);
                         finalSqlQuery += partOfSqlQuery;
                     }
@@ -300,7 +300,7 @@ public class SQLGenerate {
                 //printData = printData.trim();
                 if (printData.startsWith(");")) {
                     isAddComma = false;
-                } else if (nextData.startsWith(");")) {
+                } else if (nextData.startsWith(") ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;")) {
                     isAddComma = false;
                 }
                 if (isAddComma) {
