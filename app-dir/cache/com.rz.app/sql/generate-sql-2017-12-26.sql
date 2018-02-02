@@ -1,0 +1,81 @@
+
+
+
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357201202';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357201975';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357203888';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357215084';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357219951';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357212719';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357213267';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357213491';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357211199';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357219757';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357212284';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357213763';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357223745';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357221346';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357228518';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357228505';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357224859';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357222473';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357223819';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357225175';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357223348';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357229070';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357239211';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357231750';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357234806';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357236799';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357231699';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357239900';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357235328';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357235367';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357233661';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357246012';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357249817';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357244179';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357246344';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357248396';
+DELETE FROM tv_live_television WHERE lt_tv_id = '15142357242813';
+
+
+INSERT INTO tv_live_television VALUES ('15142357201202', '9XM', '9xm', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226053/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:00', '2017-12-26 03:02:00');
+INSERT INTO tv_live_television VALUES ('15142357201975', '9XM Jalwa', '9xm Jalwa', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226011/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:00', '2017-12-26 03:02:00');
+INSERT INTO tv_live_television VALUES ('15142357203888', 'Aljazeera', 'Aljazeera', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226109/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:00', '2017-12-26 03:02:00');
+INSERT INTO tv_live_television VALUES ('15142357215084', 'Animl Plnet', 'Animl Plnet', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225872/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357219951', 'B4U Music', 'B4u Music', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226055/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357212719', 'BBC EARTH', 'Bbc Earth', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221226068/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357213267', 'Bikini', 'Bikini', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://stream-01.sg1.dailymotion.com/52/dm/3/x3m6nld/live-1.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357213491', 'Discov Kids', 'Discov Kids', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225775/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357211199', 'DISCOVERY', 'Discovery', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225874/04.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357219757', 'ESPN', 'Espn', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225805/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357212284', 'Jasmin', 'Jasmin', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://109.71.162.112:1935/live/hd.jasminchannel.stream/chunklist_w800936782.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357213763', 'Music India', 'Music India', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225863/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:01', '2017-12-26 03:02:01');
+INSERT INTO tv_live_television VALUES ('15142357223745', 'Name', 'Details', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://xc1.asmhosting.solutions:80/live/555555555/555555555/13098.ts', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357221346', 'Neo Prime', 'Neo Prime', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225789/04.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357228518', 'Neo Sports', 'Neo Sports', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225791/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357228505', 'Peace TV', 'Peace Tv', 'English', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'rtmp://peace.fms.visionip.tv/live//b2b-peace_asia-live-25f-4x3-sdh_1', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357224859', 'Sony Aath', 'Sony Aath', 'Bangla', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226099/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357222473', 'Sony Max', 'Sony Max', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225811/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357223819', 'Sony Max 2', 'Sony Max 2', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225812/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357225175', 'Sony Max HD', 'Sony Max Hd', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225776/01.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357223348', 'Sony Mix', 'Sony Mix', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225816/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357229070', 'Sony Six', 'Sony Six', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225827/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:02', '2017-12-26 03:02:02');
+INSERT INTO tv_live_television VALUES ('15142357239211', 'Sony Six HD', 'Sony Six Hd', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225780/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357231750', 'SONY TV', 'Sony Tv', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225803/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357234806', 'Sony TV HD', 'Sony Tv Hd', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225772/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357236799', 'TEN 01 HD', 'Ten 01 Hd', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225875/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357231699', 'TEN 1', 'Ten 1', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225931/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357239900', 'TEN 2', 'Ten 2', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225932/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357235328', 'TEN 3', 'Ten 3', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225933/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357235367', 'TLC', 'Tlc', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225819/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357233661', 'TRAVEL XP', 'Travel Xp', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225813/01.m3u8', '', '0', '1', '0', '2017-12-26 03:02:03', '2017-12-26 03:02:03');
+INSERT INTO tv_live_television VALUES ('15142357246012', 'ZEE BANGLA', 'Zee Bangla', 'Bangla', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225882/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+INSERT INTO tv_live_television VALUES ('15142357249817', 'Zee Cinema', 'Zee Cinema', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225935/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+INSERT INTO tv_live_television VALUES ('15142357244179', 'ZEE CLASSIC', 'Zee Classic', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.3/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226067/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+INSERT INTO tv_live_television VALUES ('15142357246344', 'ZEE TV', 'Zee Tv', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.4/wh7f454c46tw3372980723_1650188555/PLTV/88888888/224/3221225878/03.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+INSERT INTO tv_live_television VALUES ('15142357248396', 'Zing', 'Zing', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://125.17.129.5/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221226080/01.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+INSERT INTO tv_live_television VALUES ('15142357242813', 'ZOOM', 'Zoom', 'Hindi', 'com.rz.livetv,me.apphive.bestpixnormalgp', 'iptv', 'G', 'http://zoomweblive-lh.akamaihd.net/i/Zoomweb_1@348071/index_600.m3u8', '', '0', '1', '0', '2017-12-26 03:02:04', '2017-12-26 03:02:04');
+
+

@@ -13,3 +13,15 @@ git commit -m "Add Readme & Git Commit File"
 git pull
 git push --all
 ```
+```zalunu_command
+Name: Zalunu
+Package: com.watchlivetv.onlineradioapp
+
+com.watchlivetv.onlineradioapp.sync - ZalunuSyncAdapter
+URL: http://cend.zalunu.com/auth/GetStations (LINE: 199)
+URL: http://cend.zalunu.com/auth/UserFavourites (LINE: 236)
+
+http://www.youtube.com/get_video_info?video_id=
+
+http://ip-api.com/json
+```
