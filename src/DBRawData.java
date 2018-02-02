@@ -1,6 +1,7 @@
 
 import com.rz.librarycore.RandomValue;
 import com.rz.librarycore.dbhandler.SQLiteConnection;
+import com.rz.librarycore.logger.LogWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,6 +31,8 @@ public class DBRawData {
 
     public static void main(String args[]) {
         SQLiteConnection.isLogPrint = false;
+        LogWriter.isDebug = false;
+        LogWriter.Log("Hi");
         DBRawData dbRawData = new DBRawData();
         dbRawData.getTableProperty();
     }
