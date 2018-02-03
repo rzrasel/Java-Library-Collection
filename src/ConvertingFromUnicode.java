@@ -376,8 +376,12 @@ public class ConvertingFromUnicode {
         return output.toString();
     }
 }
-//http://www.choti69.com/2015/11/english-chodar-golpo.html
-//https://www.banglachoticlub.com/
+/*
+http://www.choti69.com/2015/11/english-chodar-golpo.html
+https://www.banglachoticlub.com/
+https://www.bangla-choti-golpo.com/
+http://www.exluv.com/
+*/
 //http://shankarpshetty.blogspot.com/2009/11/java-function-to-convert-string-to-html.html
 //http://yagudaev.com/posts/jsp-escaping-html/
 //http://www.java2s.com/Tutorial/Java/0120__Development/Convertsthestringtotheunicodeformat.htm
