@@ -109,6 +109,10 @@ public class PowerHTTPConnection {
         return bytes;
     }
 
+    public void onImageWriteToDisk() {
+        //
+    }
+
     public BufferedImage onReadImage(String argStrDomainURL, FileType argFileType, String argOutFilePath) {
         //Image image = null;
         BufferedImage bufferedImage = null;
