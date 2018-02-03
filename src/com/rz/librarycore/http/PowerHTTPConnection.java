@@ -158,6 +158,7 @@ public class PowerHTTPConnection {
             LogWriter.Log("DEBUG IOException: " + e);
         }
         return null;
+        //http://www.codejava.net/java-se/networking/use-httpurlconnection-to-download-file-from-an-http-url
         //https://javapointers.com/tutorial/java-convert-image-to-base64-string-and-base64-to-image/
     }
 
