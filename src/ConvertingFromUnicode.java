@@ -14,6 +14,8 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -153,9 +155,13 @@ public class ConvertingFromUnicode {
         OutputStream outputStream = null;
         try {
             String strDomainURL;
+            String metaHostUrl;
+            String metaImageUrl;
             BufferedImage bufferedImage = null;
             strDomainURL = "http://pngimagesfree.com/NATURE/Grass/pond_with_grass-png.png";
             strDomainURL = imageURLRawData;
+            metaHostUrl = "http://apphive.me/fb-page/";
+            metaImageUrl = "http://apphive.me/fb-page/p-003.jpg";
             /*PowerHTTPConnection powerHTTPConnection = new PowerHTTPConnection();
             bufferedImage = powerHTTPConnection.onReadImage(strDomainURL, PowerHTTPConnection.FileType.PNG, "");
             String base64Data = powerHTTPConnection.onImageEncodeToString(bufferedImage);
@@ -167,8 +173,14 @@ public class ConvertingFromUnicode {
             htmlTitle = htmlTitle.replaceAll("&#32;", " ");
             htmlDescription = htmlDescription.replaceAll("&#32;", " ");
             htmlDescriptionNew = htmlDescription.replaceAll("&#13;&#10;", "<br />");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
+            String metaFileName = "literotica-" + simpleDateFormat.format(date) + ".html";
+            metaHostUrl = metaHostUrl + metaFileName;
+            convertingFromUnicode.onWriteIndex(metaFileName);
             //outputStream = new FileOutputStream("app-dir/output.html");
-            outputStream = new FileOutputStream("app-dir/story.php");
+            //outputStream = new FileOutputStream("app-dir/story.php");
+            outputStream = new FileOutputStream("app-dir/" + metaFileName);
             /*String fileData = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
                     + "<html lang=\"en-US\"xmlns=\"http://www.w3.org/1999/xhtml\">\n"
                     + "    <head>\n"
@@ -182,7 +194,7 @@ public class ConvertingFromUnicode {
                     + "        <meta property=\"og:description\" content=\"" + htmlDescription + " Note: If you have any issues, contact us before giving a bad review. If you have any suggestions please send us an email instead of giving one star and bad review. Suggestions and feedback please contact contact@apphive.me - App Hive\" />\n"
                     + "        <meta property=\"og:type\" content=\"article\" />\n"
                     //+ "        <meta property=\"og:image\" content=\"<?= base_url(); ?>assets/fb-quick-story/001.jpg\" />\n"
-                    + "        <meta property=\"og:image\" content=\"http://apphive.me/assets/fb-quick-story/001.jpg\" />\n"
+                    + "        <meta property=\"og:image\" content=\""+ metaImageUrl + "\" />\n"
                     //+ "        <meta property=\"og:url\" content=\"<?= base_url(\"/fb-story\"); ?>\" />\n"
                     + "        <meta property=\"og:url\" content=\"http://apphive.me/story.php\" />\n"
                     + "        <meta property=\"og:locale\" content=\"en_US\" />\n"
@@ -199,17 +211,17 @@ public class ConvertingFromUnicode {
                     + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"
                     + "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n"
                     + "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>\n"
-                    + "        <meta name=\"description\" content=\"AOS - Animate On Scroll library using CSS3\"/>\n"
-                    + "        <meta name=\"keywords\" content=\"AOS, animate on scroll, css3 scroll animations, simple scroll animations\"/>\n"
+                    + "        <meta name=\"description\" content=\"" + titleRawData + " App Hive, App Hive Me\"/>\n"
+                    + "        <meta name=\"keywords\" content=\"" + titleRawData + " App Hive, App Hive Me\"/>\n"
                     + "\n"
                     + "        <meta property=\"og:title\" content=\"" + htmlTitle + "\" />\n"
                     + "        <meta property=\"og:description\" content=\"" + htmlDescription + " Note: If you have any issues, contact us before giving a bad review. If you have any suggestions please send us an email instead of giving one star and bad review. Suggestions and feedback please contact contact@apphive.me - App Hive\" />\n"
                     + "        <meta property=\"og:type\" content=\"article\" />\n"
-                    + "        <meta property=\"og:image\" content=\"http://apphive.me/assets/fb-quick-story/001.jpg\" />\n"
-                    + "        <meta property=\"og:url\" content=\"http://apphive.me/story.php\" />\n"
+                    + "        <meta property=\"og:image\" content=\"" + metaImageUrl + "\" />\n"
+                    + "        <meta property=\"og:url\" content=\"" + metaHostUrl + "\" />\n"
                     + "        <meta property=\"og:locale\" content=\"en_US\" />\n"
                     + "        <meta property=\"og:site_name\" content=\"App Hive - Math Play\" />\n"
-                    + "        <title>APP Hive</title>\n"
+                    + "        <title>APP Hive - " + titleRawData + "</title>\n"
                     + "        <link rel=\"icon\" type=\"image/png\" href=\"http://apphive.me/assets/favicon-apphive.png\" />\n"
                     + "        <link rel=\"stylesheet\" href=\"http://apphive.me/assets/css/main.css\" />\n"
                     + "        <link rel=\"stylesheet\" href=\"http://apphive.me/assets/css/app-grid.css\" />\n"
@@ -249,11 +261,11 @@ public class ConvertingFromUnicode {
                     + "                            <p>maecenas sapien feugiat ex purus</p>\n"
                     + "                            <h2>APP HIVE</h2>\n"
                     + "                        </header>\n"
-                    + "                        <img src=\"http://apphive.me/assets/fb-quick-story/001.jpg\" alt=\"\" width=\"100%\" />\n"
+                    + "                        <img src=\"" + metaImageUrl + "\" alt=\"\" width=\"100%\" />\n"
                     + "                        <br />\n"
                     + "                        <br />\n"
                     + "                        <h4>" + htmlTitle + "</h4>\n"
-                    + "                        <p>" + htmlDescription + "\n"
+                    + "                        <p style=\"text-align:justify; color: #000000;\">" + htmlDescriptionNew + "\n"
                     + "                        </p>\n"
                     + "                    </div>\n"
                     + "                </div>\n"
@@ -300,6 +312,27 @@ public class ConvertingFromUnicode {
         //convertingFromUnicode.buildHtmlEntityCode(fileRawData);
     }
 
+    public void onWriteIndex(String argMenuLink) {
+        OutputStream outputStream = null;
+        try {
+            String fileData = "<a href=\"" + argMenuLink + "\">" + argMenuLink + "</a>";
+            outputStream = new FileOutputStream("app-dir/index.html");
+            Writer writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
+            writer.write(fileData);
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                outputStream.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
     public static String buildHtmlEntityCode(String input) {
         StringBuffer output = new StringBuffer(input.length() * 2);
 
@@ -343,6 +376,8 @@ public class ConvertingFromUnicode {
         return output.toString();
     }
 }
+//http://www.choti69.com/2015/11/english-chodar-golpo.html
+//https://www.banglachoticlub.com/
 //http://shankarpshetty.blogspot.com/2009/11/java-function-to-convert-string-to-html.html
 //http://yagudaev.com/posts/jsp-escaping-html/
 //http://www.java2s.com/Tutorial/Java/0120__Development/Convertsthestringtotheunicodeformat.htm
