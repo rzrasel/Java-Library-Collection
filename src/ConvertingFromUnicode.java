@@ -1,4 +1,7 @@
 
+import com.rz.librarycore.http.PowerHTTPConnection;
+import com.rz.librarycore.logger.LogWriter;
+import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -35,6 +38,9 @@ public class ConvertingFromUnicode {
         String newString = new String(bytes);
         System.out.println("Text Decryted : " + bytes.toString());*/
         String fileRawData = "";
+        String imageURLRawData = "";
+        String titleRawData = "";
+        String descriptionRawData = "";
         InputStream inputStream = null;
         StringBuilder stringBuilder = null;
         try {
@@ -49,6 +55,11 @@ public class ConvertingFromUnicode {
             }
             reader.close();
             fileRawData = stringBuilder.toString();
+            String[] fileData = fileRawData.split("\\|\\|");
+            imageURLRawData = fileData[0].trim();
+            titleRawData = fileData[1].trim();
+            descriptionRawData = fileData[2].trim();
+            LogWriter.Log(fileData.length + " Lenght");
             System.out.println("DEBUG PRINT: " + stringBuilder.toString());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
@@ -141,8 +152,24 @@ public class ConvertingFromUnicode {
 
         OutputStream outputStream = null;
         try {
-            outputStream = new FileOutputStream("app-dir/output.html");
-            String fileData = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+            String strDomainURL;
+            BufferedImage bufferedImage = null;
+            strDomainURL = "http://pngimagesfree.com/NATURE/Grass/pond_with_grass-png.png";
+            strDomainURL = imageURLRawData;
+            /*PowerHTTPConnection powerHTTPConnection = new PowerHTTPConnection();
+            bufferedImage = powerHTTPConnection.onReadImage(strDomainURL, PowerHTTPConnection.FileType.PNG, "");
+            String base64Data = powerHTTPConnection.onImageEncodeToString(bufferedImage);
+            String imageString = "data:image/png;base64," + base64Data;
+            LogWriter.Log("DEBUG base64Data: " + base64Data);*/
+            String htmlTitle = convertingFromUnicode.buildHtmlEntityCode(titleRawData);
+            String htmlDescription = convertingFromUnicode.buildHtmlEntityCode(descriptionRawData);
+            String htmlDescriptionNew;
+            htmlTitle = htmlTitle.replaceAll("&#32;", " ");
+            htmlDescription = htmlDescription.replaceAll("&#32;", " ");
+            htmlDescriptionNew = htmlDescription.replaceAll("&#13;&#10;", "<br />");
+            //outputStream = new FileOutputStream("app-dir/output.html");
+            outputStream = new FileOutputStream("app-dir/story.php");
+            /*String fileData = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
                     + "<html lang=\"en-US\"xmlns=\"http://www.w3.org/1999/xhtml\">\n"
                     + "    <head>\n"
                     + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"
@@ -151,10 +178,110 @@ public class ConvertingFromUnicode {
                     + "        <meta name=\"description\" content=\"AOS - Animate On Scroll library using CSS3\"/>\n"
                     + "        <meta name=\"keywords\" content=\"AOS, animate on scroll, css3 scroll animations, simple scroll animations\"/>\n"
                     + "        <title>App Store</title>\n"
+                    + "        <meta property=\"og:title\" content=\"" + htmlTitle + "\" />\n"
+                    + "        <meta property=\"og:description\" content=\"" + htmlDescription + " Note: If you have any issues, contact us before giving a bad review. If you have any suggestions please send us an email instead of giving one star and bad review. Suggestions and feedback please contact contact@apphive.me - App Hive\" />\n"
+                    + "        <meta property=\"og:type\" content=\"article\" />\n"
+                    //+ "        <meta property=\"og:image\" content=\"<?= base_url(); ?>assets/fb-quick-story/001.jpg\" />\n"
+                    + "        <meta property=\"og:image\" content=\"http://apphive.me/assets/fb-quick-story/001.jpg\" />\n"
+                    //+ "        <meta property=\"og:url\" content=\"<?= base_url(\"/fb-story\"); ?>\" />\n"
+                    + "        <meta property=\"og:url\" content=\"http://apphive.me/story.php\" />\n"
+                    + "        <meta property=\"og:locale\" content=\"en_US\" />\n"
+                    + "        <meta property=\"og:site_name\" content=\"App Hive - Math Play\" />\n"
                     + "    </head>\n"
                     + "    <body>\n\n"
-                    + convertingFromUnicode.buildHtmlEntityCode(fileRawData)
+                    + "<img src=\"" + strDomainURL + "\" width=\"100%\">"
+                    + htmlDescriptionNew
                     + "\n\n</body>\n"
+                    + "</html>";*/
+            String fileData = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+                    + "<html lang=\"en-US\"xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+                    + "    <head>\n"
+                    + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"
+                    + "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n"
+                    + "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>\n"
+                    + "        <meta name=\"description\" content=\"AOS - Animate On Scroll library using CSS3\"/>\n"
+                    + "        <meta name=\"keywords\" content=\"AOS, animate on scroll, css3 scroll animations, simple scroll animations\"/>\n"
+                    + "\n"
+                    + "        <meta property=\"og:title\" content=\"" + htmlTitle + "\" />\n"
+                    + "        <meta property=\"og:description\" content=\"" + htmlDescription + " Note: If you have any issues, contact us before giving a bad review. If you have any suggestions please send us an email instead of giving one star and bad review. Suggestions and feedback please contact contact@apphive.me - App Hive\" />\n"
+                    + "        <meta property=\"og:type\" content=\"article\" />\n"
+                    + "        <meta property=\"og:image\" content=\"http://apphive.me/assets/fb-quick-story/001.jpg\" />\n"
+                    + "        <meta property=\"og:url\" content=\"http://apphive.me/story.php\" />\n"
+                    + "        <meta property=\"og:locale\" content=\"en_US\" />\n"
+                    + "        <meta property=\"og:site_name\" content=\"App Hive - Math Play\" />\n"
+                    + "        <title>APP Hive</title>\n"
+                    + "        <link rel=\"icon\" type=\"image/png\" href=\"http://apphive.me/assets/favicon-apphive.png\" />\n"
+                    + "        <link rel=\"stylesheet\" href=\"http://apphive.me/assets/css/main.css\" />\n"
+                    + "        <link rel=\"stylesheet\" href=\"http://apphive.me/assets/css/app-grid.css\" />\n"
+                    + "    </head>\n"
+                    + "    <body class=\"subpage\">\n"
+                    + "        <!-- Header -->\n"
+                    + "        <header id=\"header\">\n"
+                    + "            <div class=\"logo\"><a href=\"http://apphive.me/app-store\">APP <span>Hive</span></a></div>\n"
+                    + "            <a href=\"#menu\">Menu</a>\n"
+                    + "        </header>\n"
+                    + "\n"
+                    + "        <!-- Nav -->\n"
+                    + "        <nav id=\"menu\">\n"
+                    + "            <ul class=\"links\">\n"
+                    + "                <li><a href=\"http://apphive.me/\">Home</a></li>\n"
+                    + "                <li><a href=\"http://apphive.me/app-store\">App Store</a></li>\n"
+                    + "                <!--<li><a href=\"elements.html\">Elements</a></li>-->\n"
+                    + "            </ul>\n"
+                    + "        </nav>\n"
+                    + "\n"
+                    + "        <!-- One -->\n"
+                    + "        <section id=\"One\" class=\"wrapper style3\">\n"
+                    + "            <div class=\"inner\">\n"
+                    + "                <header class=\"align-center\">\n"
+                    + "                    <p>Eleifend vitae urna</p>\n"
+                    + "                    <h2>APP HIVE</h2>\n"
+                    + "                </header>\n"
+                    + "            </div>\n"
+                    + "        </section>\n"
+                    + "\n"
+                    + "        <!-- Two -->\n"
+                    + "        <section id=\"two\" class=\"wrapper style2\">\n"
+                    + "            <div class=\"inner\">\n"
+                    + "                <div class=\"box\">\n"
+                    + "                    <div class=\"content\">\n"
+                    + "                        <header class=\"align-center\">\n"
+                    + "                            <p>maecenas sapien feugiat ex purus</p>\n"
+                    + "                            <h2>APP HIVE</h2>\n"
+                    + "                        </header>\n"
+                    + "                        <img src=\"http://apphive.me/assets/fb-quick-story/001.jpg\" alt=\"\" width=\"100%\" />\n"
+                    + "                        <br />\n"
+                    + "                        <br />\n"
+                    + "                        <h4>" + htmlTitle + "</h4>\n"
+                    + "                        <p>" + htmlDescription + "\n"
+                    + "                        </p>\n"
+                    + "                    </div>\n"
+                    + "                </div>\n"
+                    + "            </div>\n"
+                    + "        </section>\n"
+                    + "\n"
+                    + "        <!-- Footer -->\n"
+                    + "        <footer id=\"footer\">\n"
+                    + "            <div class=\"container\">\n"
+                    + "                <ul class=\"icons\">\n"
+                    + "                    <li><a href=\"#\" class=\"icon fa-twitter\"><span class=\"label\">Twitter</span></a></li>\n"
+                    + "                    <li><a href=\"#\" class=\"icon fa-facebook\"><span class=\"label\">Facebook</span></a></li>\n"
+                    + "                    <li><a href=\"#\" class=\"icon fa-instagram\"><span class=\"label\">Instagram</span></a></li>\n"
+                    + "                    <li><a href=\"#\" class=\"icon fa-envelope-o\"><span class=\"label\">Email</span></a></li>\n"
+                    + "                </ul>\n"
+                    + "            </div>\n"
+                    + "            <div class=\"copyright\">\n"
+                    + "                &copy; App Hive. All rights reserved.\n"
+                    + "            </div>\n"
+                    + "        </footer>\n"
+                    + "\n"
+                    + "        <!-- Scripts -->\n"
+                    + "        <script src=\"http://apphive.me/assets/js/jquery.min.js\"></script>\n"
+                    + "        <script src=\"http://apphive.me/assets/js/jquery.scrollex.min.js\"></script>\n"
+                    + "        <script src=\"http://apphive.me/assets/js/skel.min.js\"></script>\n"
+                    + "        <script src=\"http://apphive.me/assets/js/util.js\"></script>\n"
+                    + "        <script src=\"http://apphive.me/assets/js/main.js\"></script>\n"
+                    + "    </body>\n"
                     + "</html>";
             Writer writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
             writer.write(fileData);
