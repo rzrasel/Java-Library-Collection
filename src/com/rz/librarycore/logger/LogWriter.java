@@ -24,7 +24,7 @@ public class LogWriter {
                 + "Method Name: " + getCallerMethodName() + " - "
                 + "Line Number: " + getCallerLineNumber();
         if (isDebug) {
-            System.out.println("LOG_WRITER_PRINT:- " + buildMessage);
+            System.out.println("DEBUG LOG WRITER PRINT:- " + buildMessage);
         }
     }
 
