@@ -154,14 +154,21 @@ public class ConvertingFromUnicode {
 
         OutputStream outputStream = null;
         try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
             String strDomainURL;
             String metaHostUrl;
             String metaImageUrl;
             BufferedImage bufferedImage = null;
             strDomainURL = "http://pngimagesfree.com/NATURE/Grass/pond_with_grass-png.png";
             strDomainURL = imageURLRawData;
-            metaHostUrl = "http://apphive.me/fb-page/";
-            metaImageUrl = "http://apphive.me/fb-page/p-003.jpg";
+            String metaFileName = "";
+            //metaHostUrl = "http://apphive.me/fb-page/";
+            //metaImageUrl = "http://apphive.me/fb-page/p-003.jpg";
+            //metaFileName = "literotica-" + simpleDateFormat.format(date) + ".html";
+            metaHostUrl = "http://apphive.me/fb-story/";
+            metaImageUrl = "http://apphive.me/fb-story/s-002.jpg";
+            metaFileName = "story-" + simpleDateFormat.format(date) + ".html";
             /*PowerHTTPConnection powerHTTPConnection = new PowerHTTPConnection();
             bufferedImage = powerHTTPConnection.onReadImage(strDomainURL, PowerHTTPConnection.FileType.PNG, "");
             String base64Data = powerHTTPConnection.onImageEncodeToString(bufferedImage);
@@ -173,9 +180,6 @@ public class ConvertingFromUnicode {
             htmlTitle = htmlTitle.replaceAll("&#32;", " ");
             htmlDescription = htmlDescription.replaceAll("&#32;", " ");
             htmlDescriptionNew = htmlDescription.replaceAll("&#13;&#10;", "<br />");
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-            String metaFileName = "literotica-" + simpleDateFormat.format(date) + ".html";
             metaHostUrl = metaHostUrl + metaFileName;
             convertingFromUnicode.onWriteIndex(metaFileName);
             //outputStream = new FileOutputStream("app-dir/output.html");
