@@ -1,4 +1,5 @@
 
+import com.rz.librarycore.logger.LogWriter;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.regex.Pattern;
@@ -51,12 +52,32 @@ public class Utils {
         if (argValue == null) {
             return null;
         }
+        String slug = "";
         Pattern NONLATIN = Pattern.compile("[^\\w-]");
         Pattern WHITESPACE = Pattern.compile("[\\s]");
-        argValue = argValue.replaceAll("\\s+", "-");
         String nowhitespace = WHITESPACE.matcher(argValue).replaceAll("-");
         String normalized = Normalizer.normalize(nowhitespace, Form.NFD);
-        String slug = NONLATIN.matcher(normalized).replaceAll("");
-        return slug.toLowerCase();
+        slug = NONLATIN.matcher(normalized).replaceAll("");
+        /*slug = argValue.replaceAll("\\s+", "-");
+        slug = slug.replaceAll("[^\\w\\s\\p{Pd}]", "");
+        slug = slug.replaceAll("([-_]){2,}", "");*/
+        slug = slug.replaceAll("[-]+", " ").trim();
+        if (slug.isEmpty()) {
+            slug = null;
+        } else {
+            slug = slug.replaceAll("\\s+", "-").toLowerCase();
+        }
+        return slug;
+    }
+
+    public static String toEmptyToNull(String argValue) {
+        if (argValue == null) {
+            return null;
+        }
+        argValue = argValue.replaceAll("\\s+", " ").trim();
+        if (argValue.isEmpty()) {
+            argValue = null;
+        }
+        return argValue;
     }
 }

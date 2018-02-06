@@ -43,25 +43,34 @@ public class AppPlayStoreDataFormat {
                     while (resultSet.next()) {
                         String insertSqlData = "INSERT INTO tbtmp_app_play_store "
                                 + " VALUES ("
-                                + "%s, %s, %s, '%s', '%s'"
+                                + "%s, %s, %s, %s, '%s', '%s'"
                                 + ");";
                         currentDate = formatter.format(new Date());
                         String colTitle = resultSet.getString("apstre_aplstor_title").trim();
                         String colDescription = resultSet.getString("apstre_aplstor_description").trim();
+                        String colSlug = resultSet.getString("apstre_aplstor_slug").trim();
                         String newId = "";
                         newId = RandomValue.getRandId(1111, 9999);
                         newId = Utils.getDbFromat(newId);
                         colTitle = Utils.getDbFromat(Utils.toProperCase(colTitle));
-                        LogWriter.Log("TEST: " + Utils.toSlugCase(colTitle));
                         colDescription = Utils.getDbFromat(colDescription);
+                        colSlug = Utils.toEmptyToNull(colSlug);
+                        if (colSlug == null) {
+                            colSlug = Utils.toSlugCase(colTitle + "");
+                        } else {
+                            colSlug = Utils.toSlugCase(colSlug + "");
+                        }
+                        LogWriter.Log("TEST: " + colTitle.substring(0, 6) + " - " + colSlug + "");
+                        //LogWriter.Log("TEST: " + Utils.toSlugCase(colTitle + ""));
                         String newInsertSql = String.format(insertSqlData,
                                 newId,
                                 colTitle,
                                 colDescription,
+                                colSlug,
                                 currentDate,
                                 currentDate
                         );
-                        System.out.println(newInsertSql);
+                        //System.out.println(newInsertSql);
                         Thread.sleep(200);
                     }
                 }
