@@ -61,6 +61,7 @@ public class Utils {
         /*slug = argValue.replaceAll("\\s+", "-");
         slug = slug.replaceAll("[^\\w\\s\\p{Pd}]", "");
         slug = slug.replaceAll("([-_]){2,}", "");*/
+        //input.toLowerCase().replaceAll("[^a-z\\s]", "").replaceAll("\\s", "-");
         slug = slug.replaceAll("[-]+", " ").trim();
         if (slug.isEmpty()) {
             slug = null;

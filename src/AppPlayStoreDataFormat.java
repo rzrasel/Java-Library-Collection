@@ -49,6 +49,14 @@ public class AppPlayStoreDataFormat {
                         String colTitle = resultSet.getString("apstre_aplstor_title").trim();
                         String colDescription = resultSet.getString("apstre_aplstor_description").trim();
                         String colSlug = resultSet.getString("apstre_aplstor_slug").trim();
+                        String colImageURL = resultSet.getString("apstre_aplstor_image_url").trim();
+                        String colApkURL = resultSet.getString("apstre_aplstor_apk_url").trim();
+                        String colSEO = resultSet.getString("apstre_aplstor_seo").trim();
+                        String colTAG = resultSet.getString("apstre_aplstor_tag").trim();
+                        String colIsFeatured = resultSet.getString("apstre_aplstor_is_featured").trim();
+                        String colIsOwn = resultSet.getString("apstre_aplstor_is_own").trim();
+                        String colStatus = resultSet.getString("apstre_aplstor_status").trim();
+                        String colCreateDate = resultSet.getString("apstre_aplstor_create_date").trim();
                         String newId = "";
                         newId = RandomValue.getRandId(1111, 9999);
                         newId = Utils.getDbFromat(newId);
@@ -60,6 +68,10 @@ public class AppPlayStoreDataFormat {
                         } else {
                             colSlug = Utils.toSlugCase(colSlug + "");
                         }
+                        colSlug = Utils.getDbFromat(colSlug);
+                        colImageURL = Utils.getDbFromat(colImageURL);
+                        colApkURL = Utils.getDbFromat(colApkURL);
+                        colSEO = Utils.getDbFromat(colSEO);
                         //LogWriter.Log("TEST: " + colTitle.substring(0, 6) + " - " + colSlug + "");
                         //LogWriter.Log("TEST: " + Utils.toSlugCase(colTitle + ""));
                         String newInsertSql = String.format(insertSqlData,
