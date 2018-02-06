@@ -1,6 +1,7 @@
 
 import com.rz.librarycore.RandomValue;
 import com.rz.librarycore.dbhandler.SQLiteConnection;
+import com.rz.librarycore.logger.LogWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,6 +52,7 @@ public class AppPlayStoreDataFormat {
                         newId = RandomValue.getRandId(1111, 9999);
                         newId = Utils.getDbFromat(newId);
                         colTitle = Utils.getDbFromat(Utils.toProperCase(colTitle));
+                        LogWriter.Log("TEST: " + Utils.toSlugCase(colTitle));
                         colDescription = Utils.getDbFromat(colDescription);
                         String newInsertSql = String.format(insertSqlData,
                                 newId,

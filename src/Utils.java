@@ -1,9 +1,13 @@
+
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
+import java.util.regex.Pattern;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Rz Rasel 2018-02-06.
@@ -41,5 +45,18 @@ public class Utils {
             }
         }
         return ret.toString();
+    }
+
+    public static String toSlugCase(String argValue) {
+        if (argValue == null) {
+            return null;
+        }
+        Pattern NONLATIN = Pattern.compile("[^\\w-]");
+        Pattern WHITESPACE = Pattern.compile("[\\s]");
+        argValue = argValue.replaceAll("\\s+", "-");
+        String nowhitespace = WHITESPACE.matcher(argValue).replaceAll("-");
+        String normalized = Normalizer.normalize(nowhitespace, Form.NFD);
+        String slug = NONLATIN.matcher(normalized).replaceAll("");
+        return slug.toLowerCase();
     }
 }
