@@ -25,3 +25,8 @@ http://www.youtube.com/get_video_info?video_id=
 
 http://ip-api.com/json
 ```
+Socnets Posting
+```sample_2018_02_06
+https://github.com/Sword-Dancer/Socnets_posting
+https://github.com/Sword-Dancer/Socnets_posting/blob/master/include.php
+```

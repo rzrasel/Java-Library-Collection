@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.lang3.StringEscapeUtils;
+//import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 //import org.json.simple.JSONObject;
@@ -145,8 +145,8 @@ public class ConvertingFromUnicode {
                 System.out.println("DEBUG PRINT: " + text);*/
                 //escapeHtml
                 //input).unescapeJava(
-                String title = StringEscapeUtils.escapeHtml3(stringBuilder.toString());
-                System.out.println("DEBUG PRINT: -------------" + title);
+                //String title = StringEscapeUtils.escapeHtml3(stringBuilder.toString());
+                //System.out.println("DEBUG PRINT: -------------" + title);
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
             }
