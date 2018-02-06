@@ -60,7 +60,7 @@ public class AppPlayStoreDataFormat {
                         } else {
                             colSlug = Utils.toSlugCase(colSlug + "");
                         }
-                        LogWriter.Log("TEST: " + colTitle.substring(0, 6) + " - " + colSlug + "");
+                        //LogWriter.Log("TEST: " + colTitle.substring(0, 6) + " - " + colSlug + "");
                         //LogWriter.Log("TEST: " + Utils.toSlugCase(colTitle + ""));
                         String newInsertSql = String.format(insertSqlData,
                                 newId,
@@ -70,7 +70,7 @@ public class AppPlayStoreDataFormat {
                                 currentDate,
                                 currentDate
                         );
-                        //System.out.println(newInsertSql);
+                        System.out.println(newInsertSql);
                         Thread.sleep(200);
                     }
                 }
