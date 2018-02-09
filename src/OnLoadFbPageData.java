@@ -89,7 +89,7 @@ public class OnLoadFbPageData {
                     + ");";
             sqlQuery = String.format(sqlQuery,
                     databaseId,
-                    "'" + rawTitle + "'", "'" + rawDescription + "'", "'d-1110'",
+                    "'" + rawTitle + "'", "'" + rawDescription + "'", "'n-0000'",
                     "'not-story'", "'ImageURL'",
                     "'0'", "'0'"
             );
