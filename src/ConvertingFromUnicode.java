@@ -176,6 +176,7 @@ public class ConvertingFromUnicode {
             LogWriter.Log("DEBUG base64Data: " + base64Data);*/
             String htmlTitle = convertingFromUnicode.buildHtmlEntityCode(titleRawData);
             String htmlDescription = convertingFromUnicode.buildHtmlEntityCode(descriptionRawData);
+            convertingFromUnicode.onWriteHtmlEntity(htmlTitle, htmlDescription);
             String htmlDescriptionNew;
             htmlTitle = htmlTitle.replaceAll("&#32;", " ");
             htmlDescription = htmlDescription.replaceAll("&#32;", " ");
@@ -316,6 +317,27 @@ public class ConvertingFromUnicode {
         //convertingFromUnicode.buildHtmlEntityCode(fileRawData);
     }
 
+    public void onWriteHtmlEntity(String argTitle, String argDescription) {
+        OutputStream outputStream = null;
+        try {
+            String fileData = argTitle + "\n||\n" + argDescription;
+            outputStream = new FileOutputStream("app-dir/html-entity.txt");
+            Writer writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
+            writer.write(fileData);
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                outputStream.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ConvertingFromUnicode.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
     public void onWriteIndex(String argMenuLink) {
         OutputStream outputStream = null;
         try {
@@ -385,6 +407,14 @@ http://www.choti69.com/2015/11/english-chodar-golpo.html
 https://www.banglachoticlub.com/
 https://www.bangla-choti-golpo.com/
 http://www.exluv.com/
+https://www.facebook.com/Bangla-Choti-Golpo-318316995343026/?ref=br_rs
+https://www.facebook.com/sexychoti2018/?ref=br_rs
+
+https://vhalobashi.wordpress.com/tag/bangla-love-story/page/2/
+http://www.somewhereinblog.net/blog/nissongojoddha/29128150
+http://www.deshebideshe.com/news/details/126460
+http://www.rupalialo.com/2017/10/07/%E0%A6%B8%E0%A6%BE%E0%A6%AC%E0%A6%B2%E0%A7%87%E0%A6%9F-%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%A8%E0%A6%BE-%E0%A6%A8%E0%A6%BE%E0%A6%B8%E0%A6%B0%E0%A7%80%E0%A6%A8/
+
 */
 //http://shankarpshetty.blogspot.com/2009/11/java-function-to-convert-string-to-html.html
 //http://yagudaev.com/posts/jsp-escaping-html/
