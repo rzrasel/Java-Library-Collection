@@ -64,4 +64,5 @@ https://www.freepik.com/free-photo/grunge-metal-background_1437477.htm
 
 https://design.tutsplus.com/tutorials/how-to-create-a-vector-glitter-text-art-effect--vector-6133
 https://www.freepik.com/free-vector/beautiful-festival-glitter-shiny-colorful-background_1460820.htm
+http://vectips.com/tutorials/heavy-metal-design-brushed-metal-texture-vector-tutorial/
 ```
