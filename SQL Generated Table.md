@@ -89,6 +89,8 @@ CREATE TABLE IF NOT EXISTS tbtmp_userrole
 ```
 ```sql_query_insert
 -- Forgot, Change,
+-- FCM Table -> FCM token, Build Number, package, version, last ip, last country, last city
+-- Login Log -> 
 DELETE FROM tbl_table_property;
 INSERT INTO tbl_table_property VALUES ('15176655557559', 'app_key_store', 'tbtmp', 'akstor', null);
 INSERT INTO tbl_table_property VALUES ('15176655569633', 'app_play_store', 'tbtmp', 'apstre', null);

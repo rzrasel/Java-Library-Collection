@@ -1,8 +1,14 @@
 
 import com.rz.librarycore.logger.LogWriter;
+import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLEditorKit;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -80,5 +86,105 @@ public class Utils {
             argValue = null;
         }
         return argValue;
+    }
+
+    public static String htmlEntityCode(String argStringInput) {
+        StringBuffer output = new StringBuffer(argStringInput.length() * 2);
+
+        int len = argStringInput.length();
+        int code, code1, code2, code3, code4;
+        char ch;
+
+        for (int i = 0; i < len;) {
+            code1 = argStringInput.codePointAt(i);
+            if (code1 >> 3 == 30) {
+                code2 = argStringInput.codePointAt(i + 1);
+                code3 = argStringInput.codePointAt(i + 2);
+                code4 = argStringInput.codePointAt(i + 3);
+                code = ((code1 & 7) << 18) | ((code2 & 63) << 12) | ((code3 & 63) << 6) | (code4 & 63);
+                i += 4;
+                output.append("&#" + code + ";");
+            } else if (code1 >> 4 == 14) {
+                code2 = argStringInput.codePointAt(i + 1);
+                code3 = argStringInput.codePointAt(i + 2);
+                code = ((code1 & 15) << 12) | ((code2 & 63) << 6) | (code3 & 63);
+                i += 3;
+                output.append("&#" + code + ";");
+            } else if (code1 >> 5 == 6) {
+                code2 = argStringInput.codePointAt(i + 1);
+                code = ((code1 & 31) << 6) | (code2 & 63);
+                i += 2;
+                output.append("&#" + code + ";");
+            } else {
+                code = code1;
+                i += 1;
+
+                ch = (char) code;
+                if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9') {
+                    output.append(ch);
+                } else {
+                    output.append("&#" + code + ";");
+                }
+            }
+        }
+        //System.out.println("DATA: " + output.toString());
+        return output.toString();
+    }
+
+    public static String htmlUnescape3(String str) {
+        try {
+            HTMLDocument doc = new HTMLDocument();
+            new HTMLEditorKit().read(new StringReader("<html><body>" + str), doc, 0);
+            return doc.getText(1, doc.getLength());
+        } catch (Exception e) {
+            return str;
+        }
+    }
+
+    public static String urlEncode(String argString) {
+        String result = null;
+        try {
+            result = URLEncoder.encode(argString, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            //throw new RuntimeException("UTF-8 not supported", e);
+        }
+        return result;
+    }
+
+    public static String escapeSqlSpecial(String argSqlString) {
+        String[] arrPattern = {"+", "-", "&&", "||", "!", "(", ")", "{", "}",
+            "[", "]", "^", "\"", "~", "*", "?", ":", "\\", "AND", "OR"};
+        for (int i = 0; i < arrPattern.length; i++) {
+            //'search' is my input string
+            if (argSqlString.contains((String) arrPattern[i])) {
+                String oldString = (String) arrPattern[i];
+                //myStr.replaceAll(Pattern.quote("+"), replaceStr);
+                //oldString = Pattern.quote("+");
+                //oldString = oldString;
+                String newString = new String(arrPattern[i]);
+                newString = newString.replaceAll("\\\\", "");
+                //System.out.println("OLD STRING: " + oldString);
+                newString = "\\\\" + newString;
+                if (oldString.equals("\\")) {
+                    newString = "v" + newString;
+                    //System.out.println("asdfakslf " + newString);
+                }
+                //System.out.println("NEW STRING: " + newString);
+                //argSqlString = argSqlString.replaceAll(oldString, (String) ("\\" + newString));
+                try {
+                    argSqlString = argSqlString.replaceAll(oldString, newString);
+                    System.out.println(argSqlString + "===" + oldString + " asdfakslf " + newString);
+                } catch (PatternSyntaxException e) {
+                    /*oldString = "\\" + oldString;
+                    argSqlString = argSqlString.replaceAll(oldString, newString);*/
+                } catch (IllegalArgumentException e) {
+                    /*oldString = "\\" + oldString;
+                    newString = "\\" + newString;
+                    argSqlString = argSqlString.replaceAll(oldString, newString);*/
+                }
+            }
+        }
+        argSqlString.replaceAll("'", "\\\\'");
+        return argSqlString;
     }
 }

@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS tbtmp_app_play_store
     apstre_aplstor_slug             VARCHAR(255)      NOT NULL,
     apstre_aplstor_image_url        TEXT              NOT NULL,
     apstre_aplstor_apk_url          TEXT              NOT NULL,
-    apstre_aplstor_seo              TEXT              NOT NULL,
-    apstre_aplstor_tag              TEXT              NOT NULL,
+    apstre_aplstor_seo              TEXT              NULL,
+    apstre_aplstor_tag              TEXT              NULL,
     apstre_aplstor_is_featured      BOOLEAN           NOT NULL,
     apstre_aplstor_is_own           BOOLEAN           NOT NULL,
     apstre_aplstor_status           BOOLEAN           NOT NULL,
@@ -33,8 +33,8 @@ INSERT INTO tbl_column_property VALUES (15176909266852, '15176909264412', 'aplst
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909266732', 'aplstor_slug', 'VARCHAR', '255', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909268320', 'aplstor_image_url', 'TEXT', null, '0', null, null);
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909268868', 'aplstor_apk_url', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15176909266852, '15176909268495', 'aplstor_seo', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15176909266852, '15176909276802', 'aplstor_tag', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15176909266852, '15176909268495', 'aplstor_seo', 'TEXT', null, '1', null, null);
+INSERT INTO tbl_column_property VALUES (15176909266852, '15176909276802', 'aplstor_tag', 'TEXT', null, '1', null, null);
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909272345', 'aplstor_is_featured', 'BOOLEAN', null, '0', null, null);
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909277223', 'aplstor_is_own', 'BOOLEAN', null, '0', null, null);
 INSERT INTO tbl_column_property VALUES (15176909266852, '15176909278507', 'aplstor_status', 'BOOLEAN', null, '0', null, null);
