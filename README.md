@@ -61,4 +61,6 @@ https://www.freepik.com/free-photo/brown-metallic-texture_1036763.htm
 https://www.freepik.com/free-vector/circle-made-of-metal_766351.htm
 https://www.freepik.com/free-vector/black-metal-grill-texture-vector_682619.htm
 https://www.freepik.com/free-photo/grunge-metal-background_1437477.htm
+
+https://design.tutsplus.com/tutorials/how-to-create-a-vector-glitter-text-art-effect--vector-6133
 ```
