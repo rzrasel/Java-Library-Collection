@@ -65,4 +65,11 @@ https://www.freepik.com/free-photo/grunge-metal-background_1437477.htm
 https://design.tutsplus.com/tutorials/how-to-create-a-vector-glitter-text-art-effect--vector-6133
 https://www.freepik.com/free-vector/beautiful-festival-glitter-shiny-colorful-background_1460820.htm
 http://vectips.com/tutorials/heavy-metal-design-brushed-metal-texture-vector-tutorial/
+
+http://all-free-download.com/free-vector/download/metallic-polygonal-background-honeycomb-icon-various-pattern-decor_6828970.html
+http://all-free-download.com/free-vector/download/metal-texture-background-02-vector_182187.html
+http://all-free-download.com/free-vector/download/metal-texture-with-glossy-circle_6813622.html
+
+http://all-free-download.com/free-vector/download/vector-metal-texture-background-vector_286495.html
+https://www.youtube.com/watch?v=dmOEOPUyIt0
 ```
