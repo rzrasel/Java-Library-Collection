@@ -63,4 +63,5 @@ https://www.freepik.com/free-vector/black-metal-grill-texture-vector_682619.htm
 https://www.freepik.com/free-photo/grunge-metal-background_1437477.htm
 
 https://design.tutsplus.com/tutorials/how-to-create-a-vector-glitter-text-art-effect--vector-6133
+https://www.freepik.com/free-vector/beautiful-festival-glitter-shiny-colorful-background_1460820.htm
 ```
