@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS tbtmp_user_role
 ```sql_query_insert
 -- Forgot, Change,
 -- FCM Table -> FCM token, Build Number, package, version, last ip, last country, last city
--- Login Log ->crood, snap shoot, tintin (movie)
+-- Login Log ->crood, snap shoot, tintin (movie)ulnlog
 DELETE FROM tbl_table_property;
 INSERT INTO tbl_table_property VALUES ('15184362379338', 'app_key_store', 'tbtmp', 'akstor', null);
 INSERT INTO tbl_table_property VALUES ('15184362377338', 'app_project', 'tbtmp', 'apjt', null);
@@ -127,6 +127,7 @@ INSERT INTO tbl_table_property VALUES ('15184362383031', 'registration', 'tbtmp'
 INSERT INTO tbl_table_property VALUES ('15184362388228', 'user_device_key', 'tbtmp', 'udivkey', null);
 INSERT INTO tbl_table_property VALUES ('15184362386590', 'user_profile', 'tbtmp', 'usrpro', null);
 INSERT INTO tbl_table_property VALUES ('15184362389455', 'user_role', 'tbtmp', 'usrro', null);
+INSERT INTO tbl_table_property VALUES ('25184362389455', 'user_login_log', 'tbtmp', 'ulnglog', null);
 
 DELETE FROM tbl_column_property;
 -- -|START- APP_KEY_STORE table property started
