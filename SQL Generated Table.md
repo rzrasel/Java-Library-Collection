@@ -119,150 +119,150 @@ CREATE TABLE IF NOT EXISTS tbtmp_user_role
 -- FCM Table -> FCM token, Build Number, package, version, last ip, last country, last city
 -- Login Log ->crood, snap shoot, tintin (movie)
 DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15184346985233', 'app_key_store', 'tbtmp', 'akstor', null);
-INSERT INTO tbl_table_property VALUES ('15184346985045', 'app_project', 'tbtmp', 'apjt', null);
-INSERT INTO tbl_table_property VALUES ('15184346984758', 'country', 'tbtmp', 'cntry', null);
-INSERT INTO tbl_table_property VALUES ('15184346985705', 'metadata', 'tbtmp', 'mta', null);
-INSERT INTO tbl_table_property VALUES ('15184346989338', 'registration', 'tbtmp', 'regi', null);
-INSERT INTO tbl_table_property VALUES ('15184346982096', 'user_device_key', 'tbtmp', 'udivkey', null);
-INSERT INTO tbl_table_property VALUES ('15184346981384', 'user_profile', 'tbtmp', 'usrpro', null);
-INSERT INTO tbl_table_property VALUES ('15184346991952', 'user_role', 'tbtmp', 'usrro', null);
+INSERT INTO tbl_table_property VALUES ('15184362379338', 'app_key_store', 'tbtmp', 'akstor', null);
+INSERT INTO tbl_table_property VALUES ('15184362377338', 'app_project', 'tbtmp', 'apjt', null);
+INSERT INTO tbl_table_property VALUES ('15184362386325', 'country', 'tbtmp', 'cntry', null);
+INSERT INTO tbl_table_property VALUES ('15184362382810', 'metadata', 'tbtmp', 'mta', null);
+INSERT INTO tbl_table_property VALUES ('15184362383031', 'registration', 'tbtmp', 'regi', null);
+INSERT INTO tbl_table_property VALUES ('15184362388228', 'user_device_key', 'tbtmp', 'udivkey', null);
+INSERT INTO tbl_table_property VALUES ('15184362386590', 'user_profile', 'tbtmp', 'usrpro', null);
+INSERT INTO tbl_table_property VALUES ('15184362389455', 'user_role', 'tbtmp', 'usrro', null);
 
 DELETE FROM tbl_column_property;
--- -|START- METADATA table property started
-INSERT INTO tbl_column_property VALUES (15184346985705, '15184346992612', 'ref_id', 'BIGINT', '20', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985705, '15184346994924', 'meta_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985705, '15184346998484', 'meta_identity', 'TEXT', null, '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985705, '15184346992379', 'meta_key', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985705, '15184346997924', 'meta_value', 'TEXT', null, '1', null, null);
+-- -|START- APP_KEY_STORE table property started
+INSERT INTO tbl_column_property VALUES (15184362379338, '15184362389862', 'apjt_aproj_id', 'BIGINT', '20', '0', '1', null);
+INSERT INTO tbl_column_property VALUES (15184362379338, '15184362382702', 'aukey_id', 'BIGINT', '20', '0', null, null);
 
 DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184346994924', '15184346997039', 'PRIMARY', null, null);
--- -|END- METADATA table property end
-
-
-
--- -|START- APP_KEY_STORE table property started
-INSERT INTO tbl_column_property VALUES (15184346985233, '15184346998840', 'apjt_aproj_id', 'BIGINT', '20', '0', '1', null);
-INSERT INTO tbl_column_property VALUES (15184346985233, '15184346998841', 'aukey_id', 'BIGINT', '20', '0', null, null);
-
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184346998841', '15184347004654', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362382702', '15184362389512', 'PRIMARY', null, null);
 -- -|END- APP_KEY_STORE table property end
 
 
 
--- -|START- APP_PROJECT table property started
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347007692', 'aproj_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347006569', 'aproj_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347007798', 'aproj_details', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347001985', 'aproj_type', 'VARCHAR', '255', '0', null, 'APP, GAME ETC');
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347001420', 'aproj_pakg_bundle', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347007743', 'aproj_latest_ver_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347001512', 'aproj_latest_ver_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347007553', 'aproj_lowest_valid_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347008062', 'aproj_lowest_valid_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347011541', 'aproj_status', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347016253', 'aproj_on_published', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347019136', 'aproj_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347019300', 'aproj_modify_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347014557', 'aproj_created_by', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346985045, '15184347019303', 'aproj_modified_by', 'BIGINT', '20', '0', null, null);
-
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184347007692', '15184347015102', 'PRIMARY', null, null);
--- -|END- APP_PROJECT table property end
-
-
-
--- -|START- COUNTRY table property started
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347015938', 'ctry_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347016992', 'ctry_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347012368', 'ctry_iso2', 'VARCHAR', '5', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347029455', 'ctry_iso3', 'VARCHAR', '5', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347022155', 'ctry_numeric_code', 'VARCHAR', '10', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347024824', 'ctry_continent', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347021304', 'ctry_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346984758, '15184347021339', 'ctry_modify_date', 'DATETIME', null, '0', null, null);
-
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184347012368', '15184347022418', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15184347022155', '15184347023204', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15184347015938', '15184347029065', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15184347029455', '15184347027595', 'UNIQUE', null, null);
--- -|END- COUNTRY table property end
-
-
-
--- -|START- USER_PROFILE table property started
-INSERT INTO tbl_column_property VALUES (15184346981384, '15184347034655', 'user_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346981384, '15184347033579', 'first_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346981384, '15184347033830', 'mid_name', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346981384, '15184347038697', 'last_name', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346981384, '15184347037187', 'regi_type', 'VARCHAR', '255', '1', null, 'email, fb, gplus');
-
--- DELETE FROM tbl_constraint_property;
--- -|END- USER_PROFILE table property end
-
-
-
 -- -|START- REGISTRATION table property started
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347033887', 'rgi_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347031843', 'rgi_email', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347038794', 'rgi_password', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347038707', 'rgi_wifi_ip', 'VARCHAR', '255', '0', null, 'IP get by other online api');
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347033348', 'rgi_device_ip', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347046575', 'rgi_traced_ip', 'VARCHAR', '255', '0', null, 'IP traced by php host script');
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347046072', 'rgi_type', 'VARCHAR', '255', '0', null, 'email, fb, gplus');
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347043445', 'rgi_build_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347047975', 'rgi_tele_device_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347041753', 'rgi_tele_device_serial', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347045073', 'rgi_fcm_id', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347046875', 'rgi_con_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347049978', 'rgi_package', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347049079', 'rgi_ver_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347047887', 'rgi_ver_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347056377', 'rgi_auth_key', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346989338, '15184347054667', 'rgi_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362394788', 'rgi_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362399443', 'rgi_email', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362393355', 'rgi_password', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362391975', 'rgi_wifi_ip', 'VARCHAR', '255', '0', null, 'IP get by other online api');
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362396245', 'rgi_device_ip', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362392655', 'rgi_traced_ip', 'VARCHAR', '255', '0', null, 'IP traced by php host script');
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362391780', 'rgi_type', 'VARCHAR', '255', '0', null, 'email, fb, gplus');
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362392965', 'rgi_build_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362391194', 'rgi_tele_device_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362393541', 'rgi_tele_device_serial', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362402047', 'rgi_fcm_id', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362405301', 'rgi_con_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362409595', 'rgi_package', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362409025', 'rgi_ver_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362409826', 'rgi_ver_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362405075', 'rgi_auth_key', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362383031, '15184362406876', 'rgi_date', 'DATETIME', null, '0', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184347033887', '15184347057995', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15184347033887', '15184347058345', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362394788', '15184362409130', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362394788', '15184362401262', 'UNIQUE', null, null);
 -- -|END- REGISTRATION table property end
 
 
 
--- -|START- USER_ROLE table property started
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347059184', 'role_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347052424', 'role_title', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347053477', 'role_priority', 'INT', '3', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347056382', 'role_is_default', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347056829', 'role_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346991952, '15184347062239', 'role_modify_date', 'DATETIME', null, '0', null, null);
+-- -|START- USER_DEVICE_KEY table property started
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362402516', 'user_prof_id', 'BIGINT', '20', '1', '1', null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362418583', 'udkey_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362416618', 'udkey_fcm_token', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362414652', 'udkey_build_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362414659', 'udkey_android_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362412866', 'udkey_uuid_id', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362417501', 'udkey_pkg_bundle', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362418963', 'udkey_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362419654', 'udkey_modify_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362418793', 'udkey_created_by', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362388228, '15184362429617', 'udkey_modified_by', 'BIGINT', '20', '0', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184347059184', '15184347064979', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15184347052424', '15184347061887', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362418583', '15184362427273', 'PRIMARY', null, null);
+-- -|END- USER_DEVICE_KEY table property end
+
+
+
+-- -|START- USER_ROLE table property started
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362427600', 'role_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362423059', 'role_title', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362423815', 'role_priority', 'INT', '3', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362429321', 'role_is_default', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362424422', 'role_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362389455, '15184362427047', 'role_modify_date', 'DATETIME', null, '0', null, null);
+
+-- DELETE FROM tbl_constraint_property;
+INSERT INTO tbl_constraint_property VALUES ('15184362423059', '15184362425924', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362427600', '15184362425665', 'PRIMARY', null, null);
 -- -|END- USER_ROLE table property end
 
 
 
--- -|START- USER_DEVICE_KEY table property started
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347062512', 'user_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347062972', 'udkey_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347066637', 'udkey_fcm_token', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347061812', 'udkey_build_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347067000', 'udkey_android_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347061147', 'udkey_uuid_id', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347069450', 'udkey_app_bundle', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347078851', 'udkey_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347076617', 'udkey_modify_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347078998', 'udkey_created_by', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15184346982096, '15184347078297', 'udkey_modified_by', 'BIGINT', '20', '0', null, null);
+-- -|START- COUNTRY table property started
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362435503', 'ctry_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362437061', 'ctry_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362435476', 'ctry_iso2', 'VARCHAR', '5', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362434344', 'ctry_iso3', 'VARCHAR', '5', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362433133', 'ctry_numeric_code', 'VARCHAR', '10', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362438281', 'ctry_continent', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362435618', 'ctry_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386325, '15184362435421', 'ctry_modify_date', 'DATETIME', null, '0', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15184347062972', '15184347074808', 'PRIMARY', null, null);
--- -|END- USER_DEVICE_KEY table property end
+INSERT INTO tbl_constraint_property VALUES ('15184362433133', '15184362437954', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362435503', '15184362437461', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362434344', '15184362445003', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15184362435476', '15184362441483', 'UNIQUE', null, null);
+-- -|END- COUNTRY table property end
+
+
+
+-- -|START- METADATA table property started
+INSERT INTO tbl_column_property VALUES (15184362382810, '15184362446630', 'ref_id', 'BIGINT', '20', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362382810, '15184362449748', 'meta_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362382810, '15184362444351', 'meta_identity', 'TEXT', null, '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362382810, '15184362448984', 'meta_key', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362382810, '15184362449555', 'meta_value', 'TEXT', null, '1', null, null);
+
+-- DELETE FROM tbl_constraint_property;
+INSERT INTO tbl_constraint_property VALUES ('15184362449748', '15184362446624', 'PRIMARY', null, null);
+-- -|END- METADATA table property end
+
+
+
+-- -|START- APP_PROJECT table property started
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362442169', 'aproj_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362451393', 'aproj_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362459340', 'aproj_details', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362458298', 'aproj_type', 'VARCHAR', '255', '0', null, 'APP, GAME ETC');
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362455507', 'aproj_pkg_bundle', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362454535', 'aproj_latest_ver_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362456717', 'aproj_latest_ver_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362459530', 'aproj_lowest_valid_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362456935', 'aproj_lowest_valid_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362458742', 'aproj_status', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362451166', 'aproj_on_published', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362469990', 'aproj_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362461678', 'aproj_modify_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362465690', 'aproj_created_by', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362377338, '15184362467781', 'aproj_modified_by', 'BIGINT', '20', '0', null, null);
+
+-- DELETE FROM tbl_constraint_property;
+INSERT INTO tbl_constraint_property VALUES ('15184362442169', '15184362463321', 'PRIMARY', null, null);
+-- -|END- APP_PROJECT table property end
+
+
+
+-- -|START- USER_PROFILE table property started
+INSERT INTO tbl_column_property VALUES (15184362386590, '15184362466152', 'user_prof_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386590, '15184362469570', 'first_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386590, '15184362464925', 'mid_name', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386590, '15184362462234', 'last_name', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15184362386590, '15184362462147', 'regi_type', 'VARCHAR', '255', '1', null, 'email, fb, gplus');
+
+-- DELETE FROM tbl_constraint_property;
+-- -|END- USER_PROFILE table property end
 ```
 ```create_table_sql
 CREATE TABLE `app_countries` (
