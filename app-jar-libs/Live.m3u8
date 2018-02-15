@@ -1,0 +1,283 @@
+#EXTM3U
+
+#EXTINF: 1 Sports Live
+http://139.59.92.240:1935/wmsAuthSign=c2VydmVyX3RpbW/end_time=54854/playlist.m3u8
+
+#EXTINF: 2 BD vS SL
+http://52.74.101.37:8989/GAIANGAIANPU00000001/master.m3u8
+
+#EXTINF: 3 BD VS SL
+http://139.59.22.37:1935/bros/ngrp:live1_all/playlist.m3u8
+
+#EXTINF: 9X Jalwa
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226011/03.m3u8
+
+#EXTINF: 9XM
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226053/03.m3u8
+
+#EXTINF: Aljazeera
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226109/03.m3u8
+
+#EXTINF: Animl Plnet
+http://125.17.105.168/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225872/03.m3u8
+
+#EXTINF: Asian TV
+http://162.254.149.187:1935/live/asiantv/playlist.m3u8
+
+#EXTINF: ATN Bangla
+http://203.76.117.226/hls/AtN@B@N0/index.m3u8
+
+#EXTINF: ATN News
+http://203.76.117.226/hls/aT@N0OB@n/index.m3u8
+
+#EXTINF: B4U Music
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226055/03.m3u8
+
+#EXTINF: B4U Music
+http://103.211.219.73/static/ftv?id=B4U_Music/B4U_Music_400.m3u8
+
+#EXTINF: BANGVISON
+http://203.76.117.226/hls/Vb@N@loAV/index.m3u8
+
+#EXTINF: BBC EARTH
+http://125.17.105.168/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221226068/03.m3u8
+
+#EXTINF: BBC EARTH
+http://103.211.219.73/static/ftv?id=Sony_BBC_Earth_HD/Sony_BBC_Earth_HD_400.m3u8
+
+#EXTINF: BOISHAKHI
+http://203.76.117.226/hls/b@0IS@K0i/index.m3u8
+
+#EXTINF: BTV
+http://203.76.117.226/hls/b@tVnA@tI0l/index.m3u8
+
+#EXTINF: CHANEL24
+http://203.76.117.226/hls/cH@N0L@F/index.m3u8
+
+#EXTINF: Channel 9
+http://203.76.117.226/hls/channel9/index.m3u8off
+
+#EXTINF: CHANNEL I
+http://162.254.149.187:1935/live/channel-i/chunklist_w1568739522.m3u8
+
+#EXTINF: Desh Tv
+http://beeiptv.dynu.net:8081/nimble_live/DeshTV/playlist.m3u8
+
+#EXTINF: DESH TV
+http://162.254.149.187:1935/live/deshtv/playlist.m3u8
+
+#EXTINF: Discov Kids
+http://125.17.105.168/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225775/03.m3u8
+
+#EXTINF: Discov Kids
+http://103.211.219.73/static/ftv?id=Discovery_Kids_1/Discovery_Kids_1_400.m3u8
+
+#EXTINF: DISCOVBAN
+http://103.211.219.73/static/ftv?id=Discovery_Channel_Bengali/Discovery_Channel_Bengali_400.m3u8
+
+#EXTINF: DISCOVERY
+http://125.17.105.168/wh7f454c46tw3798502344_146685544/PLTV/88888888/224/3221225874/04.m3u8
+
+#EXTINF: EKATTOR
+http://203.76.117.226/hls/eK@tTvHd@h/index.m3u8
+
+#EXTINF: EKATTOR
+http://162.254.149.187:1935/live/71tv/playlist.m3u8
+
+#EXTINF: Ekushey TV
+http://203.76.117.226/hls/EkU0@S@/index.m3u8
+
+#EXTINF: ESPN
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225805/03.m3u8
+
+#EXTINF: ESPN
+http://103.211.219.73/static/ftv?id=Sony_ESPN_SD/Sony_ESPN_SD_400.m3u8
+
+#EXTINF: ESPN HD
+http://103.211.219.73/static/ftv?id=Sony_ESPN_HD/Sony_ESPN_HD_400.m3u8
+
+#EXTINF: Gaan Bang
+http://162.254.149.146:1935/live/gaanbangla/playlist.m3u8
+
+#EXTINF: Gazi TV
+http://203.76.117.226/hls/g@zitVg0ziTV@BagLQA/index.m3u8
+
+#EXTINF: Gazi TV
+http://52.74.101.37:8989/GAIANGAIANPU00000001/master.m3u8
+
+#EXTINF: History HD
+http://103.211.219.73/static/ftv?id=History_HD/History_HD_400.m3u8
+
+#EXTINF: INDPNDENT
+http://203.76.117.226/hls/iD@P0N024/index.m3u8
+
+#EXTINF: Jalshamovs
+http://103.211.219.73/static/ftv?id=Jalsa_Movies_HD/Jalsa_Movies_HD_400.m3u8
+
+#EXTINF: JAMUNA TV
+http://203.76.117.226/hls/j@MuN@nNA/index.m3u8
+
+#EXTINF: Maasranga 
+http://203.76.117.226/hls/rGATv@@BaNglA/index.m3u8
+
+#EXTINF: Music India
+http://103.211.219.73/static/ftv?id=Music_India/Music_India_400.m3u8
+
+#EXTINF: Natgogrpy
+http://play.uktvnow.net:1935/live/natgeo.stream/playlist.m3u8
+
+#EXTINF: Neo Prime
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225789/04.m3u8
+
+#EXTINF: Neo Sports
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225791/03.m3u8
+
+#EXTINF: NICK
+http://103.211.219.73/static/ftv?id=Nickelodeon/Nickelodeon_400.m3u8
+
+#EXTINF: NICK Jr
+http://103.211.219.73/static/ftv?id=Nickelodeon_Jr/Nickelodeon_Jr_400.m3u8
+
+#EXTINF: NTV
+http://203.76.117.226/hls/N@0TvW@0/index.m3u8
+
+#EXTINF: Peace TV
+rtmp://peace.fms.visionip.tv/live//b2b-peace_asia-live-25f-4x3-sdh_1
+
+#EXTINF: PTV SPORTS
+http://app.pakistanvision.tv:1935//live//ptvsports//playlist.m3u8
+
+#EXTINF: RTV
+http://203.76.117.226/hls/rtv/index.m3u8
+
+#EXTINF: SANGEETBAN
+http://203.76.117.226/hls/s@nG@iTbATv/index.m3u8
+
+#EXTINF: SANGEETBAN
+http://103.211.219.73/static/ftv?id=Sangeet_Bangla/Sangeet_Bangla_400.m3u8
+
+#EXTINF: SATV
+http://203.76.117.226/hls/satvhd/index.m3u8
+
+#EXTINF: SOMOY TV
+http://203.76.117.226/hls/s0@M@o0NT/index.m3u8
+
+#EXTINF: Somoy TV
+http://103.250.71.30:8081/somoylive/somoy000.smil/playlist.m3u8
+
+#EXTINF: Sony Aath
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226099/03.m3u8
+
+#EXTINF: Sony Aath
+http://103.211.219.73/static/ftv?id=Sony_aath/Sony_aath_400.m3u8
+
+#EXTINF: Sony Max
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225811/03.m3u8
+
+#EXTINF: Sony Max 2
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225812/03.m3u8
+
+#EXTINF: Sony Max HD
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225776/01.m3u8
+
+#EXTINF: Sony Mix
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225816/03.m3u8
+
+#EXTINF: Sony Pal
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225818/03.m3u8
+
+#EXTINF: Sony Six
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225827/03.m3u8
+
+#EXTINF: Sony Six
+http://103.211.219.73/static/ftv?id=Sony_Six_SD/Sony_Six_SD_400.m3u8
+
+#EXTINF: Sony Six HD
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225780/03.m3u8
+
+#EXTINF: Sony Six HD
+http://103.211.219.73/static/ftv?id=Six_HD/Six_HD_400.m3u8
+
+#EXTINF: SONY TV
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225803/03.m3u8
+
+#EXTINF: Sony TV HD
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225772/03.m3u8
+
+#EXTINF: Star Plus
+http://103.211.219.73/static/ftv?id=Star_Plus_HD/Star_Plus_HD_400.m3u8
+
+#EXTINF: StarGoldHD
+http://103.211.219.73/static/ftv?id=Star_Gold_HD/Star_Gold_HD_400.m3u8
+
+#EXTINF: StarJalsha
+http://103.211.219.73/static/ftv?id=Star_Jalsha/Star_Jalsha_400.m3u8
+
+#EXTINF: Strselthd1
+http://103.211.219.73/static/ftv?id=Star_Sports_Select_HD_1/Star_Sports_Select_HD_1_400.m3u8
+
+#EXTINF: Strselthd2
+http://103.211.219.73/static/ftv?id=Star_Sports_Select_HD_2/Star_Sports_Select_HD_2_400.m3u8
+
+#EXTINF: StrSprtshd1
+http://103.211.219.73/static/ftv?id=Star_Sports_HD_1/Star_Sports_HD_1_400.m3u8
+
+#EXTINF: StrSprtshd2
+http://103.211.219.73/static/ftv?id=Star_Sports_HD_2/Star_Sports_HD_2_400.m3u8
+
+#EXTINF: TEN 01 HD
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225875/03.m3u8
+
+#EXTINF: TEN 1
+http://125.17.105.168/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225931/03.m3u8
+
+#EXTINF: TEN 1
+http://103.211.219.73/static/ftv?id=Ten_1/Ten_1_400.m3u8
+
+#EXTINF: TEN 2
+http://125.17.105.168/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225932/03.m3u8
+
+#EXTINF: TEN 2
+http://103.211.219.73/static/ftv?id=Ten_2/Ten_2_400.m3u8
+
+#EXTINF: TEN 3
+http://125.17.105.168/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225933/03.m3u8
+
+#EXTINF: TEN 3
+http://103.211.219.73/static/ftv?id=Ten_3/Ten_3_400.m3u8
+
+#EXTINF: Ten HD
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225875/03.m3u8
+
+#EXTINF: TLC
+http://125.17.105.168/wh7f454c46tw2717373403_526904823/PLTV/88888888/224/3221225819/03.m3u8
+
+#EXTINF: TRAVEL XP
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225813/01.m3u8
+
+#EXTINF: ZEE BANGLA
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221225882/03.m3u8
+
+#EXTINF: ZEE BANGLA
+http://103.211.219.73/static/ftv?id=Zee_Bangla/Zee_Bangla_400.m3u8
+
+#EXTINF: Zee Cinema
+http://125.17.105.168/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221225935/03.m3u8
+
+#EXTINF: ZEE CLASSIC
+http://125.17.105.168/wh7f454c46tw3189386479_1439368730/PLTV/88888888/224/3221226067/03.m3u8
+
+#EXTINF: ZEE TV
+http://125.17.105.168/wh7f454c46tw3372980723_1650188555/PLTV/88888888/224/3221225878/03.m3u8
+
+#EXTINF: zing
+http://125.17.105.168/wh7f454c46tw3547367093_1434011504/PLTV/88888888/224/3221226080/01.m3u8
+
+#EXTINF: ZOOM
+http://zoomweblive-lh.akamaihd.net/i/Zoomweb_1@348071/master.m3u8
+
+#EXTINF: 9xm
+http://103.211.219.73/static/ftv?id=9XM/9XM_400.m3u8
+
+#EXTINF: Animl Plnet
+http://103.211.219.73/static/ftv?id=Animal_Planet_Hindi/Animal_Planet_Hindi_400.m3u8
