@@ -418,6 +418,9 @@ CREATE TABLE tbtmp_fb_obscene_dirt_temp AS SELECT * FROM tbtmp_fb_obscene_dirt O
 DROP TABLE IF EXISTS tbtmp_fb_obscene_dirt;
 DELETE FROM tbtmp_fb_obscene_dirt_temp;
 DROP TABLE IF EXISTS tbtmp_fb_obscene_dirt_temp;
+
+incest 
+
 http://www.choti69.com/2015/11/english-chodar-golpo.html
 https://www.banglachoticlub.com/
 https://www.bangla-choti-golpo.com/
@@ -426,7 +429,13 @@ https://www.facebook.com/Bangla-Choti-Golpo-318316995343026/?ref=br_rs
 https://www.facebook.com/sexychoti2018/?ref=br_rs
 http://newbanglachoti1.blogspot.com/2016/03/bangla-choti-golpo_29.html
 https://www.banglachotifull.com/2016/11/20/bangla-choti-chuda-maayer-guder-jala-mitano/
+http://banglachotigalpo.blogspot.com/2017/01/Bangla-Sexy-Story.html#
+https://tanbazar.wordpress.com/tag/bangla-choti/
+http://www.banglachotigolpo24.com/
+http://banglachotimasla24.blogspot.com/
+https://www.facebook.com/%E0%A6%95%E0%A6%BE%E0%A6%AE%E0%A7%81%E0%A6%95-%E0%A6%AD%E0%A6%BE%E0%A6%87-%E0%A6%AC%E0%A7%8B%E0%A6%A8-324889181357549/
 
+https://www.facebook.com/4girlswoman/
 
 https://vhalobashi.wordpress.com/tag/bangla-love-story/page/2/
 http://www.somewhereinblog.net/blog/nissongojoddha/29128150
