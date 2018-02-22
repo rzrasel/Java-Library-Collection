@@ -1,0 +1,27 @@
+#EXTM3U
+
+#EXTINF: ZOOM
+http://zoomweblive-lh.akamaihd.net/i/Zoomweb_1@348071/master.m3u
+
+#EXTINF: ZEE BANGLA
+http://103.211.219.73/static/ftv?id=Zee_Bangla/Zee_Bangla_400.m3u8
+
+http://www.prothomalo.com/technology/article/1428786/%E0%A6%AC%E0%A6%B2%E0%A7%81%E0%A6%A8-%E0%A6%A4%E0%A7%8B-%E0%A6%A4%E0%A6%BF%E0%A6%A8-%E0%A6%85%E0%A6%99%E0%A7%8D%E0%A6%95%E0%A7%87%E0%A6%B0-%E0%A6%9C%E0%A7%8B%E0%A7%9C-%E0%A6%B8%E0%A6%82%E0%A6%96%E0%A7%8D%E0%A6%AF%E0%A6%BE-%E0%A6%95%E0%A7%9F%E0%A6%9F%E0%A6%BF
+
+[
+   {
+      "channel_name":"ZEE BANGLA",
+      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Zee_Bangla\/Zee_Bangla_400.m3u8",
+      "channel_color":"#571e70"
+   },
+   {
+      "channel_name":"ZOOM",
+      "channel_url":"http:\/\/zoomweblive-lh.akamaihd.net\/i\/Zoomweb_1@348071\/master.m3u8",
+      "channel_color":"#012153"
+   }
+]
+
+http://rupchorcha24.com/bangla/%E0%A6%B6%E0%A6%B0%E0%A7%80%E0%A6%B0%E0%A7%87%E0%A6%B0-%E0%A6%AB%E0%A6%BE%E0%A6%9F%E0%A6%BE-%E0%A6%A6%E0%A6%BE%E0%A6%97-%E0%A6%A6%E0%A7%82%E0%A6%B0/
+http://www.ruplabonno.com/
+http://rupchorcha24.com/bangla/%e0%a6%ab%e0%a7%8d%e0%a6%b0%e0%a7%81%e0%a6%9f-%e0%a6%ab%e0%a7%87%e0%a6%b8%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%b2/
+http://www.ruplabonno.com/archives/5833#at_pco=smlwn-1.0&at_si=5a8e9f63915a6fd7&at_ab=per-2&at_pos=0&at_tot=1
