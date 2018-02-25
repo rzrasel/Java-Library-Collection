@@ -1,0 +1,16 @@
+{
+   "data": [
+      {
+         "name": "My Email",
+         "privacy": "SECRET",
+         "id": "197635973845"
+      },
+   ],
+   "paging": {
+      "cursors": {
+         "before": "QVFIUmd5TkE0NEZABZAHNzNXM2Q3k0bXdqMzg5X09OQS1XQVk0WHc2ZAmk2M25VVHE1QXN3ZAnNUSnN4RzJ4amwyT255LWRLTzNzNlhfVERoU211VzVMUE15Tm9n",
+         "after": "QVFIUlhFYlo4Nk1POC1qdGJHOWk3a2thRTlBblNRMU8zZAnVUMjdiZAXgzVE9fMnR4ZA0t4M01odHVua1BhM3pPQ0R5QU16QzJ3X216dm1GTzR2NjByNVFSdnlR"
+      },
+      "previous": "https://graph.facebook.com/v2.12/1958805994147920/groups?access_token=EAADH5ugwunYBAOANow2zJMZBdzhAw39jfDZChkq4ZCNnxPgAT5C64JQmnAZBQrdzHLM4IkFu7lg7rqstgFy8JFJheIlgGf6VdwGIRWcLzANnXMEoNvX461jyVZAiFs4Yyfq4Y5BE5HcEhzFBAO5gbz5K5EuDjfkZBxhUZC5ImfvMQZDZD&pretty=1&limit=25&before=QVFIUmd5TkE0NEZABZAHNzNXM2Q3k0bXdqMzg5X09OQS1XQVk0WHc2ZAmk2M25VVHE1QXN3ZAnNUSnN4RzJ4amwyT255LWRLTzNzNlhfVERoU211VzVMUE15Tm9n"
+   }
+}

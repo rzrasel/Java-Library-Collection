@@ -1,0 +1,73 @@
+DELETE FROM tbl_fb_group_store;
+INSERT INTO tbl_fb_group_store VALUES ('15194796151451', 'DDDDD', '54545', 'own', 'url');
+
+
+#Gossiping, #Programming, #Help, #Quotes, #Food, #Job, #Friend, #App Hive, #App Hive Me, #Story, #Poem,
+
+
+{
+   "data": [
+      {
+         "name": "My Personal",
+         "privacy": "CLOSED",
+         "id": "274446525911159"
+      },
+      {
+         "name": "Heart",
+         "privacy": "OPEN",
+         "id": "200161000020760"
+      },
+      {
+         "name": "Photo Album",
+         "privacy": "OPEN",
+         "id": "373396862717"
+      },
+      {
+         "name": "Al-Quran",
+         "privacy": "OPEN",
+         "id": "304433507749"
+      },
+      {
+         "name": "Architectural Designs",
+         "privacy": "OPEN",
+         "id": "439077925273"
+      },
+      {
+         "name": "Love Story. Valobashar Golpo",
+         "privacy": "OPEN",
+         "id": "239603883195"
+      },
+      {
+         "name": "I Need A Message",
+         "privacy": "OPEN",
+         "id": "283269607784"
+      },
+      {
+         "name": "Lonely",
+         "privacy": "OPEN",
+         "id": "258595020254"
+      },
+      {
+         "name": "Amoraboti",
+         "privacy": "OPEN",
+         "id": "221702281746"
+      },
+      {
+         "name": "Sculptor",
+         "privacy": "OPEN",
+         "id": "218836778673"
+      },
+      {
+         "name": "Allah",
+         "privacy": "OPEN",
+         "id": "236597695352"
+      }
+   ],
+   "paging": {
+      "cursors": {
+         "before": "QVFIUm5fNDJKS1ZAKZAjFnOTFRUG9zYW14anNyNldQSFh0dVNNSkNnRzlMdC1fdTlrWkk1OXlzQWVwRWpqN0ZAzYlVvVE1sSXM0QnNGOEhvYzhsQXR4V2VCbGRn",
+         "after": "QVFIUnh3enlRR2NqcldRVEJhSUZApSkpSTnIwZAGlhZAUNXRzRQb0xPbkJtUFBQRklMeDJ1QU9JUEJVVHZAfLWZApc2RpdGkxSTducVM3ZAmpibTNDcWVBZAllOS0Fn"
+      },
+      "next": "https://graph.facebook.com/v2.12/1958805994147920/groups?access_token=EAADH5ugwunYBAOANow2zJMZBdzhAw39jfDZChkq4ZCNnxPgAT5C64JQmnAZBQrdzHLM4IkFu7lg7rqstgFy8JFJheIlgGf6VdwGIRWcLzANnXMEoNvX461jyVZAiFs4Yyfq4Y5BE5HcEhzFBAO5gbz5K5EuDjfkZBxhUZC5ImfvMQZDZD&pretty=1&limit=25&after=QVFIUnh3enlRR2NqcldRVEJhSUZApSkpSTnIwZAGlhZAUNXRzRQb0xPbkJtUFBQRklMeDJ1QU9JUEJVVHZAfLWZApc2RpdGkxSTducVM3ZAmpibTNDcWVBZAllOS0Fn"
+   }
+}
