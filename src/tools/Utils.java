@@ -1,10 +1,14 @@
+package tools;
 
 import com.rz.librarycore.logger.LogWriter;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import javax.swing.text.html.HTMLDocument;
@@ -23,12 +27,22 @@ public class Utils {
 
     public static String getDbFromat(String argData) {
         String retVal = null;
-        if (argData != null) {
-            argData = argData.trim();
-            if (argData.isEmpty()) {
+        retVal = argData;
+        if (retVal != null) {
+            retVal = retVal.trim();
+            if (retVal.isEmpty()) {
                 retVal = null;
             } else {
-                retVal = "'" + argData.trim() + "'";
+                /*try {
+                    retVal = new String(retVal.getBytes("utf-8"), "iso8859-1");
+                } catch (UnsupportedEncodingException ex) {
+                    Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+                }*/
+                /*if (isUnicode(retVal)) {
+                    System.out.println("|----|------------|UNICODE");
+                }*/
+                retVal = retVal.replaceAll("\'", "''");
+                retVal = "'" + retVal.trim() + "'";
             }
         } else {
             retVal = null;
@@ -186,5 +200,21 @@ public class Utils {
         }
         argSqlString.replaceAll("'", "\\\\'");
         return argSqlString;
+    }
+
+    public static boolean isUnicode(String argText) {
+
+        Charset charset = Charset.forName("US-ASCII");
+        String checked = new String(argText.getBytes(charset), charset);
+        return !checked.equals(argText);
+
+    }
+
+    public void testAscii() throws Exception {
+        //Assert.assertFalse(isEncoded("Hello world"));
+    }
+
+    public void testNonAscii() throws Exception {
+        //Assert.assertTrue(isEncoded("Hellä world"));
     }
 }
