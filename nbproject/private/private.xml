@@ -2,6 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/src/microapi/FormedCountryData.java</file>
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/SQL%20Generated%20Table.md</file>
@@ -9,5 +12,6 @@
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/src/tools/Utils.java</file>
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/Link.txt</file>
         </group>
+>>>>>>> 6e9a73979b155d9f2897f558ffeb173ac6f26d67
     </open-files>
 </project-private>
