@@ -21,7 +21,36 @@ CREATE TABLE IF NOT EXISTS `apps_countries_detailed` (
 	`geonameId` int(10) DEFAULT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0;
+-- |----|------------------------------------|
+word - id, part of speech, spelling
+synonym - id, word_id, spelling
+definition - id, definition, word_id, example_sentence
 
+language - id, name
+word - id, lan_id
+translation - word_id_1, word_id_2
+
+DROP TABLE IF EXISTS tbtmp_app_project;
+CREATE TABLE IF NOT EXISTS tbtmp_app_project
+(
+    apjt_aproj_id                   BIGINT(20)        NOT NULL,
+    apjt_aproj_name                 VARCHAR(255)      NOT NULL,
+    apjt_aproj_details              TEXT              NOT NULL,
+    apjt_aproj_type                 VARCHAR(255)      NOT NULL,
+    apjt_aproj_pakg_bundle          VARCHAR(255)      NOT NULL,
+    apjt_aproj_latest_ver_code      VARCHAR(255)      NOT NULL,
+    apjt_aproj_latest_ver_name      VARCHAR(255)      NOT NULL,
+    apjt_aproj_lowest_valid_code    VARCHAR(255)      NOT NULL,
+    apjt_aproj_lowest_valid_name    VARCHAR(255)      NOT NULL,
+    apjt_aproj_status               BOOLEAN           NOT NULL,
+    apjt_aproj_on_published         BOOLEAN           NOT NULL,
+    apjt_aproj_create_date          DATETIME          NOT NULL,
+    apjt_aproj_modify_date          DATETIME          NOT NULL,
+    apjt_aproj_created_by           BIGINT(20)        NOT NULL,
+    apjt_aproj_modified_by          BIGINT(20)        NOT NULL,
+    CONSTRAINT                      pk_apppr_apjt_aproj_id PRIMARY KEY (apjt_aproj_id)
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+-- |----|------------------------------------|
 DROP TABLE IF EXISTS tbtmp_app_key_store;
 CREATE TABLE IF NOT EXISTS tbtmp_app_key_store
 (
