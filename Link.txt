@@ -826,6 +826,7 @@ Power of positive thinking
 |----|------------------------------------|
 অডিও এবং ভিডিও কলের জন্যেই কোন এপ্স ভাল???
 |----|------------------------------------|
+<<<<<<< HEAD
 পিছনে ফেলে আসা দুঃখ, হতাশা, না পাওয়ার বেদনাকে ভুলে গিয়ে নতুন করে শুরু করুন নতুন জীবন। পৃথিবী এগিয়ে যাবে বর্তমানকে নিয়ে আর অতীত পেছনে থেকে শিক্ষা দেবে সঠিক পথের। তাই ভুল থেকে শিক্ষা নিয়ে সামনের পানে চলুন, একটু দেরি হলেও বদলে যাবে সব কিছুই।
 বদলে যান আজ, এখনই -
 আপনার যদি কোন খারাপ স্বভাব থেকে থাকে, তবে তো বদলে ফেলুন এখনই। লোকের কথা নিয়ে ভাবতে হবে না। যেখানে আপনি সঠিক, সেখানে জগতও আপনার সাথে সঠিক আচরণই করবে।
@@ -841,6 +842,13 @@ Power of positive thinking
 |----|------------------------------------|
 |----|------------------------------------|
 |----|------------------------------------|
+=======
+#হেল্প_পোস্ট
+নুহাশ পল্লী কি এখন খোলা থাকবে?
+দিয়াবাড়ির কি অবস্থা এখন শরতের মত কি সুন্দর আছে এখন ও?
+এছাড়া ঢাকার আশে পাশে ঘুরার মতো সুন্দর কিছু যাইগার নাম সাজেস্ট করেন যাতে দিন যেয়ে দিনে ফেরা জায়।নদী নৌকার যায়গা হলে বেশি ভাল হয়।নৌকায় কখনো চড়া হয়নি।
+#অগ্রিম_ধন্যবাদ
+>>>>>>> 4108f54a165eaf58116dfc7ac39862a16bf0d988
 |----|------------------------------------|
 |----|------------------------------------|
 |----|------------------------------------|
@@ -940,6 +948,16 @@ Unity 5 - Scrambled Word Game Tutorial - C# Programming - Bahasa Indonesia Part 
 https://www.youtube.com/watch?v=K8_JR2b_VnQ
 
 
+Bangla Cinema News
+http://www.anandabazar.com/entertainment
+https://bmdb.co/
+https://eisamay.indiatimes.com/entertainment/cinema/articlelist/15935855.cms
+http://mediaonenews24.com/tag/bangla-cinema-news/
+https://www.news18.com/newstopics/bangla-film.html
+http://indianexpress.com/section/entertainment/
+http://www.deshebideshe.com/news/items/168
+https://timesofindia.indiatimes.com/entertainment/bengali/movies/news
+https://healthbangla.com/
 
 
 #Gossiping, #Programming, #Help, #Quotes, #Food, #Job, #Friend, #AppHive, #App_Hive, #App-Hive, #AppHiveMe, #App_Hive_Me, #App-Hive-Me, #Story, #Poem,
