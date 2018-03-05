@@ -403,6 +403,10 @@ public class ConvertingFromUnicode {
     }
 }
 /*
+m-1168
+https://www.raywenderlich.com/148158/introduction-to-unity-particle-systems
+
+
 INSERT INTO destinationTable (risposta, data_ins)
 SELECT STATUS risposta, DATETIME('now') data_ins 
 FROM   sourceTable
