@@ -1,422 +1,396 @@
-[
-   {
-      "channel_name":"1 Sports Live",
-      "channel_url":"http:\/\/139.59.63.153:1935\/bdix_sports\/live\/playlist.m3u8",
-      "channel_color":"#ffa800"
-   },
-   {
-      "channel_name":"2 BD vS SL",
-      "channel_url":"http:\/\/52.74.101.37:8989\/GAIANGAIANPU00000001\/master.m3u8",
-      "channel_color":"#8188dd"
-   },
-   {
-      "channel_name":"3 BD VS SL",
-      "channel_url":"http:\/\/139.59.63.153:1935\/live_now\/dccare\/playlist.m3u8",
-      "channel_color":"#f3a314"
-   },
-   {
-      "channel_name":"9X Jalwa",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221226011\/03.m3u8",
-      "channel_color":"#ce9411"
-   },
-   {
-      "channel_name":"9XM",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221226053\/03.m3u8",
-      "channel_color":"#d5743e"
-   },
-   {
-      "channel_name":"9xm",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=9XM\/9XM_400.m3u8",
-      "channel_color":"#ffa800"
-   },
-   {
-      "channel_name":"Aljazeera",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221226109\/03.m3u8",
-      "channel_color":"#f3a314"
-   },
-   {
-      "channel_name":"Animl Plnet",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3798502344_146685544\/PLTV\/88888888\/224\/3221225872\/03.m3u8",
-      "channel_color":"#962e52"
-   },
-   {
-      "channel_name":"Animl Plnet",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Animal_Planet_Hindi\/Animal_Planet_Hindi_400.m3u8",
-      "channel_color":"#133b2f"
-   },
-   {
-      "channel_name":"Asian TV",
-      "channel_url":"http:\/\/162.254.149.187:1935\/live\/asiantv\/playlist.m3u8",
-      "channel_color":"#ffa500"
-   },
-   {
-      "channel_name":"ATN Bangla",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/AtN@B@N0\/index.m3u8",
-      "channel_color":"#636631"
-   },
-   {
-      "channel_name":"ATN News",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/aT@N0OB@n\/index.m3u8",
-      "channel_color":"#2d3884"
-   },
-   {
-      "channel_name":"B4U Music",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221226055\/03.m3u8",
-      "channel_color":"#a88b54"
-   },
-   {
-      "channel_name":"B4U Music",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=B4U_Music\/B4U_Music_400.m3u8",
-      "channel_color":"#133b2f"
-   },
-   {
-      "channel_name":"BANGVISON",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/Vb@N@loAV\/index.m3u8",
-      "channel_color":"#ffa343"
-   },
-   {
-      "channel_name":"BBC EARTH",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3798502344_146685544\/PLTV\/88888888\/224\/3221226068\/03.m3u8",
-      "channel_color":"#18648a"
-   },
-   {
-      "channel_name":"BBC EARTH",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sony_BBC_Earth_HD\/Sony_BBC_Earth_HD_400.m3u8",
-      "channel_color":"#a131f1"
-   },
-   {
-      "channel_name":"BOISHAKHI",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/b@0IS@K0i\/index.m3u8",
-      "channel_color":"#5a3c56"
-   },
-   {
-      "channel_name":"BTV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/b@tVnA@tI0l\/index.m3u8",
-      "channel_color":"#004d00"
-   },
-   {
-      "channel_name":"CHANEL24",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/cH@N0L@F\/index.m3u8",
-      "channel_color":"#a7823e"
-   },
-   {
-      "channel_name":"Channel 9",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/channel9\/index.m3u8off",
-      "channel_color":"#fe8907"
-   },
-   {
-      "channel_name":"CHANNEL I",
-      "channel_url":"http:\/\/162.254.149.187:1935\/live\/channel-i\/chunklist_w1568739522.m3u8",
-      "channel_color":"#5224c2"
-   },
-   {
-      "channel_name":"Desh Tv",
-      "channel_url":"http:\/\/beeiptv.dynu.net:8081\/nimble_live\/DeshTV\/playlist.m3u8",
-      "channel_color":"#f3a314"
-   },
-   {
-      "channel_name":"DESH TV",
-      "channel_url":"http:\/\/162.254.149.187:1935\/live\/deshtv\/playlist.m3u8",
-      "channel_color":"#5224c2"
-   },
-   {
-      "channel_name":"Discov Kids",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3798502344_146685544\/PLTV\/88888888\/224\/3221225775\/03.m3u8",
-      "channel_color":"#815fa1"
-   },
-   {
-      "channel_name":"Discov Kids",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Discovery_Kids_1\/Discovery_Kids_1_400.m3u8",
-      "channel_color":"#073106"
-   },
-   {
-      "channel_name":"DISCOVBAN",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Discovery_Channel_Bengali\/Discovery_Channel_Bengali_400.m3u8",
-      "channel_color":"#ffa800"
-   },
-   {
-      "channel_name":"DISCOVERY",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3798502344_146685544\/PLTV\/88888888\/224\/3221225874\/04.m3u8",
-      "channel_color":"#5b48b9"
-   },
-   {
-      "channel_name":"EKATTOR",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/eK@tTvHd@h\/index.m3u8",
-      "channel_color":"#2e4c50"
-   },
-   {
-      "channel_name":"EKATTOR",
-      "channel_url":"http:\/\/162.254.149.187:1935\/live\/71tv\/playlist.m3u8",
-      "channel_color":"#5224c2"
-   },
-   {
-      "channel_name":"Ekushey TV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/EkU0@S@\/index.m3u8",
-      "channel_color":"#c65529"
-   },
-   {
-      "channel_name":"ESPN",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225805\/03.m3u8",
-      "channel_color":"#7b40ad"
-   },
-   {
-      "channel_name":"ESPN",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sony_ESPN_SD\/Sony_ESPN_SD_400.m3u8",
-      "channel_color":"#066fa9"
-   },
-   {
-      "channel_name":"ESPN HD",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sony_ESPN_HD\/Sony_ESPN_HD_400.m3u8",
-      "channel_color":"#00aedb"
-   },
-   {
-      "channel_name":"Gaan Bang",
-      "channel_url":"http:\/\/162.254.149.146:1935\/live\/gaanbangla\/playlist.m3u8",
-      "channel_color":"#660718"
-   },
-   {
-      "channel_name":"Gazi TV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/g@zitVg0ziTV@BagLQA\/index.m3u8",
-      "channel_color":"#0282c8"
-   },
-   {
-      "channel_name":"Gazi TV",
-      "channel_url":"http:\/\/52.74.101.37:8989\/GAIANGAIANPU00000001\/master.m3u8",
-      "channel_color":"#ffc863"
-   },
-   {
-      "channel_name":"History HD",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=History_HD\/History_HD_400.m3u8",
-      "channel_color":"#073106"
-   },
-   {
-      "channel_name":"INDPNDENT",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/iD@P0N024\/index.m3u8",
-      "channel_color":"#501236"
-   },
-   {
-      "channel_name":"Jalshamovs",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Jalsa_Movies_HD\/Jalsa_Movies_HD_400.m3u8",
-      "channel_color":"#5224c2"
-   },
-   {
-      "channel_name":"JAMUNA TV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/j@MuN@nNA\/index.m3u8",
-      "channel_color":"#6003bb"
-   },
-   {
-      "channel_name":"Maasranga ",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/rGATv@@BaNglA\/index.m3u8",
-      "channel_color":"#6a0410"
-   },
-   {
-      "channel_name":"Music India",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Music_India\/Music_India_400.m3u8",
-      "channel_color":"#d77903"
-   },
-   {
-      "channel_name":"Natgogrpy",
-      "channel_url":"http:\/\/play.uktvnow.net:1935\/live\/natgeo.stream\/playlist.m3u8",
-      "channel_color":"#5b7435"
-   },
-   {
-      "channel_name":"Neo Prime",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225789\/04.m3u8",
-      "channel_color":"#5e8403"
-   },
-   {
-      "channel_name":"Neo Sports",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225791\/03.m3u8",
-      "channel_color":"#6f80a3"
-   },
-   {
-      "channel_name":"NICK",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Nickelodeon\/Nickelodeon_400.m3u8",
-      "channel_color":"#571e70"
-   },
-   {
-      "channel_name":"NICK Jr",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Nickelodeon_Jr\/Nickelodeon_Jr_400.m3u8",
-      "channel_color":"#a700cc"
-   },
-   {
-      "channel_name":"NTV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/N@0TvW@0\/index.m3u8",
-      "channel_color":"#0d5e8c"
-   },
-   {
-      "channel_name":"Peace TV",
-      "channel_url":"rtmp:\/\/peace.fms.visionip.tv\/live\/\/b2b-peace_asia-live-25f-4x3-sdh_1",
-      "channel_color":"#7c0f62"
-   },
-   {
-      "channel_name":"PTV SPORTS",
-      "channel_url":"http:\/\/app.pakistanvision.tv:1935\/\/live\/\/ptvsports\/\/playlist.m3u8",
-      "channel_color":"#a76591"
-   },
-   {
-      "channel_name":"RTV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/rtv\/index.m3u8",
-      "channel_color":"#133b2f"
-   },
-   {
-      "channel_name":"SANGEETBAN",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/s@nG@iTbATv\/index.m3u8",
-      "channel_color":"#8f9a2a"
-   },
-   {
-      "channel_name":"SANGEETBAN",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sangeet_Bangla\/Sangeet_Bangla_400.m3u8",
-      "channel_color":"#874e28"
-   },
-   {
-      "channel_name":"SATV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/satvhd\/index.m3u8",
-      "channel_color":"#ffc300"
-   },
-   {
-      "channel_name":"SOMOY TV",
-      "channel_url":"http:\/\/203.76.117.226\/hls\/s0@M@o0NT\/index.m3u8",
-      "channel_color":"#005ca0"
-   },
-   {
-      "channel_name":"Somoy TV",
-      "channel_url":"http:\/\/103.250.71.30:8081\/somoylive\/somoy000.smil\/playlist.m3u8",
-      "channel_color":"#f3a314"
-   },
-   {
-      "channel_name":"Sony Aath",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221226099\/03.m3u8",
-      "channel_color":"#f3a314"
-   },
-   {
-      "channel_name":"Sony Aath",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sony_aath\/Sony_aath_400.m3u8",
-      "channel_color":"#a131f1"
-   },
-   {
-      "channel_name":"Sony Max",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225811\/03.m3u8",
-      "channel_color":"#9044d6"
-   },
-   {
-      "channel_name":"Sony Max 2",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225812\/03.m3u8",
-      "channel_color":"#5b7435"
-   },
-   {
-      "channel_name":"Sony Max HD",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225776\/01.m3u8",
-      "channel_color":"#856886"
-   },
-   {
-      "channel_name":"Sony Mix",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225816\/03.m3u8",
-      "channel_color":"#c39f36"
-   },
-   {
-      "channel_name":"Sony Pal",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225818\/03.m3u8",
-      "channel_color":"#5c8c62"
-   },
-   {
-      "channel_name":"Sony Six",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225827\/03.m3u8",
-      "channel_color":"#c77033"
-   },
-   {
-      "channel_name":"Sony Six",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Sony_Six_SD\/Sony_Six_SD_400.m3u8",
-      "channel_color":"#c65529"
-   },
-   {
-      "channel_name":"Sony Six HD",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225780\/03.m3u8",
-      "channel_color":"#47958a"
-   },
-   {
-      "channel_name":"Sony Six HD",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Six_HD\/Six_HD_400.m3u8",
-      "channel_color":"#073106"
-   },
-   {
-      "channel_name":"SONY TV",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw2717373403_526904823\/PLTV\/88888888\/224\/3221225803\/03.m3u8",
-      "channel_color":"#a775d8"
-   },
-   {
-      "channel_name":"Sony TV HD",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225772\/03.m3u8",
-      "channel_color":"#e35d6a"
-   },
-   {
-      "channel_name":"Star Plus",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Plus_HD\/Star_Plus_HD_400.m3u8",
-      "channel_color":"#00aedb"
-   },
-   {
-      "channel_name":"StarGoldHD",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Gold_HD\/Star_Gold_HD_400.m3u8",
-      "channel_color":"#f5a82c"
-   },
-   {
-      "channel_name":"StarJalsha",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Jalsha\/Star_Jalsha_400.m3u8",
-      "channel_color":"#5224c2"
-   },
-   {
-      "channel_name":"Strselthd1",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_Select_HD_1\/Star_Sports_Select_HD_1_400.m3u8",
-      "channel_color":"#ffa800"
-   },
-   {
-      "channel_name":"Strselthd2",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_Select_HD_2\/Star_Sports_Select_HD_2_400.m3u8",
-      "channel_color":"#ca552d"
-   },
-   {
-      "channel_name":"StrSprtshd1",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_HD_1\/Star_Sports_HD_1_400.m3u8",
-      "channel_color":"#6b214c"
-   },
-   {
-      "channel_name":"StrSprtshd2",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_HD_2\/Star_Sports_HD_2_400.m3u8",
-      "channel_color":"#404bc2"
-   },
-   {
-      "channel_name":"TEN 01 HD",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3189386479_1439368730\/PLTV\/88888888\/224\/3221225875\/03.m3u8",
-      "channel_color":"#0e291d"
-   },
-   {
-      "channel_name":"TEN 1",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3547367093_1434011504\/PLTV\/88888888\/224\/3221225931\/03.m3u8",
-      "channel_color":"#5564b2"
-   },
-   {
-      "channel_name":"TEN 1",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Ten_1\/Ten_1_400.m3u8",
-      "channel_color":"#a700cc"
-   },
-   {
-      "channel_name":"TEN 2",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3547367093_1434011504\/PLTV\/88888888\/224\/3221225932\/03.m3u8",
-      "channel_color":"#908135"
-   },
-   {
-      "channel_name":"TEN 2",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Ten_2\/Ten_2_400.m3u8",
-      "channel_color":"#ffa800"
-   },
-   {
-      "channel_name":"TEN 3",
-      "channel_url":"http:\/\/125.17.105.168\/wh7f454c46tw3547367093_1434011504\/PLTV\/88888888\/224\/3221225933\/03.m3u8",
-      "channel_color":"#690e9b"
-   },
-   {
-      "channel_name":"TEN 3",
-      "channel_url":"http:\/\/103.211.219.73\/static\/ftv?id=Ten_3\/Ten_3_400.m3u8",
-      "channel_color":"#6c5371"
-   }
+[  {
+    "channel_name": "1 Sports Live",
+    "channel_url": "http:\/\/159.89.161.162:1935\/hd\/engvsnz\/playlist.m3u8",
+    "channel_color": "#ffa800"
+  },
+  {
+    "channel_name": "2 PSL Live",
+    "channel_url": "http:\/\/159.89.161.162:1935\/hd\/lol\/playlist.m3u8",
+    "channel_color": "#8188dd"
+  },
+  {
+    "channel_name": "9X Jalwa",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=9X_Jalwa\/9X_Jalwa_400.m3u8",
+    "channel_color": "#ce9411"
+  },
+  {
+    "channel_name": "9xm",
+    "channel_url": "https:\/\/www.flexlivetv.com\/static\/ftv?id=9XM\/9XM_400.m3u8",
+    "channel_color": "#ffa800"
+  },
+  {
+    "channel_name": "Aljazeera",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=AL_Jazeera\/AL_Jazeera_400.m3u8",
+    "channel_color": "#f3a314"
+  },
+  {
+    "channel_name": "Animl Plnet",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Animal_Planet_Hindi\/Animal_Planet_Hindi_400.m3u8",
+    "channel_color": "#133b2f"
+  },
+  {
+    "channel_name": "Asian TV",
+    "channel_url": "http:\/\/162.254.149.187:1935\/live\/asiantv\/playlist.m3u8",
+    "channel_color": "#ffa500"
+  },
+  {
+    "channel_name": "ATN Bangla",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/AtN@B@N0\/index.m3u8",
+    "channel_color": "#636631"
+  },
+  {
+    "channel_name": "ATN News",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/aT@N0OB@n\/index.m3u8",
+    "channel_color": "#2d3884"
+  },
+  {
+    "channel_name": "B4U Music",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=B4U_Music\/B4U_Music_400.m3u8",
+    "channel_color": "#133b2f"
+  },
+  {
+    "channel_name": "BANGVISON",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/Vb@N@loAV\/index.m3u8",
+    "channel_color": "#ffa343"
+  },
+  {
+    "channel_name": "BBC EARTH",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_BBC_Earth_HD\/Sony_BBC_Earth_HD_400.m3u8",
+    "channel_color": "#a131f1"
+  },
+  {
+    "channel_name": "BOISHAKHI",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/b@0IS@K0i\/index.m3u8",
+    "channel_color": "#5a3c56"
+  },
+  {
+    "channel_name": "BTV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/b@tVnA@tI0l\/index.m3u8",
+    "channel_color": "#004d00"
+  },
+  {
+    "channel_name": "CHANEL24",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/cH@N0L@F\/index.m3u8",
+    "channel_color": "#a7823e"
+  },
+  {
+    "channel_name": "Channel 9",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/channel9\/index.m3u8off",
+    "channel_color": "#fe8907"
+  },
+  {
+    "channel_name": "CHANNEL I",
+    "channel_url": "http:\/\/162.254.149.187:1935\/live\/channel-i\/chunklist_w1568739522.m3u8",
+    "channel_color": "#5224c2"
+  },
+  {
+    "channel_name": "CNN",
+    "channel_url": "https:\/\/103.211.219.73\/static\/ftv?id=CNN\/CNN_400.m3u8",
+    "channel_color": "#c16001"
+  },
+  {
+    "channel_name": "Colors HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Colors_HD\/Colors_HD_400.m3u8",
+    "channel_color": "#5b7435"
+  },
+  {
+    "channel_name": "DESH TV",
+    "channel_url": "http:\/\/162.254.149.187:1935\/live\/deshtv\/playlist.m3u8",
+    "channel_color": "#5224c2"
+  },
+  {
+    "channel_name": "Discov Kids",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Discovery_Kids_1\/Discovery_Kids_1_400.m3u8",
+    "channel_color": "#073106"
+  },
+  {
+    "channel_name": "DISCOVBAN",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Discovery_Channel_Bengali\/Discovery_Channel_Bengali_400.m3u8",
+    "channel_color": "#ffa800"
+  },
+  {
+    "channel_name": "EKATTOR",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/eK@tTvHd@h\/index.m3u8",
+    "channel_color": "#2e4c50"
+  },
+  {
+    "channel_name": "EKATTOR",
+    "channel_url": "http:\/\/162.254.149.187:1935\/live\/71tv\/playlist.m3u8",
+    "channel_color": "#5224c2"
+  },
+  {
+    "channel_name": "Ekushey TV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/EkU0@S@\/index.m3u8",
+    "channel_color": "#c65529"
+  },
+  {
+    "channel_name": "ESPN",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_ESPN_SD\/Sony_ESPN_SD_400.m3u8",
+    "channel_color": "#066fa9"
+  },
+  {
+    "channel_name": "ESPN HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_ESPN_HD\/Sony_ESPN_HD_400.m3u8",
+    "channel_color": "#00aedb"
+  },
+  {
+    "channel_name": "Gaan Bang",
+    "channel_url": "http:\/\/162.254.149.146:1935\/live\/gaanbangla\/playlist.m3u8",
+    "channel_color": "#660718"
+  },
+  {
+    "channel_name": "Gazi TV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/g@zitVg0ziTV@BagLQA\/index.m3u8",
+    "channel_color": "#0282c8"
+  },
+  {
+    "channel_name": "Gazi TV",
+    "channel_url": "http:\/\/52.74.101.37:8989\/GAIANGAIANPU00000001\/master.m3u8",
+    "channel_color": "#ffc863"
+  },
+  {
+    "channel_name": "History HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=History_HD\/History_HD_400.m3u8",
+    "channel_color": "#073106"
+  },
+  {
+    "channel_name": "INDPNDENT",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/iD@P0N024\/index.m3u8",
+    "channel_color": "#501236"
+  },
+  {
+    "channel_name": "Jalshamovs",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Jalsa_Movies_HD\/Jalsa_Movies_HD_400.m3u8",
+    "channel_color": "#5224c2"
+  },
+  {
+    "channel_name": "JAMUNA TV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/j@MuN@nNA\/index.m3u8",
+    "channel_color": "#6003bb"
+  },
+  {
+    "channel_name": "Maasranga ",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/rGATv@@BaNglA\/index.m3u8",
+    "channel_color": "#6a0410"
+  },
+  {
+    "channel_name": "Music India",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Music_India\/Music_India_400.m3u8",
+    "channel_color": "#d77903"
+  },
+  {
+    "channel_name": "Neo Prime",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Neo_Prime\/Neo_Prime_400.m3u8",
+    "channel_color": "#5e8403"
+  },
+  {
+    "channel_name": "Neo Sports",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Neo_Sports\/Neo_Sports_400.m3u8",
+    "channel_color": "#6f80a3"
+  },
+  {
+    "channel_name": "NICK",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Nickelodeon\/Nickelodeon_400.m3u8",
+    "channel_color": "#571e70"
+  },
+  {
+    "channel_name": "NICK Jr",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Nickelodeon_Jr\/Nickelodeon_Jr_400.m3u8",
+    "channel_color": "#a700cc"
+  },
+  {
+    "channel_name": "NTV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/N@0TvW@0\/index.m3u8",
+    "channel_color": "#0d5e8c"
+  },
+  {
+    "channel_name": "Peace TV",
+    "channel_url": "rtmp:\/\/peace.fms.visionip.tv\/live\/\/b2b-peace_asia-live-25f-4x3-sdh_1",
+    "channel_color": "#7c0f62"
+  },
+  {
+    "channel_name": "PTV SPORTS",
+    "channel_url": "http:\/\/app.pakistanvision.tv:1935\/\/live\/\/ptvsports\/\/playlist.m3u8",
+    "channel_color": "#a76591"
+  },
+  {
+    "channel_name": "RTV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/rtv\/index.m3u8",
+    "channel_color": "#133b2f"
+  },
+  {
+    "channel_name": "SANGEETBAN",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/s@nG@iTbATv\/index.m3u8",
+    "channel_color": "#8f9a2a"
+  },
+  {
+    "channel_name": "SANGEETBAN",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sangeet_Bangla\/Sangeet_Bangla_400.m3u8",
+    "channel_color": "#874e28"
+  },
+  {
+    "channel_name": "SATV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/satvhd\/index.m3u8",
+    "channel_color": "#ffc300"
+  },
+  {
+    "channel_name": "SOMOY TV",
+    "channel_url": "http:\/\/203.76.117.226\/hls\/s0@M@o0NT\/index.m3u8",
+    "channel_color": "#005ca0"
+  },
+  {
+    "channel_name": "Somoy TV",
+    "channel_url": "http:\/\/103.250.71.30:8081\/somoylive\/somoy000.smil\/playlist.m3u8",
+    "channel_color": "#f3a314"
+  },
+  {
+    "channel_name": "Sony Aath",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_aath\/Sony_aath_400.m3u8",
+    "channel_color": "#a131f1"
+  },
+  {
+    "channel_name": "SONY HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_HD\/Sony_HD_400.m3u8",
+    "channel_color": "#a775d8"
+  },
+  {
+    "channel_name": "Sony Max 2",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_MAX2\/Sony_MAX2_400.m3u8",
+    "channel_color": "#5b7435"
+  },
+  {
+    "channel_name": "Sony Max HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_Max_HD\/Sony_Max_HD_400.m3u8",
+    "channel_color": "#856886"
+  },
+  {
+    "channel_name": "Sony Mix",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_Mix\/Sony_Mix_400.m3u8",
+    "channel_color": "#c39f36"
+  },
+  {
+    "channel_name": "Sony Pal",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_Pal\/Sony_Pal_400.m3u8",
+    "channel_color": "#5c8c62"
+  },
+  {
+    "channel_name": "Sony Six",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Sony_Six_SD\/Sony_Six_SD_400.m3u8",
+    "channel_color": "#c65529"
+  },
+  {
+    "channel_name": "Sony Six HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Six_HD\/Six_HD_400.m3u8",
+    "channel_color": "#073106"
+  },
+  {
+    "channel_name": "Star Plus",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Plus_HD\/Star_Plus_HD_400.m3u8",
+    "channel_color": "#00aedb"
+  },
+  {
+    "channel_name": "StarGoldHD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Gold_HD\/Star_Gold_HD_400.m3u8",
+    "channel_color": "#f5a82c"
+  },
+  {
+    "channel_name": "StarJalsha",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Jalsha\/Star_Jalsha_400.m3u8",
+    "channel_color": "#5224c2"
+  },
+  {
+    "channel_name": "Strselthd1",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_Select_HD_1\/Star_Sports_Select_HD_1_400.m3u8",
+    "channel_color": "#ffa800"
+  },
+  {
+    "channel_name": "Strselthd2",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_Select_HD_2\/Star_Sports_Select_HD_2_400.m3u8",
+    "channel_color": "#ca552d"
+  },
+  {
+    "channel_name": "StrSprtshd1",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_HD_1\/Star_Sports_HD_1_400.m3u8",
+    "channel_color": "#6b214c"
+  },
+  {
+    "channel_name": "StrSprtshd2",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Star_Sports_HD_2\/Star_Sports_HD_2_400.m3u8",
+    "channel_color": "#404bc2"
+  },
+  {
+    "channel_name": "TEN 01 HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten_HD\/Ten_HD_400.m3u8",
+    "channel_color": "#0e291d"
+  },
+  {
+    "channel_name": "TEN 1",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten_1\/Ten_1_400.m3u8",
+    "channel_color": "#5564b2"
+  },
+  {
+    "channel_name": "TEN 2",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten_2\/Ten_2_400.m3u8",
+    "channel_color": "#ffa800"
+  },
+  {
+    "channel_name": "TEN 2 HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten2_HD\/Ten2_HD_400.m3u8",
+    "channel_color": "#a700cc"
+  },
+  {
+    "channel_name": "TEN 3",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten_3\/Ten_3_400.m3u8",
+    "channel_color": "#6c5371"
+  },
+  {
+    "channel_name": "TEN 3 HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Ten3_HD\/Ten3_HD_400.m3u8",
+    "channel_color": "#690e9b"
+  },
+  {
+    "channel_name": "TLC Hindi",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=TLC_Hindi\/TLC_Hindi_400.m3u8",
+    "channel_color": "#39a3ab"
+  },
+  {
+    "channel_name": "TRAVEL XP",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Travel_XP_HD\/Travel_XP_HD_400.m3u8",
+    "channel_color": "#ac8b32"
+  },
+  {
+    "channel_name": "Zee Action",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zee_Action\/Zee_Action_400.m3u8",
+    "channel_color": "#c16001"
+  },
+  {
+    "channel_name": "ZEE BANGLA",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zee_Bangla\/Zee_Bangla_400.m3u8",
+    "channel_color": "#571e70"
+  },
+  {
+    "channel_name": "Zee Cinema",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zee_Cinema\/Zee_Cinema_400.m3u8",
+    "channel_color": "#969b3f"
+  },
+  {
+    "channel_name": "ZEE CLASSIC",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zee_Classic\/Zee_Classic_400.m3u8",
+    "channel_color": "#6c5371"
+  },
+  {
+    "channel_name": "ZEE TV HD",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zee_TV_HD\/Zee_TV_HD_400.m3u8",
+    "channel_color": "#99005a"
+  },
+  {
+    "channel_name": "zing",
+    "channel_url": "http:\/\/103.211.219.73\/static\/ftv?id=Zing\/Zing_400.m3u8",
+    "channel_color": "#7514f6"
+  },
+  {
+    "channel_name": "ZOOM",
+    "channel_url": "http:\/\/zoomweblive-lh.akamaihd.net\/i\/Zoomweb_1@348071\/master.m3u8",
+    "channel_color": "#012153"
+  }
 ]
