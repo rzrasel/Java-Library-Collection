@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  *
  * @author Rz Rasel 2018-01-18.
  */
-public class DBRawData {
+public class SQLGenDBRawData {
 
     public static final String DB_NAME = "app-jar-libs/app-system.sqlite3";
     private SQLiteConnection sQLiteConnection;
@@ -33,7 +33,7 @@ public class DBRawData {
         SQLiteConnection.isLogPrint = false;
         LogWriter.isDebug = false;
         LogWriter.Log("Hi");
-        DBRawData dbRawData = new DBRawData();
+        SQLGenDBRawData dbRawData = new SQLGenDBRawData();
         dbRawData.getTableProperty();
     }
 
@@ -156,7 +156,7 @@ public class DBRawData {
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
             } catch (InterruptedException ex) {
-                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, ex);
             }
             sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
@@ -220,7 +220,7 @@ public class DBRawData {
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
             } catch (InterruptedException ex) {
-                Logger.getLogger(DBRawData.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, ex);
             }
             sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
