@@ -1,0 +1,10 @@
+#EXTM3U
+
+#EXTINF: ZEE CLASSIC
+http://103.211.219.73/static/ftv?id=Zee_Classic/Zee_Classic_400.m3u8
+
+#EXTINF: ZEE TV HD
+http://103.211.219.73/static/ftv?id=Zee_TV_HD/Zee_TV_HD_400.m3u8
+
+#EXTINF: ZOOM
+http://zoomweblive-lh.akamaihd.net/i/Zoomweb_1@348071/master.m3u8
