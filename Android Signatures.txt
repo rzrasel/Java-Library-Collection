@@ -1,0 +1,8 @@
+https://www.androidauthority.com/use-android-keystore-store-passwords-sensitive-information-623779/
+https://github.com/obaro/SimpleKeystoreApp
+http://esus.com/programmatically-generating-public-private-key/
+https://github.com/mengpeng920223/EncryptAndroid
+https://github.com/ashutoshmdev/KeySignaturesAndroid
+https://github.com/arashmarzi/KinCryptin/blob/master/android/kincryptin/app/src/main/java/com/pebble/acceldatastreamandroid/Kincryptin.java
+https://github.com/thatpanda/apk-signature-reader
+https://github.com/cmalmstr/SHA-Pass-Hash
