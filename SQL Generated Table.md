@@ -187,7 +187,6 @@ INSERT INTO tbl_table_property VALUES ('15195441308466', 'app_project', 'tbtmp',
 INSERT INTO tbl_table_property VALUES ('15195441306806', 'country', 'tbtmp', 'cntry', null);
 INSERT INTO tbl_table_property VALUES ('15195441309179', 'metadata', 'tbtmp', 'mta', null);
 INSERT INTO tbl_table_property VALUES ('15195441319233', 'registration', 'tbtmp', 'regi', null);
-INSERT INTO tbl_table_property VALUES ('15195441311515', 'user_device_key', 'tbtmp', 'udivkey', null);
 INSERT INTO tbl_table_property VALUES ('15195441311295', 'user_login_log', 'tbtmp', 'ulnglog', null);
 INSERT INTO tbl_table_property VALUES ('15195441315436', 'user_profile', 'tbtmp', 'usrpro', null);
 INSERT INTO tbl_table_property VALUES ('15195441315095', 'user_role', 'tbtmp', 'usrro', null);
@@ -294,25 +293,6 @@ INSERT INTO tbl_column_property VALUES (15195441308466, '15195441378559', 'aproj
 -- DELETE FROM tbl_constraint_property;
 INSERT INTO tbl_constraint_property VALUES ('15195441356179', '15195441371430', 'PRIMARY', null, null);
 -- -|END- APP_PROJECT table property end
-
-
-
--- -|START- USER_DEVICE_KEY table property started
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441375910', 'user_prof_id', 'BIGINT', '20', '1', '1', null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441377360', 'udkey_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441375617', 'udkey_fcm_token', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441376205', 'udkey_build_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441378498', 'udkey_android_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441373108', 'udkey_uuid_id', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441388145', 'udkey_pkg_bundle', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441381851', 'udkey_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441381170', 'udkey_modify_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441381394', 'udkey_created_by', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441311515, '15195441383124', 'udkey_modified_by', 'BIGINT', '20', '0', null, null);
-
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15195441377360', '15195441385681', 'PRIMARY', null, null);
--- -|END- USER_DEVICE_KEY table property end
 
 
 
