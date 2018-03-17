@@ -15,6 +15,10 @@ CREATE TABLE IF NOT EXISTS tbtmp_app_key_store
 (
     apjt_aproj_id                   BIGINT(20)        NOT NULL,
     akstor_aukey_id                 BIGINT(20)        NOT NULL,
+    akstor_aukey_sha1_key           TEXT              NOT NULL,
+    akstor_aukey_status             BOOLEAN           NOT NULL,
+    akstor_aukey_create_date        DATETIME          NOT NULL,
+    akstor_aukey_modify_date        DATETIME          NOT NULL,
     CONSTRAINT                      pk_appke_akstor_aukey_id PRIMARY KEY (akstor_aukey_id)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 DROP TABLE IF EXISTS tbtmp_app_project;
@@ -93,38 +97,42 @@ INSERT INTO tbl_constraint_property VALUES ('15202691664105', '15202691667547', 
 ```
 ```sql_query_app_authentication
 DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15202700386408', 'app_key_store', 'tbtmp', 'akstor', null);
-INSERT INTO tbl_table_property VALUES ('15202700386417', 'app_project', 'tbtmp', 'apjt', null);
+INSERT INTO tbl_table_property VALUES ('15213100711461', 'app_key_store', 'tbtmp', 'akstor', null);
+INSERT INTO tbl_table_property VALUES ('15213100713675', 'app_project', 'tbtmp', 'apjt', null);
 
 DELETE FROM tbl_column_property;
--- -|START- APP_KEY_STORE table property started
-INSERT INTO tbl_column_property VALUES (15202700386408, '15202700389690', 'apjt_aproj_id', 'BIGINT', '20', '0', '1', null);
-INSERT INTO tbl_column_property VALUES (15202700386408, '15202700387637', 'aukey_id', 'BIGINT', '20', '0', null, null);
+-- -|START- APP_PROJECT table property started
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100711693', 'aproj_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100713254', 'aproj_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100719978', 'aproj_details', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100717040', 'aproj_type', 'VARCHAR', '255', '0', null, 'APP, GAME ETC');
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100712383', 'aproj_pkg_bundle', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100716722', 'aproj_latest_ver_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100712545', 'aproj_latest_ver_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100719463', 'aproj_lowest_valid_code', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100724832', 'aproj_lowest_valid_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100723861', 'aproj_status', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100723470', 'aproj_on_published', 'BOOLEAN', null, '0', null, 'On published false only default data show');
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100726169', 'aproj_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100727205', 'aproj_modify_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100722882', 'aproj_created_by', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100713675, '15213100724457', 'aproj_modified_by', 'BIGINT', '20', '0', null, null);
 
 DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15202700387637', '15202700397816', 'PRIMARY', null, null);
--- -|END- APP_KEY_STORE table property end
+INSERT INTO tbl_constraint_property VALUES ('15213100711693', '15213100726649', 'PRIMARY', null, null);
+-- -|END- APP_PROJECT table property end
 
--- -|START- APP_PROJECT table property started
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700398692', 'aproj_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700399750', 'aproj_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700393121', 'aproj_details', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700396903', 'aproj_type', 'VARCHAR', '255', '0', null, 'APP, GAME ETC');
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700397007', 'aproj_pkg_bundle', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700398758', 'aproj_latest_ver_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700391524', 'aproj_latest_ver_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700396410', 'aproj_lowest_valid_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700405771', 'aproj_lowest_valid_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700409428', 'aproj_status', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700407336', 'aproj_on_published', 'BOOLEAN', null, '0', null, 'On published false only default data show');
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700403812', 'aproj_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700409713', 'aproj_modify_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700401430', 'aproj_created_by', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15202700386417, '15202700405269', 'aproj_modified_by', 'BIGINT', '20', '0', null, null);
+-- -|START- APP_KEY_STORE table property started
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100725276', 'apjt_aproj_id', 'BIGINT', '20', '0', '1', null);
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100739840', 'aukey_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100733937', 'aukey_sha1_key', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100736151', 'aukey_status', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100738040', 'aukey_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213100711461, '15213100739771', 'aukey_modify_date', 'DATETIME', null, '0', null, null);
 
 -- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15202700398692', '15202700404149', 'PRIMARY', null, null);
--- -|END- APP_PROJECT table property end
+INSERT INTO tbl_constraint_property VALUES ('15213100739840', '15213100737089', 'PRIMARY', null, null);
+-- -|END- APP_KEY_STORE table property end
 ```
 ```sql_query_user_device_key
 DELETE FROM tbl_table_property;
