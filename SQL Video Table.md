@@ -45,12 +45,13 @@ DROP TABLE IF EXISTS tbtmp_user_device_key;
 CREATE TABLE IF NOT EXISTS tbtmp_user_device_key
 (
     user_prof_id                    BIGINT(20)        NULL,
+    apjt_aproj_id                   BIGINT(20)        NOT NULL,
     udivkey_udkey_id                BIGINT(20)        NOT NULL,
     udivkey_udkey_fcm_token         TEXT              NOT NULL,
     udivkey_udkey_build_id          VARCHAR(255)      NOT NULL,
     udivkey_udkey_android_id        VARCHAR(255)      NOT NULL,
     udivkey_udkey_uuid_id           VARCHAR(255)      NULL,
-    udivkey_udkey_pkg_bundle        VARCHAR(255)      NULL,
+    udivkey_udkey_app_version       VARCHAR(255)      NULL,
     udivkey_udkey_create_date       DATETIME          NOT NULL,
     udivkey_udkey_modify_date       DATETIME          NOT NULL,
     udivkey_udkey_created_by        BIGINT(20)        NOT NULL,
@@ -136,24 +137,25 @@ INSERT INTO tbl_constraint_property VALUES ('15213100739840', '15213100737089', 
 ```
 ```sql_query_user_device_key
 DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15212308034147', 'user_device_key', 'tbtmp', 'udivkey', null);
+INSERT INTO tbl_table_property VALUES ('15213176045332', 'user_device_key', 'tbtmp', 'udivkey', null);
 
 DELETE FROM tbl_column_property;
 -- -|START- USER_DEVICE_KEY table property started
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308038571', 'user_prof_id', 'BIGINT', '20', '1', '1', null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308035493', 'udkey_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308038165', 'udkey_fcm_token', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308035732', 'udkey_build_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308037628', 'udkey_android_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308036457', 'udkey_uuid_id', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308039192', 'udkey_pkg_bundle', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308032332', 'udkey_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308034010', 'udkey_modify_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308046369', 'udkey_created_by', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15212308034147, '15212308044571', 'udkey_modified_by', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176044330', 'user_prof_id', 'BIGINT', '20', '1', '1', null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176046145', 'apjt_aproj_id', 'BIGINT', '20', '0', '1', null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176041614', 'udkey_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176045589', 'udkey_fcm_token', 'TEXT', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176048029', 'udkey_build_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176047812', 'udkey_android_id', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176041866', 'udkey_uuid_id', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176049807', 'udkey_app_version', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176046051', 'udkey_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176058648', 'udkey_modify_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176058717', 'udkey_created_by', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15213176045332, '15213176051801', 'udkey_modified_by', 'BIGINT', '20', '0', null, null);
 
 DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15212308035493', '15212308047699', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15213176041614', '15213176059421', 'PRIMARY', null, null);
 -- -|END- USER_DEVICE_KEY table property end
 ```
 ```sql_query_video_details
