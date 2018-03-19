@@ -50,4 +50,5 @@ https://www.youtube.com/watch?v=XmHXl-UFTqM
 https://support.gamesparks.net/support/discussions/topics/1000063337
 
 https://forum.unity.com/threads/how-to-add-the-official-google-play-game-services-plugin-to-unity.243683/
+https://www.youtube.com/watch?v=5Ae8GeRmdH0
 */
