@@ -5,6 +5,8 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.rz.librarycore.apppackage.APPStaticPackageInfo;
+import com.rz.librarycore.storage.SharePrefPrivateHandler;
 import com.rz.strawyoutubeplayer.StrawYouTubePlayerFragment;
 
 public class ActYoutubeTest extends AppCompatActivity {
@@ -18,6 +20,9 @@ public class ActYoutubeTest extends AppCompatActivity {
         setContentView(R.layout.act_youtube_test);
         activity = this;
         context = this;
+        SharePrefPrivateHandler sharePrefHandler = new SharePrefPrivateHandler(context, APPStaticPackageInfo.getPackageName(context));
+        //sharePrefHandler.clearAll();
+        sharePrefHandler.printAllKeyValue();
         DEVELOPER_API_KEY = getResources().getString(R.string.app_google_youtube_key);
         youtubeVideoId = "7FIaXN9C-no";
         StrawYouTubePlayerFragment youTubePlayerFragment = StrawYouTubePlayerFragment.newInstance(context, DEVELOPER_API_KEY, youtubeVideoId);

@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActYoutubeTest"></activity>
+
+        <service android:name=".OnServiceTest"></service>
     </application>
 
 </manifest>
