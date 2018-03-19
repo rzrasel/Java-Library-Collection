@@ -30,3 +30,10 @@ public class ActSplash extends AppCompatActivity {
     }
 }
 //https://github.com/youtube/yt-android-player/blob/master/src/com/examples/youtubeapidemo/PlayerControlsDemoActivity.java
+//http://addcomponent.com/android-native-plugin-unity/
+//https://stackoverflow.com/questions/24564470/unity3d-and-android-studio-integration
+/*
+How to make Unity3D android plugin using Android Studio
+https://www.youtube.com/watch?v=0ahGeTNUPLM
+https://www.youtube.com/watch?v=4LBMT7wILBI
+*/
