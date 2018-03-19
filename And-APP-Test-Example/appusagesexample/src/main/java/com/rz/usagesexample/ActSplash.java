@@ -49,6 +49,8 @@ https://www.youtube.com/watch?v=XmHXl-UFTqM
 
 https://support.gamesparks.net/support/discussions/topics/1000063337
 
+Sign in with Google
+https://codelabs.developers.google.com/codelabs/playservices_unity/index.html?index=..%2F..%2Findex#0
 https://forum.unity.com/threads/how-to-add-the-official-google-play-game-services-plugin-to-unity.243683/
 https://www.youtube.com/watch?v=5Ae8GeRmdH0
 */
