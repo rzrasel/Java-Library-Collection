@@ -36,4 +36,18 @@ public class ActSplash extends AppCompatActivity {
 How to make Unity3D android plugin using Android Studio
 https://www.youtube.com/watch?v=0ahGeTNUPLM
 https://www.youtube.com/watch?v=4LBMT7wILBI
+
+Google Login in Unity for iOS & Android
+https://www.youtube.com/watch?v=mmLheAYQoO8
+
+
+Unity Google Play Service Real Time Multiplayer
+https://www.youtube.com/watch?v=joOkQK5EjHw
+https://www.youtube.com/watch?v=fM87eDzhalc
+
+https://www.youtube.com/watch?v=XmHXl-UFTqM
+
+https://support.gamesparks.net/support/discussions/topics/1000063337
+
+https://forum.unity.com/threads/how-to-add-the-official-google-play-game-services-plugin-to-unity.243683/
 */
