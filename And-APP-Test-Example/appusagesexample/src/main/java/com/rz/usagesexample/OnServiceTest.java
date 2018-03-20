@@ -185,6 +185,7 @@ public class OnServiceTest extends Service {
     }
 
     private void onPrepareHTTPHashMapRequest() {
+        Format format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HashMap<String, String> urlRequestParameters = new HashMap<>();
         String appAuthKey = "";
         String appPackageName = "";
@@ -213,6 +214,7 @@ public class OnServiceTest extends Service {
         appNetLongitude = getStringValue(sharePrefHandler.getValue("device_net_longitude"));
         appNetCountry = getStringValue(sharePrefHandler.getValue("device_net_country"));
         urlRequestParameters.put("auth_key", appAuthKey);
+        urlRequestParameters.put("fcm_key_token", null);
         urlRequestParameters.put("bundle_identity", appPackageName);
         urlRequestParameters.put("version_code", appVersionCode);
         urlRequestParameters.put("version_name", appVersionName);
@@ -224,6 +226,7 @@ public class OnServiceTest extends Service {
         urlRequestParameters.put("net_latitude", appNetLatitude);
         urlRequestParameters.put("net_longitude", appNetLongitude);
         urlRequestParameters.put("net_country", appNetCountry);
+        urlRequestParameters.put("request_time", format.format(new Date()));
         LogWriter.Log("HTTP_HASH_MAP_REQUEST: " + urlRequestParameters.toString());
         Iterator<Map.Entry<String, String>> iterator = urlRequestParameters.entrySet().iterator();
         StringBuilder stringBuilder = new StringBuilder();
@@ -250,6 +253,11 @@ public class OnServiceTest extends Service {
 /*
 emon jaiga inshchoi kothao achhe
 jekhane sobai manushera manusher moton
+
+https://www.youtube.com/watch?v=JDf7DhzMOBs
+ekjon pagol bollo eto vul he, vul he
+tomra bolle ore pagol
+pagol kokhono boleni pagol ke he
 https://stackoverflow.com/questions/2809877/how-to-convert-map-to-url-query-string
                                A8:31:C1:5E:DC:30:53:D9:62:37:35:A5:52:13:4D:AC:BE:7A:D9:9F
 MAP-KEY-VALUE: app_auth_key - A8:31:C1:5E:DC:30:53:D9:62:37:35:A5:52:13:4D:AC:BE:7A:D9:9F - Class Name:- com.rz.librarycore.storage.SharePrefPrivateHandler - Method Name:- printAllKeyValue - Line Number:- 118
