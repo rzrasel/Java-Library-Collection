@@ -21,7 +21,7 @@ public class ActSplash extends AppCompatActivity {
         activity = this;
         context = this;
         SharePrefPrivateHandler sharePrefHandler = new SharePrefPrivateHandler(context, APPStaticPackageInfo.getPackageName(context));
-        sharePrefHandler.clearAll();
+        //sharePrefHandler.clearAll();
         SecureKeyManager secureKeyManager = new SecureKeyManager(activity, context);
         SecureKeyManager.onSetAppIsRunFirstTime(context);
         startActivity(new Intent(context, ActYoutubeTest.class));

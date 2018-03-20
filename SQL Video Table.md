@@ -284,4 +284,23 @@ MAP-KEY-VALUE: app_initialization_date - 2018-03-19 14:01:14 - Class Name:- com.
 
 
 
+class Test {
+    private int i;
+    public Test() { this.i = 0; }
+    public void inc(int x) { this.i += x; }
+    public int get() { return this.i; }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        IntConsumer c = t::inc;
+        c.accept(3);
+        System.out.println(t.get());
+        // prints 3
+    }
+}
+
+https://www.youtube.com/results?search_query=bot+in+coc
+https://www.youtube.com/watch?v=UvZcYIGs9nY
+https://www.youtube.com/watch?v=baMJ0VnQDRw
+
 -- http://www.gifsfor.com/masturbation/page/3/
