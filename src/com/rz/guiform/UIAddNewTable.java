@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
@@ -126,7 +127,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
         DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
         int columnCount = tableModel.getColumnCount();
-        closeDatabase();
+        //closeDatabase();
         openDatabase();
         for (int row = 0; row < rowCount; row++) {
             //Object[] tblRow = new Object[4];
@@ -146,15 +147,30 @@ public class UIAddNewTable extends javax.swing.JFrame {
             colTblComment = (String) tableModel.getValueAt(row, 4);
             if (colTblName == null) {
                 isError = true;
+                System.out.println("ERROR NULL");
             } else if (colTblName.isEmpty()) {
                 isError = true;
+                System.out.println("ERROR EMPTY");
+            }
+            sqlQuery = "SELECT COUNT(*) AS total_row, * FROM tbl_table_property WHERE ttpro_tbl_name = '" + colTblName + "';";
+            ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+            if (resultSet != null) {
+                try {
+                    ResultSetMetaData rsmd = resultSet.getMetaData();
+                    int numberOfColumns = rsmd.getColumnCount();
+                    int rowSize = 0;
+                    if (resultSet.next()) {
+                        rowSize = resultSet.getInt("total_row");
+                    }
+                    System.out.println("ROW: " + rowSize);
+                    System.out.println("ERROR EXISTS: " + sqlQuery);
+                    if (rowSize > 0) {
+                        isError = true;
+                    }
+                } catch (SQLException ex) {
+                }
             }
             if (!isError) {
-                sqlQuery = "SELECT * FROM tbl_table_property WHERE ttpro_tbl_name = '" + colTblName + "';";
-                ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
-                if (resultSet != null) {
-                    isError = true;
-                }
                 colTblName = Utils.getDbFromat(colTblName);
                 colTblPrefix = Utils.getDbFromat(colTblPrefix);
                 colColPrefix = Utils.getDbFromat(colColPrefix);
@@ -185,8 +201,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
             }
         }
         closeDatabase();
-        //sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
-        //onPopulateTable(sqlQuery);
+        sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+        onPopulateTable(sqlQuery);
     }
 
     private void getTableValue() {
@@ -326,6 +342,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
         if (sQLiteConnection != null) {
             sQLiteConnection.onCloseStatement();
             sQLiteConnection.onClose();
+            sQLiteConnection = null;
         }
     }
 }
