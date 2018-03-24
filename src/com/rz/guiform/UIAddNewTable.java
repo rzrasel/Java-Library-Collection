@@ -70,6 +70,13 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 onPopulateTable(sqlQuery);
             }
         });
+        jBtnDeleteRow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent argActionEvent) {
+                System.out.println("Delete Row Pressed");
+                onDeleteSelectedTableRow();
+            }
+        });
         jTableDetails.setRowHeight(28);
         jTableDetails.setRowMargin(6);
         jTableDetails.setGridColor(Color.decode("#9297A1"));
@@ -205,6 +212,19 @@ public class UIAddNewTable extends javax.swing.JFrame {
         onPopulateTable(sqlQuery);
     }
 
+    private void onDeleteSelectedTableRow() {
+        int column = 0;
+        int row = jTableDetails.getSelectedRow();
+        String value = jTableDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + value);
+        openDatabase();
+        sqlQuery = "DELETE FROM tbl_table_property WHERE ttpro_id = '" + value + "';";
+        sQLiteConnection.onExecuteRawQuery(sqlQuery);
+        closeDatabase();
+        sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+        onPopulateTable(sqlQuery);
+    }
+
     private void getTableValue() {
         DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
@@ -237,6 +257,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
         jBtnAddRow = new javax.swing.JButton();
         jBtnSave = new javax.swing.JButton();
         jBtnReload = new javax.swing.JButton();
+        jBtnDeleteRow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -249,7 +270,6 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
-        jTableDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTableDetails);
 
         jBtnAddRow.setText("Add");
@@ -257,6 +277,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
         jBtnSave.setText("Save");
 
         jBtnReload.setText("Reload");
+
+        jBtnDeleteRow.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -268,6 +290,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnDeleteRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnReload)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnAddRow)
@@ -284,7 +308,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnSave)
                     .addComponent(jBtnAddRow)
-                    .addComponent(jBtnReload))
+                    .addComponent(jBtnReload)
+                    .addComponent(jBtnDeleteRow))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -328,6 +353,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAddRow;
+    private javax.swing.JButton jBtnDeleteRow;
     private javax.swing.JButton jBtnReload;
     private javax.swing.JButton jBtnSave;
     private javax.swing.JScrollPane jScrollPane1;
