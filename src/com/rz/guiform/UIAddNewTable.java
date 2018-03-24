@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTextField;
+import javax.swing.border.EtchedBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
@@ -50,7 +51,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 String colColPrefix = null;
                 String colColComment = null;
                 Object[] tblRow = {colRowId, colName, colTblPrefix, colColPrefix, colColComment,};
-                DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+                DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
                 tableModel.addRow(tblRow);
                 tableModel.fireTableDataChanged();
             }
@@ -60,16 +61,18 @@ public class UIAddNewTable extends javax.swing.JFrame {
         jBtnDeleteRow.addActionListener(new OnButtonActionListener());
         jBtnPrint.addActionListener(new OnButtonActionListener());
         jBtnPrintNew.addActionListener(new OnButtonActionListener());
-        jTableDetails.setRowHeight(28);
-        jTableDetails.setRowMargin(6);
-        jTableDetails.setGridColor(Color.decode("#9297A1"));
-        jTableDetails.setIntercellSpacing(new Dimension(0, 0));
-        TableColumn tableColumn0 = jTableDetails.getColumnModel().getColumn(0);
+        jTblTableDetails.setRowHeight(28);
+        jTblTableDetails.setRowMargin(6);
+        jTblTableDetails.setIntercellSpacing(new Dimension(0, 0));
+        jTblTableDetails.setShowGrid(true);
+        jTblTableDetails.setBorder(new EtchedBorder(EtchedBorder.RAISED));
+        jTblTableDetails.setGridColor(Color.decode("#9297A1"));
+        TableColumn tableColumn0 = jTblTableDetails.getColumnModel().getColumn(0);
         tableColumn0.setMinWidth(0);
         tableColumn0.setMaxWidth(0);
         tableColumn0.setPreferredWidth(0);
-        for (int i = 0; i < jTableDetails.getColumnCount(); i++) {
-            jTableDetails.getColumnModel().getColumn(i).setCellEditor(getCellEditor());
+        for (int i = 0; i < jTblTableDetails.getColumnCount(); i++) {
+            jTblTableDetails.getColumnModel().getColumn(i).setCellEditor(getCellEditor());
         }
         sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
         onPopulateTable(sqlQuery);
@@ -149,7 +152,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
             ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {
                 if (resultSet != null) {
-                    DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+                    DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
                     tableModel.setRowCount(0);
                     while (resultSet.next()) {
                         long colRowId = resultSet.getLong("ttpro_id");
@@ -174,7 +177,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     }
 
     private void onSaveData() {
-        DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
         int columnCount = tableModel.getColumnCount();
         //closeDatabase();
@@ -297,8 +300,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
     private void onDeleteSelectedTableRow() {
         int column = 0;
-        int row = jTableDetails.getSelectedRow();
-        String value = jTableDetails.getModel().getValueAt(row, column).toString();
+        int row = jTblTableDetails.getSelectedRow();
+        String value = jTblTableDetails.getModel().getValueAt(row, column).toString();
         System.out.println("SELECTED VALUE: " + value);
         openDatabase();
         sqlQuery = "DELETE FROM tbl_table_property WHERE ttpro_id = '" + value + "';";
@@ -309,7 +312,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     }
 
     private void getTableValue() {
-        DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
         int columnCount = tableModel.getColumnCount();
         for (int i = 0; i < rowCount; i++) {
@@ -336,7 +339,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableDetails = new javax.swing.JTable();
+        jTblTableDetails = new javax.swing.JTable();
         jBtnAddRow = new javax.swing.JButton();
         jBtnSave = new javax.swing.JButton();
         jBtnReload = new javax.swing.JButton();
@@ -347,8 +350,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jTableDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(146, 151, 161)));
-        jTableDetails.setModel(new javax.swing.table.DefaultTableModel(
+        jTblTableDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(146, 151, 161)));
+        jTblTableDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -356,7 +359,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
-        jScrollPane1.setViewportView(jTableDetails);
+        jScrollPane1.setViewportView(jTblTableDetails);
 
         jBtnAddRow.setText("Add Row");
 
@@ -455,7 +458,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     private javax.swing.JButton jBtnReload;
     private javax.swing.JButton jBtnSave;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableDetails;
+    private javax.swing.JTable jTblTableDetails;
     // End of variables declaration//GEN-END:variables
     private void openDatabase() {
         sQLiteConnection = SQLiteConnection.getInstance(DB_NAME);
