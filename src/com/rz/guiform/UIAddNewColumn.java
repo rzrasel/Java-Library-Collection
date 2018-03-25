@@ -9,14 +9,10 @@ import com.rz.librarycore.RandomValue;
 import com.rz.librarycore.dbhandler.SQLiteConnection;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.ItemSelectable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
@@ -116,8 +112,119 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         /*jTblColumnDetails.getColumnModel().getColumn(6).setMinWidth(70);
         jTblColumnDetails.getColumnModel().getColumn(6).setMaxWidth(70);
         jTblColumnDetails.getColumnModel().getColumn(6).setPreferredWidth(70);*/
+        //new ExcelAdapter(jTblColumnDetails);
+        /*ActionListener listenerCopy = new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                doCopy();
+            }//end actionPerformed(ActionEvent)
+        };
+        final KeyStroke strokeCopy = KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK, false);
+        jTblColumnDetails.registerKeyboardAction(listenerCopy, "Copy", strokeCopy, JComponent.WHEN_FOCUSED);
+
+        ActionListener listenerPast = new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                doPaste();
+            }//end actionPerformed(ActionEvent)
+        };
+
+        final KeyStroke strokePast = KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK, false);
+        jTblColumnDetails.registerKeyboardAction(listenerPast, "Paste", strokePast, JComponent.WHEN_FOCUSED);*/
+        /*jTblColumnDetails = new JTable(new TableModel());
+        final JPopupMenu pm = new JPopupMenu();
+        pm.add(new CopyAction(jTblColumnDetails));
+        pm.add(new PasteAction(jTblColumnDetails));
+        jTblColumnDetails.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.isPopupTrigger()) {
+                    highlightRow(e);
+                    doPopup(e);
+                }
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                if (e.isPopupTrigger()) {
+                    highlightRow(e);
+                    doPopup(e);
+                }
+            }
+
+            protected void doPopup(MouseEvent e) {
+                pm.show(e.getComponent(), e.getX(), e.getY());
+            }
+
+            protected void highlightRow(MouseEvent e) {
+                JTable table = (JTable) e.getSource();
+                Point point = e.getPoint();
+                int row = table.rowAtPoint(point);
+                int col = table.columnAtPoint(point);
+
+                table.setRowSelectionInterval(row, row);
+                table.setColumnSelectionInterval(col, col);
+            }
+        });*/
     }
 
+    /*private void doCopy() {
+        int col = jTblColumnDetails.getSelectedColumn();
+        int row = jTblColumnDetails.getSelectedRow();
+        if (col != -1 && row != -1) {
+            Object value = jTblColumnDetails.getValueAt(row, col);
+            String data;
+            if (value == null) {
+                data = "";
+            } else {
+                data = value.toString();
+            }//end if
+
+            final StringSelection selection = new StringSelection(data);
+
+            final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(selection, selection);
+        }//end if
+    }
+
+    private void doPaste() {
+        final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        final Transferable content = clipboard.getContents(this);
+        if (content != null) {
+            try {
+                final String value = content.getTransferData(DataFlavor.stringFlavor).toString();
+
+                final int col = jTblColumnDetails.getSelectedColumn();
+                final int row = jTblColumnDetails.getSelectedRow();
+                if (jTblColumnDetails.isCellEditable(row, col)) {
+                    jTblColumnDetails.setValueAt(value, row, col);
+                    if (jTblColumnDetails.getEditingRow() == row && jTblColumnDetails.getEditingColumn() == col) {
+                        final CellEditor editor = jTblColumnDetails.getCellEditor();
+                        editor.cancelCellEditing();
+                        jTblColumnDetails.editCellAt(row, col);
+                    }//end if
+                }//end if
+                jTblColumnDetails.repaint();
+            } catch (UnsupportedFlavorException e) {
+                // String have to be the standard flavor
+                System.err.println("UNSUPPORTED FLAVOR EXCEPTION " + e.getLocalizedMessage());
+            } catch (IOException e) {
+                // The data is consumed?
+                System.err.println("DATA CONSUMED EXCEPTION " + e.getLocalizedMessage());
+            }//end try
+        }//end if
+    }//end doPaste()
+     */
+
+ /*public void registerKeyboardAction(ActionListener anAction, String aCommand, KeyStroke aKeyStroke, int aCondition) {
+        final InputMap inputMap = getInputMap(aCondition, true);
+        if (inputMap != null) {
+            final ActionMap actionMap = getActionMap(true);
+            final ActionStandin action = new ActionStandin(anAction, aCommand);
+            inputMap.put(aKeyStroke, action);
+            if (actionMap != null) {
+                actionMap.put(action, action);
+            }
+        }
+    }*/
     private class OnButtonActionListener implements ActionListener {
 
         public void actionPerformed(ActionEvent argActionEvent) {
