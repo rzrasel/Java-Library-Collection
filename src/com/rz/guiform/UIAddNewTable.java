@@ -11,12 +11,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.table.DefaultTableModel;
@@ -41,6 +44,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Add New Table");
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.addWindowListener(getWindowAdapter(this));
         jBtnAddRow.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent argActionEvent) {
@@ -211,10 +216,14 @@ public class UIAddNewTable extends javax.swing.JFrame {
             if (!isError) {
                 colTblName = removeSpace(colTblName.trim(), " ");
                 colTblName = removeSpace(colTblName.toLowerCase(), "_");
-                colTblPrefix = removeSpace(colTblPrefix.trim(), " ");
-                colTblPrefix = removeSpace(colTblPrefix.toLowerCase(), "_");
-                colColPrefix = removeSpace(colColPrefix.trim(), " ");
-                colColPrefix = removeSpace(colColPrefix.toLowerCase(), "_");
+                if (!isNullValue(colTblPrefix)) {
+                    colTblPrefix = removeSpace(colTblPrefix.trim(), " ");
+                    colTblPrefix = removeSpace(colTblPrefix.toLowerCase(), "_");
+                }
+                if (!isNullValue(colColPrefix)) {
+                    colColPrefix = removeSpace(colColPrefix.trim(), " ");
+                    colColPrefix = removeSpace(colColPrefix.toLowerCase(), "_");
+                }
             }
             isDbIdExists = isDbIdExists(colRowId);
             isDbTableNameExists = isDbTableNameExists(colTblName);
@@ -359,6 +368,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
+        jTblTableDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTblTableDetails);
 
         jBtnAddRow.setText("Add Row");
@@ -475,5 +485,31 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
     private String removeSpace(String argValue, String argReplaceBy) {
         return argValue.replaceAll("\\s+", argReplaceBy);
+    }
+
+    private boolean isNullValue(String argStrValue) {
+        boolean isNull = false;
+        if (argStrValue == null) {
+            isNull = true;
+        } else if (argStrValue.isEmpty()) {
+            isNull = true;
+        }
+        return isNull;
+    }
+
+    private WindowAdapter getWindowAdapter(JFrame argJFrame) {
+        return new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                super.windowClosing(we);
+            }
+
+            @Override
+            public void windowIconified(WindowEvent we) {
+                argJFrame.setState(JFrame.NORMAL);
+                //JOptionPane.showMessageDialog(frame, "Cant Minimize");
+                System.out.println("Cant Minimize");
+            }
+        };
     }
 }
