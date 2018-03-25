@@ -5,6 +5,7 @@
  */
 package com.rz.guiform;
 
+import com.rz.librarycore.RandomValue;
 import com.rz.librarycore.dbhandler.SQLiteConnection;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,6 +16,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
@@ -24,6 +26,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
+import tools.Utils;
 
 /**
  *
@@ -66,15 +69,24 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                 /*System.out.println("Selected: " + jComBoxTableName.getSelectedItem()
                         + ", Position: " + jComBoxTableName.getSelectedIndex());*/
                 System.out.println("Index: " + selectedIndex);
-                if (selectedIndex >= 0) {
-                    System.out.println("Value: " + modelTableDataList.get(selectedIndex).getTableName());
+                /*if (selectedIndex >= 0) {
+                    //System.out.println("Value: " + modelTableDataList.get(selectedIndex).getTableName());
                     long colRowId = modelTableDataList.get(selectedIndex).getTableId();
                     sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowId + "; ";
-                    System.out.println(sqlQuery);
+                    //System.out.println(sqlQuery);
                     onPopulateTable(sqlQuery);
+                }*/
+                long colRowId = 0l;
+                if (selectedIndex >= 0) {
+                    colRowId = modelTableDataList.get(selectedIndex).getTableId();
                 }
+                sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowId + "; ";
+                onPopulateTable(sqlQuery);
             }
         });
+        jBtnSaveAll.addActionListener(new OnButtonActionListener());
+        jBtnAddRow.addActionListener(new OnButtonActionListener());
+        jBtnReload.addActionListener(new OnButtonActionListener());
         jTblColumnDetails.setRowHeight(28);
         jTblColumnDetails.setRowMargin(6);
         jTblColumnDetails.setIntercellSpacing(new Dimension(0, 0));
@@ -98,12 +110,48 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         jTblColumnDetails.getColumnModel().getColumn(4).setMinWidth(45);
         jTblColumnDetails.getColumnModel().getColumn(4).setMaxWidth(45);
         jTblColumnDetails.getColumnModel().getColumn(4).setPreferredWidth(45);
-        jTblColumnDetails.getColumnModel().getColumn(5).setMinWidth(55);
-        jTblColumnDetails.getColumnModel().getColumn(5).setMaxWidth(55);
-        jTblColumnDetails.getColumnModel().getColumn(5).setPreferredWidth(55);
+        jTblColumnDetails.getColumnModel().getColumn(5).setMinWidth(60);
+        jTblColumnDetails.getColumnModel().getColumn(5).setMaxWidth(60);
+        jTblColumnDetails.getColumnModel().getColumn(5).setPreferredWidth(60);
         /*jTblColumnDetails.getColumnModel().getColumn(6).setMinWidth(70);
         jTblColumnDetails.getColumnModel().getColumn(6).setMaxWidth(70);
         jTblColumnDetails.getColumnModel().getColumn(6).setPreferredWidth(70);*/
+    }
+
+    private class OnButtonActionListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent argActionEvent) {
+            if (argActionEvent.getSource() == jBtnSaveAll) {
+                System.out.println("Save Pressed");
+                int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+                if (selectedIndex > -1) {
+                    onSaveData();
+                } else {
+                    System.out.println("Please select a table from combobox");
+                }
+            } else if (argActionEvent.getSource() == jBtnAddRow) {
+                System.out.println("Add Row Pressed");
+                int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+                if (selectedIndex > -1) {
+                    long colRowId = Long.parseLong(RandomValue.getRandId(1111, 9999));
+                    Object[] tblRow = {colRowId, null, null, null, null, null, null,};
+                    DefaultTableModel tableModel = (DefaultTableModel) jTblColumnDetails.getModel();
+                    tableModel.addRow(tblRow);
+                    tableModel.fireTableDataChanged();
+                } else {
+                    System.out.println("Please select a table from combobox");
+                }
+            } else if (argActionEvent.getSource() == jBtnReload) {
+                System.out.println("Reload Pressed");
+                int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+                long colRowId = 0l;
+                if (selectedIndex >= 0) {
+                    colRowId = modelTableDataList.get(selectedIndex).getTableId();
+                }
+                sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowId + "; ";
+                onPopulateTable(sqlQuery);
+            }
+        }
     }
 
     private TableCellEditor getCellEditor() {
@@ -169,6 +217,129 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         closeDatabase();
     }
 
+    private void onSaveData() {
+        int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+        long colRowTableId = modelTableDataList.get(selectedIndex).getTableId();
+        DefaultTableModel tableModel = (DefaultTableModel) jTblColumnDetails.getModel();
+        int rowCount = tableModel.getRowCount();
+        int columnCount = tableModel.getColumnCount();
+        openDatabase();
+        String tmpSql = "INSERT INTO tbl_column_property VALUES (%s, %s, %s, %s, %s, %s, %s, %s);";
+        boolean isError = false;
+        boolean isDbIdExists = false;
+        boolean isDbNameExists = false;
+        String newId = "";
+        long colRowId;
+        String colColName = "";
+        String colColDataType = "";
+        String colColLength = "";
+        String colColIsNull = "";
+        String colColNoPrefix = "";
+        String colColComment = "";
+        for (int row = 0; row < rowCount; row++) {
+            isError = false;
+            newId = RandomValue.getRandId(1111, 9999);
+            colRowId = (Long) tableModel.getValueAt(row, 0);
+            colColName = (String) tableModel.getValueAt(row, 1);
+            colColDataType = (String) tableModel.getValueAt(row, 2);
+            colColLength = (String) tableModel.getValueAt(row, 3);
+            colColIsNull = (String) tableModel.getValueAt(row, 4);
+            colColNoPrefix = (String) tableModel.getValueAt(row, 5);
+            colColComment = (String) tableModel.getValueAt(row, 6);
+            if (isNullValue(colColName)) {
+                isError = true;
+            }
+            if (isNullValue(colColDataType)) {
+                isError = true;
+            }
+            if (isNullValue(colColIsNull)) {
+                colColIsNull = "0";
+            }
+            if (!isError) {
+                colColName = removeSpace(colColName.trim(), " ");
+                colColName = removeSpace(colColName.toLowerCase(), "_");
+                colColDataType = removeSpace(colColDataType.trim(), "");
+                colColDataType = colColDataType.toUpperCase();
+            }
+            isDbIdExists = isDbIdExists(colRowId);
+            isDbNameExists = isDbColumnNameExists(colColName);
+            if (!isError) {
+                colColName = Utils.getDbFromat(colColName);
+                colColDataType = Utils.getDbFromat(colColDataType);
+                colColLength = Utils.getDbFromat(colColLength);
+                colColIsNull = Utils.getDbFromat(colColIsNull);
+                colColNoPrefix = Utils.getDbFromat(colColNoPrefix);
+                colColComment = Utils.getDbFromat(colColComment);
+                String formedDbColId = Utils.getDbFromat(colRowId + "");
+                //System.out.println("FORMED_ID: " + formedDbColId);
+                if (!isDbIdExists) {
+                    sqlQuery = String.format(tmpSql, colRowTableId, newId, colColName, colColDataType, colColLength, colColIsNull, colColNoPrefix, colColComment);
+                    //System.out.println(row + ") " + tmpSql);
+                    System.out.println(sqlQuery);
+                    sQLiteConnection.onExecuteQuery(sqlQuery);
+                } else if (!isDbNameExists) {
+                    sqlQuery = " UPDATE tbl_column_property SET tcpro_col_name = %s, tcpro_col_dtype = %s, tcpro_length = %s, tcpro_is_null = %s, tcpro_no_prefix = %s, tcpro_col_comment = %s  WHERE ttpro_id = %s AND tcpro_id = %s ";
+                    sqlQuery = String.format(sqlQuery, colColName, colColDataType, colColLength, colColIsNull, colColNoPrefix, colColComment, colRowTableId, colRowId);
+                    System.out.println(sqlQuery);
+                    sQLiteConnection.onExecuteRawQuery(sqlQuery);
+                } else {
+                    sqlQuery = " UPDATE tbl_column_property SET tcpro_col_dtype = %s, tcpro_length = %s, tcpro_is_null = %s, tcpro_no_prefix = %s, tcpro_col_comment = %s  WHERE ttpro_id = %s AND tcpro_id = %s ";
+                    sqlQuery = String.format(sqlQuery, colColDataType, colColLength, colColIsNull, colColNoPrefix, colColComment, colRowTableId, colRowId);
+                    System.out.println(sqlQuery);
+                    sQLiteConnection.onExecuteRawQuery(sqlQuery);
+                }
+                //System.out.println("FORMED_ID: " + formedDbColId);
+            }
+        }
+        closeDatabase();
+        sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowTableId + "; ";
+        onPopulateTable(sqlQuery);
+    }
+
+    private boolean isDbIdExists(long argDbId) {
+        boolean retVal = false;
+        //openDatabase();
+        sqlQuery = " SELECT COUNT(*) AS total_row, * FROM tbl_column_property WHERE tcpro_id = '" + argDbId + "'; ";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                    if (rowSize > 0) {
+                        retVal = true;
+                    }
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        //closeDatabase();
+        return retVal;
+    }
+
+    private boolean isDbColumnNameExists(String argDbTableName) {
+        boolean retVal = false;
+        //openDatabase();
+        sqlQuery = "SELECT COUNT(*) AS total_row, * FROM tbl_column_property WHERE tcpro_col_name = '" + argDbTableName + "';";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                    if (rowSize > 0) {
+                        retVal = true;
+                    }
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        //closeDatabase();
+        return retVal;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,6 +353,9 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         jComBoxTableName = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblColumnDetails = new javax.swing.JTable();
+        jBtnSaveAll = new javax.swing.JButton();
+        jBtnAddRow = new javax.swing.JButton();
+        jBtnReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -199,6 +373,12 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTblColumnDetails);
 
+        jBtnSaveAll.setText("Save All");
+
+        jBtnAddRow.setText("Add Row");
+
+        jBtnReload.setText("Reload");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,7 +390,14 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jComBoxTableName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jComBoxTableName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnReload)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnAddRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnSaveAll)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -222,7 +409,12 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                     .addComponent(jComBoxTableName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnSaveAll)
+                    .addComponent(jBtnAddRow)
+                    .addComponent(jBtnReload))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -264,6 +456,9 @@ public class UIAddNewColumn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnAddRow;
+    private javax.swing.JButton jBtnReload;
+    private javax.swing.JButton jBtnSaveAll;
     private javax.swing.JComboBox<String> jComBoxTableName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -285,6 +480,16 @@ public class UIAddNewColumn extends javax.swing.JFrame {
 
     private String removeSpace(String argValue, String argReplaceBy) {
         return argValue.replaceAll("\\s+", argReplaceBy);
+    }
+
+    private boolean isNullValue(String argStrValue) {
+        boolean isNull = false;
+        if (argStrValue == null) {
+            isNull = true;
+        } else if (argStrValue.isEmpty()) {
+            isNull = true;
+        }
+        return isNull;
     }
 
     public static class ModelTableData {
