@@ -371,6 +371,7 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                 "Id", "Name", "Data Type", "Length", "Is Null", "Is Prefix", "Comment"
             }
         ));
+        jTblColumnDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTblColumnDetails);
 
         jBtnSaveAll.setText("Save All");

@@ -359,6 +359,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
+        jTblTableDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTblTableDetails);
 
         jBtnAddRow.setText("Add Row");
