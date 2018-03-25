@@ -211,10 +211,14 @@ public class UIAddNewTable extends javax.swing.JFrame {
             if (!isError) {
                 colTblName = removeSpace(colTblName.trim(), " ");
                 colTblName = removeSpace(colTblName.toLowerCase(), "_");
-                colTblPrefix = removeSpace(colTblPrefix.trim(), " ");
-                colTblPrefix = removeSpace(colTblPrefix.toLowerCase(), "_");
-                colColPrefix = removeSpace(colColPrefix.trim(), " ");
-                colColPrefix = removeSpace(colColPrefix.toLowerCase(), "_");
+                if (!isNullValue(colTblPrefix)) {
+                    colTblPrefix = removeSpace(colTblPrefix.trim(), " ");
+                    colTblPrefix = removeSpace(colTblPrefix.toLowerCase(), "_");
+                }
+                if (!isNullValue(colColPrefix)) {
+                    colColPrefix = removeSpace(colColPrefix.trim(), " ");
+                    colColPrefix = removeSpace(colColPrefix.toLowerCase(), "_");
+                }
             }
             isDbIdExists = isDbIdExists(colRowId);
             isDbTableNameExists = isDbTableNameExists(colTblName);
@@ -476,5 +480,15 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
     private String removeSpace(String argValue, String argReplaceBy) {
         return argValue.replaceAll("\\s+", argReplaceBy);
+    }
+
+    private boolean isNullValue(String argStrValue) {
+        boolean isNull = false;
+        if (argStrValue == null) {
+            isNull = true;
+        } else if (argStrValue.isEmpty()) {
+            isNull = true;
+        }
+        return isNull;
     }
 }
