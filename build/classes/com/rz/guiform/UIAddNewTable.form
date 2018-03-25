@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -29,6 +30,12 @@
                   <Component id="jScrollPane1" alignment="0" pref="628" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jBtnPrintNew" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jBtnPrint" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jBtnDeleteRow" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jBtnReload" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jBtnAddRow" min="-2" max="-2" attributes="0"/>
@@ -50,6 +57,9 @@
                   <Component id="jBtnSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnAddRow" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnReload" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnDeleteRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnPrint" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnPrintNew" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
@@ -64,7 +74,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTableDetails">
+        <Component class="javax.swing.JTable" name="jTblTableDetails">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -111,7 +121,6 @@
                 </Column>
               </TableColumnModel>
             </Property>
-            <Property name="showGrid" type="boolean" value="true"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
@@ -121,17 +130,32 @@
     </Container>
     <Component class="javax.swing.JButton" name="jBtnAddRow">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add"/>
+        <Property name="text" type="java.lang.String" value="Add Row"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnSave">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Save"/>
+        <Property name="text" type="java.lang.String" value="Save All"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnReload">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reload"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnDeleteRow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnPrint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Print"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnPrintNew">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Print New"/>
       </Properties>
     </Component>
   </SubComponents>

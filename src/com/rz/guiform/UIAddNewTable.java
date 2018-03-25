@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTextField;
+import javax.swing.border.EtchedBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
@@ -50,40 +51,55 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 String colColPrefix = null;
                 String colColComment = null;
                 Object[] tblRow = {colRowId, colName, colTblPrefix, colColPrefix, colColComment,};
-                DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+                DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
                 tableModel.addRow(tblRow);
                 tableModel.fireTableDataChanged();
             }
         });
-        jBtnSave.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent argActionEvent) {
-                System.out.println("Save Pressed");
-                onSaveData();
-            }
-        });
-        jBtnReload.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent argActionEvent) {
-                System.out.println("Reload Pressed");
-                sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
-                onPopulateTable(sqlQuery);
-            }
-        });
-        jTableDetails.setRowHeight(28);
-        jTableDetails.setRowMargin(6);
-        jTableDetails.setGridColor(Color.decode("#9297A1"));
-        jTableDetails.setIntercellSpacing(new Dimension(0, 0));
-        TableColumn tableColumn0 = jTableDetails.getColumnModel().getColumn(0);
+        jBtnSave.addActionListener(new OnButtonActionListener());
+        jBtnReload.addActionListener(new OnButtonActionListener());
+        jBtnDeleteRow.addActionListener(new OnButtonActionListener());
+        jBtnPrint.addActionListener(new OnButtonActionListener());
+        jBtnPrintNew.addActionListener(new OnButtonActionListener());
+        jTblTableDetails.setRowHeight(28);
+        jTblTableDetails.setRowMargin(6);
+        jTblTableDetails.setIntercellSpacing(new Dimension(0, 0));
+        jTblTableDetails.setShowGrid(true);
+        jTblTableDetails.setBorder(new EtchedBorder(EtchedBorder.RAISED));
+        jTblTableDetails.setGridColor(Color.decode("#9297A1"));
+        TableColumn tableColumn0 = jTblTableDetails.getColumnModel().getColumn(0);
         tableColumn0.setMinWidth(0);
         tableColumn0.setMaxWidth(0);
         tableColumn0.setPreferredWidth(0);
-        for (int i = 0; i < jTableDetails.getColumnCount(); i++) {
-            jTableDetails.getColumnModel().getColumn(i).setCellEditor(getCellEditor());
+        for (int i = 0; i < jTblTableDetails.getColumnCount(); i++) {
+            jTblTableDetails.getColumnModel().getColumn(i).setCellEditor(getCellEditor());
         }
         sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
         onPopulateTable(sqlQuery);
         getTableValue();
+    }
+
+    private class OnButtonActionListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent argActionEvent) {
+            if (argActionEvent.getSource() == jBtnSave) {
+                System.out.println("Save Pressed");
+                onSaveData();
+            } else if (argActionEvent.getSource() == jBtnReload) {
+                System.out.println("Reload Pressed");
+                sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+                onPopulateTable(sqlQuery);
+            } else if (argActionEvent.getSource() == jBtnDeleteRow) {
+                System.out.println("Delete Row Pressed");
+                onDeleteSelectedTableRow();
+            } else if (argActionEvent.getSource() == jBtnPrint) {
+                System.out.println("Print Pressed");
+                onPrintTableData(false);
+            } else if (argActionEvent.getSource() == jBtnPrintNew) {
+                System.out.println("Print All Pressed");
+                onPrintTableData(true);
+            }
+        }
     }
 
     private TableCellEditor getCellEditor() {
@@ -92,14 +108,51 @@ public class UIAddNewTable extends javax.swing.JFrame {
         return new DefaultCellEditor(textField);
     }
 
-    public void onPopulateTable(String argSqlQuery) {
+    private void onPrintTableData(boolean argIsNewId) {
+        openDatabase();
+        sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        try {
+            if (resultSet != null) {
+                System.out.println("-- |----|");
+                System.out.println("DELETE FROM tbl_table_property;");
+                while (resultSet.next()) {
+                    long newId = Long.parseLong(RandomValue.getRandId(1111, 9999));
+                    long colRowId = resultSet.getLong("ttpro_id");
+                    String colName = resultSet.getString("ttpro_tbl_name");
+                    String colTblPrefix = resultSet.getString("ttpro_tbl_prefix");
+                    String colColPrefix = resultSet.getString("ttpro_col_prefix");
+                    String colColComment = resultSet.getString("ttpro_tbl_comment");
+                    if (argIsNewId) {
+                        colRowId = newId;
+                    }
+                    colName = Utils.getDbFromat(colName);
+                    colTblPrefix = Utils.getDbFromat(colTblPrefix);
+                    colColPrefix = Utils.getDbFromat(colColPrefix);
+                    colColComment = Utils.getDbFromat(colColComment);
+                    sqlQuery = "INSERT INTO tbl_table_property VALUES (%s, %s, %s, %s, %s);";
+                    sqlQuery = String.format(sqlQuery, colRowId, colName, colTblPrefix, colColPrefix, colColComment);
+                    System.out.println(sqlQuery);
+                    Thread.sleep(100);
+                }
+                System.out.println("-- |----|");
+            }
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: " + e.toString());
+        }
+        closeDatabase();
+    }
+
+    private void onPopulateTable(String argSqlQuery) {
         closeDatabase();
         if (sQLiteConnection == null) {
             openDatabase();
             ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
             try {
                 if (resultSet != null) {
-                    DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+                    DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
                     tableModel.setRowCount(0);
                     while (resultSet.next()) {
                         long colRowId = resultSet.getLong("ttpro_id");
@@ -124,7 +177,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     }
 
     private void onSaveData() {
-        DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
         int columnCount = tableModel.getColumnCount();
         //closeDatabase();
@@ -132,6 +185,9 @@ public class UIAddNewTable extends javax.swing.JFrame {
         for (int row = 0; row < rowCount; row++) {
             //Object[] tblRow = new Object[4];
             boolean isError = false;
+            boolean isDbDataExists = false;
+            boolean isDbIdExists = false;
+            boolean isDbTableNameExists = false;
             String tmpSql = "INSERT INTO tbl_table_property VALUES (%s, %s, %s, %s, %s);";
             String newId = "";
             long colRowId;
@@ -152,52 +208,41 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 isError = true;
                 System.out.println("ERROR EMPTY");
             }
-            sqlQuery = "SELECT COUNT(*) AS total_row, * FROM tbl_table_property WHERE ttpro_tbl_name = '" + colTblName + "';";
-            ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
-            if (resultSet != null) {
-                try {
-                    ResultSetMetaData rsmd = resultSet.getMetaData();
-                    int numberOfColumns = rsmd.getColumnCount();
-                    int rowSize = 0;
-                    if (resultSet.next()) {
-                        rowSize = resultSet.getInt("total_row");
-                    }
-                    System.out.println("ROW: " + rowSize);
-                    System.out.println("ERROR EXISTS: " + sqlQuery);
-                    if (rowSize > 0) {
-                        isError = true;
-                    }
-                } catch (SQLException ex) {
-                }
+            if (!isError) {
+                colTblName = removeSpace(colTblName.trim(), " ");
+                colTblName = removeSpace(colTblName.toLowerCase(), "_");
+                colTblPrefix = removeSpace(colTblPrefix.trim(), " ");
+                colTblPrefix = removeSpace(colTblPrefix.toLowerCase(), "_");
+                colColPrefix = removeSpace(colColPrefix.trim(), " ");
+                colColPrefix = removeSpace(colColPrefix.toLowerCase(), "_");
             }
+            isDbIdExists = isDbIdExists(colRowId);
+            isDbTableNameExists = isDbTableNameExists(colTblName);
             if (!isError) {
                 colTblName = Utils.getDbFromat(colTblName);
                 colTblPrefix = Utils.getDbFromat(colTblPrefix);
                 colColPrefix = Utils.getDbFromat(colColPrefix);
                 colTblComment = Utils.getDbFromat(colTblComment);
-                tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
-                System.out.println(row + ") " + tmpSql);
-                if (row > 1) {
-                    sqlQuery = tmpSql + " ------- ";
+                String formedDbColId = Utils.getDbFromat(colRowId + "");
+                //System.out.println("FORMED_ID: " + formedDbColId);
+                if (!isDbIdExists) {
+                    tmpSql = String.format(tmpSql, newId, colTblName, colTblPrefix, colColPrefix, colTblComment);
+                    //System.out.println(row + ") " + tmpSql);
+                    sqlQuery = tmpSql;
                     System.out.println(sqlQuery);
                     sQLiteConnection.onExecuteQuery(sqlQuery);
-                }
-                /*if (sQLiteConnection == null) {
-                    openDatabase();
-                    if (row > 1) {
-                        sqlQuery = tmpSql + " ------- ";
-                        System.out.println(sqlQuery);
-                    }
-                    closeDatabase();
+                } else if (!isDbTableNameExists) {
+                    sqlQuery = " UPDATE tbl_table_property SET ttpro_tbl_name = %s, ttpro_tbl_prefix = %s, ttpro_col_prefix = %s, ttpro_tbl_comment = %s  WHERE ttpro_id = %s ";
+                    sqlQuery = String.format(sqlQuery, colTblName, colTblPrefix, colColPrefix, colTblComment, formedDbColId);
+                    System.out.println(sqlQuery);
+                    sQLiteConnection.onExecuteRawQuery(sqlQuery);
                 } else {
-                    //System.out.println("Database not null");
-                    if (row > 1) {
-                        sqlQuery = tmpSql + " ------- ";
-                        System.out.println(sqlQuery);
-                        sQLiteConnection.onExecuteQuery(sqlQuery);
-                    }
-                    closeDatabase();
-                }*/
+                    sqlQuery = " UPDATE tbl_table_property SET ttpro_tbl_prefix = %s, ttpro_col_prefix = %s, ttpro_tbl_comment = %s  WHERE ttpro_id = %s ";
+                    sqlQuery = String.format(sqlQuery, colTblPrefix, colColPrefix, colTblComment, formedDbColId);
+                    System.out.println(sqlQuery);
+                    sQLiteConnection.onExecuteRawQuery(sqlQuery);
+                }
+                //System.out.println("FORMED_ID: " + formedDbColId);
             }
         }
         closeDatabase();
@@ -205,8 +250,69 @@ public class UIAddNewTable extends javax.swing.JFrame {
         onPopulateTable(sqlQuery);
     }
 
+    private boolean isDbIdExists(long argDbId) {
+        boolean retVal = false;
+        //openDatabase();
+        sqlQuery = " SELECT COUNT(*) AS total_row, * FROM tbl_table_property WHERE ttpro_id = '" + argDbId + "'; ";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                ResultSetMetaData rsmd = resultSet.getMetaData();
+                int numberOfColumns = rsmd.getColumnCount();
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                }
+                if (rowSize > 0) {
+                    retVal = true;
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        //closeDatabase();
+        return retVal;
+    }
+
+    private boolean isDbTableNameExists(String argDbTableName) {
+        boolean retVal = false;
+        //openDatabase();
+        sqlQuery = "SELECT COUNT(*) AS total_row, * FROM tbl_table_property WHERE ttpro_tbl_name = '" + argDbTableName + "';";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                ResultSetMetaData rsmd = resultSet.getMetaData();
+                int numberOfColumns = rsmd.getColumnCount();
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                }
+                if (rowSize > 0) {
+                    retVal = true;
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        //closeDatabase();
+        return retVal;
+    }
+
+    private void onDeleteSelectedTableRow() {
+        int column = 0;
+        int row = jTblTableDetails.getSelectedRow();
+        String value = jTblTableDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + value);
+        openDatabase();
+        sqlQuery = "DELETE FROM tbl_table_property WHERE ttpro_id = '" + value + "';";
+        sQLiteConnection.onExecuteRawQuery(sqlQuery);
+        closeDatabase();
+        sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+        onPopulateTable(sqlQuery);
+    }
+
     private void getTableValue() {
-        DefaultTableModel tableModel = (DefaultTableModel) jTableDetails.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) jTblTableDetails.getModel();
         int rowCount = tableModel.getRowCount();
         int columnCount = tableModel.getColumnCount();
         for (int i = 0; i < rowCount; i++) {
@@ -233,15 +339,19 @@ public class UIAddNewTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableDetails = new javax.swing.JTable();
+        jTblTableDetails = new javax.swing.JTable();
         jBtnAddRow = new javax.swing.JButton();
         jBtnSave = new javax.swing.JButton();
         jBtnReload = new javax.swing.JButton();
+        jBtnDeleteRow = new javax.swing.JButton();
+        jBtnPrint = new javax.swing.JButton();
+        jBtnPrintNew = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jTableDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(146, 151, 161)));
-        jTableDetails.setModel(new javax.swing.table.DefaultTableModel(
+        jTblTableDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(146, 151, 161)));
+        jTblTableDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -249,14 +359,19 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
-        jTableDetails.setShowGrid(true);
-        jScrollPane1.setViewportView(jTableDetails);
+        jScrollPane1.setViewportView(jTblTableDetails);
 
-        jBtnAddRow.setText("Add");
+        jBtnAddRow.setText("Add Row");
 
-        jBtnSave.setText("Save");
+        jBtnSave.setText("Save All");
 
         jBtnReload.setText("Reload");
+
+        jBtnDeleteRow.setText("Delete");
+
+        jBtnPrint.setText("Print");
+
+        jBtnPrintNew.setText("Print New");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -268,6 +383,12 @@ public class UIAddNewTable extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnPrintNew)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnPrint)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnDeleteRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnReload)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnAddRow)
@@ -284,7 +405,10 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnSave)
                     .addComponent(jBtnAddRow)
-                    .addComponent(jBtnReload))
+                    .addComponent(jBtnReload)
+                    .addComponent(jBtnDeleteRow)
+                    .addComponent(jBtnPrint)
+                    .addComponent(jBtnPrintNew))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -328,10 +452,13 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAddRow;
+    private javax.swing.JButton jBtnDeleteRow;
+    private javax.swing.JButton jBtnPrint;
+    private javax.swing.JButton jBtnPrintNew;
     private javax.swing.JButton jBtnReload;
     private javax.swing.JButton jBtnSave;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableDetails;
+    private javax.swing.JTable jTblTableDetails;
     // End of variables declaration//GEN-END:variables
     private void openDatabase() {
         sQLiteConnection = SQLiteConnection.getInstance(DB_NAME);
@@ -344,5 +471,9 @@ public class UIAddNewTable extends javax.swing.JFrame {
             sQLiteConnection.onClose();
             sQLiteConnection = null;
         }
+    }
+
+    private String removeSpace(String argValue, String argReplaceBy) {
+        return argValue.replaceAll("\\s+", argReplaceBy);
     }
 }
