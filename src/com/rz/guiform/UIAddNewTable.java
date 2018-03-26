@@ -64,6 +64,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
         jBtnSave.addActionListener(new OnButtonActionListener());
         jBtnReload.addActionListener(new OnButtonActionListener());
         jBtnDeleteRow.addActionListener(new OnButtonActionListener());
+        jBtnForceDeleteRow.addActionListener(new OnButtonActionListener());
         jBtnPrint.addActionListener(new OnButtonActionListener());
         jBtnPrintNew.addActionListener(new OnButtonActionListener());
         jTblTableDetails.setRowHeight(28);
@@ -97,6 +98,9 @@ public class UIAddNewTable extends javax.swing.JFrame {
             } else if (argActionEvent.getSource() == jBtnDeleteRow) {
                 System.out.println("Delete Row Pressed");
                 onDeleteSelectedTableRow();
+            } else if (argActionEvent.getSource() == jBtnForceDeleteRow) {
+                System.out.println("Force delete Row Pressed");
+                onForceDeleteSelectedTableRow();
             } else if (argActionEvent.getSource() == jBtnPrint) {
                 System.out.println("Print Pressed");
                 onPrintTableData(false);
@@ -310,14 +314,56 @@ public class UIAddNewTable extends javax.swing.JFrame {
     private void onDeleteSelectedTableRow() {
         int column = 0;
         int row = jTblTableDetails.getSelectedRow();
-        String value = jTblTableDetails.getModel().getValueAt(row, column).toString();
-        System.out.println("SELECTED VALUE: " + value);
+        if (row < 0) {
+            System.out.println("Please select the row you want to delete");
+            return;
+        }
+        String idValue = jTblTableDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + idValue);
+        if (!isChildDataExists(idValue)) {
+            openDatabase();
+            sqlQuery = "DELETE FROM tbl_table_property WHERE ttpro_id = '" + idValue + "';";
+            sQLiteConnection.onExecuteRawQuery(sqlQuery);
+            closeDatabase();
+            sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
+            onPopulateTable(sqlQuery);
+        } else {
+            System.out.println("Please delete child table data: " + idValue);
+        }
+    }
+
+    private void onForceDeleteSelectedTableRow() {
+        int column = 0;
+        int row = jTblTableDetails.getSelectedRow();
+        if (row < 0) {
+            System.out.println("Please select the row you want to delete");
+            return;
+        }
+        String idValue = jTblTableDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + idValue);
+    }
+
+    private boolean isChildDataExists(String argParentId) {
+        boolean retVal = false;
         openDatabase();
-        sqlQuery = "DELETE FROM tbl_table_property WHERE ttpro_id = '" + value + "';";
-        sQLiteConnection.onExecuteRawQuery(sqlQuery);
+        sqlQuery = " SELECT COUNT(*) AS total_row, * FROM tbl_column_property WHERE ttpro_id = " + argParentId + "; ";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                    if (rowSize > 0) {
+                        //System.out.println("Row size: " + rowSize);
+                        retVal = true;
+                    }
+                }
+            } catch (SQLException ex) {
+            }
+        }
         closeDatabase();
-        sqlQuery = "SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name ASC;";
-        onPopulateTable(sqlQuery);
+        return retVal;
     }
 
     private void getTableValue() {
@@ -355,6 +401,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
         jBtnDeleteRow = new javax.swing.JButton();
         jBtnPrint = new javax.swing.JButton();
         jBtnPrintNew = new javax.swing.JButton();
+        jBtnForceDeleteRow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -368,7 +415,6 @@ public class UIAddNewTable extends javax.swing.JFrame {
                 "Id", "Name", "Table Prefix", "Column Prefix", "Comments"
             }
         ));
-        jTblTableDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTblTableDetails);
 
         jBtnAddRow.setText("Add Row");
@@ -383,20 +429,24 @@ public class UIAddNewTable extends javax.swing.JFrame {
 
         jBtnPrintNew.setText("Print New");
 
+        jBtnForceDeleteRow.setText("Force Delete");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jBtnPrintNew)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBtnPrint)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtnForceDeleteRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBtnDeleteRow)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnReload)
@@ -418,7 +468,8 @@ public class UIAddNewTable extends javax.swing.JFrame {
                     .addComponent(jBtnReload)
                     .addComponent(jBtnDeleteRow)
                     .addComponent(jBtnPrint)
-                    .addComponent(jBtnPrintNew))
+                    .addComponent(jBtnPrintNew)
+                    .addComponent(jBtnForceDeleteRow))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -463,6 +514,7 @@ public class UIAddNewTable extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAddRow;
     private javax.swing.JButton jBtnDeleteRow;
+    private javax.swing.JButton jBtnForceDeleteRow;
     private javax.swing.JButton jBtnPrint;
     private javax.swing.JButton jBtnPrintNew;
     private javax.swing.JButton jBtnReload;

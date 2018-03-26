@@ -88,6 +88,7 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         jBtnSaveAll.addActionListener(new OnButtonActionListener());
         jBtnAddRow.addActionListener(new OnButtonActionListener());
         jBtnReload.addActionListener(new OnButtonActionListener());
+        jBtnDeleteRow.addActionListener(new OnButtonActionListener());
         jTblColumnDetails.setRowHeight(28);
         jTblColumnDetails.setRowMargin(6);
         jTblColumnDetails.setIntercellSpacing(new Dimension(0, 0));
@@ -256,12 +257,18 @@ public class UIAddNewColumn extends javax.swing.JFrame {
             } else if (argActionEvent.getSource() == jBtnReload) {
                 System.out.println("Reload Pressed");
                 int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
-                long colRowId = 0l;
+                long colRowId = 0;
                 if (selectedIndex >= 0) {
                     colRowId = modelTableDataList.get(selectedIndex).getTableId();
                 }
                 sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowId + "; ";
                 onPopulateTable(sqlQuery);
+            } else if (argActionEvent.getSource() == jBtnDeleteRow) {
+                System.out.println("Delete Row Pressed");
+                int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+                if (selectedIndex >= 0) {
+                    onDeleteSelectedTableRow();
+                }
             }
         }
     }
@@ -408,6 +415,50 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         onPopulateTable(sqlQuery);
     }
 
+    private void onDeleteSelectedTableRow() {
+        int column = 0;
+        int row = jTblColumnDetails.getSelectedRow();
+        if (row < 0) {
+            System.out.println("Please select the row you want to delete");
+            return;
+        }
+        String idValue = jTblColumnDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + idValue);
+        if (!isChildDataExists(idValue)) {
+        }
+        /*openDatabase();
+        sqlQuery = "DELETE FROM tbl_column_property WHERE tcpro_id = '" + idValue + "';";
+        sQLiteConnection.onExecuteRawQuery(sqlQuery);
+        closeDatabase();
+        int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+        long colRowTableId = modelTableDataList.get(selectedIndex).getTableId();
+        sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowTableId + "; ";
+        onPopulateTable(sqlQuery);*/
+    }
+
+    private boolean isChildDataExists(String argParentId) {
+        boolean retVal = false;
+        openDatabase();
+        sqlQuery = " SELECT COUNT(*) AS total_row, * FROM tbl_constraint_property WHERE tcpro_id = " + argParentId + "; ";
+        //System.out.println(sqlQuery);
+        ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+        if (resultSet != null) {
+            try {
+                int rowSize = 0;
+                if (resultSet.next()) {
+                    rowSize = resultSet.getInt("total_row");
+                    if (rowSize > 0) {
+                        System.out.println("Row size: " + rowSize);
+                        retVal = true;
+                    }
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        closeDatabase();
+        return retVal;
+    }
+
     private boolean isDbIdExists(long argDbId) {
         boolean retVal = false;
         //openDatabase();
@@ -468,6 +519,7 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         jBtnSaveAll = new javax.swing.JButton();
         jBtnAddRow = new javax.swing.JButton();
         jBtnReload = new javax.swing.JButton();
+        jBtnDeleteRow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -483,7 +535,6 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                 "Id", "Name", "Data Type", "Length", "Is Null", "Is Prefix", "Comment"
             }
         ));
-        jTblColumnDetails.setShowGrid(true);
         jScrollPane1.setViewportView(jTblColumnDetails);
 
         jBtnSaveAll.setText("Save All");
@@ -491,6 +542,8 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         jBtnAddRow.setText("Add Row");
 
         jBtnReload.setText("Reload");
+
+        jBtnDeleteRow.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -506,6 +559,8 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                         .addComponent(jComBoxTableName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnDeleteRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBtnReload)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnAddRow)
@@ -526,7 +581,8 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnSaveAll)
                     .addComponent(jBtnAddRow)
-                    .addComponent(jBtnReload))
+                    .addComponent(jBtnReload)
+                    .addComponent(jBtnDeleteRow))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -570,6 +626,7 @@ public class UIAddNewColumn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAddRow;
+    private javax.swing.JButton jBtnDeleteRow;
     private javax.swing.JButton jBtnReload;
     private javax.swing.JButton jBtnSaveAll;
     private javax.swing.JComboBox<String> jComBoxTableName;
