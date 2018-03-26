@@ -34,6 +34,8 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jBtnDeleteRow" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jBtnSaveAll" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -52,7 +54,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="260" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jBtnSaveAll" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBtnSaveAll" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnDeleteRow" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -131,6 +136,11 @@
     <Component class="javax.swing.JButton" name="jBtnSaveAll">
       <Properties>
         <Property name="text" type="java.lang.String" value="Save All"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnDeleteRow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
   </SubComponents>

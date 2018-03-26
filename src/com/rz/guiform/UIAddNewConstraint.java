@@ -69,6 +69,7 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
             }
         });
         jBtnSaveAll.addActionListener(new OnButtonActionListener());
+        jBtnDeleteRow.addActionListener(new OnButtonActionListener());
         jTblConstraintDetails.setRowHeight(28);
         jTblConstraintDetails.setRowMargin(6);
         jTblConstraintDetails.setIntercellSpacing(new Dimension(0, 0));
@@ -94,6 +95,12 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
                     onSaveData();
                 } else {
                     System.out.println("Please select a table from combobox");
+                }
+            } else if (argActionEvent.getSource() == jBtnDeleteRow) {
+                System.out.println("Delete Row Pressed");
+                int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+                if (selectedIndex >= 0) {
+                    onDeleteSelectedTableRow();
                 }
             }
         }
@@ -234,6 +241,27 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
         onPopulateTable(sqlQuery);
     }
 
+    private void onDeleteSelectedTableRow() {
+        int column = 0;
+        int row = jTblConstraintDetails.getSelectedRow();
+        if (row < 0) {
+            System.out.println("Please select the row you want to delete");
+            return;
+        }
+        String idValue = jTblConstraintDetails.getModel().getValueAt(row, column).toString();
+        System.out.println("SELECTED VALUE: " + idValue);
+        openDatabase();
+        sqlQuery = "DELETE FROM tbl_constraint_property WHERE tconp_id = '" + idValue + "';";
+        sQLiteConnection.onExecuteRawQuery(sqlQuery);
+        closeDatabase();
+        int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+        long colRowTableId = modelTableDataList.get(selectedIndex).getTableId();
+        sqlQuery = " SELECT * FROM tbl_column_property AS column_property "
+                + " LEFT OUTER JOIN tbl_constraint_property AS constraint_property ON constraint_property.tcpro_id = column_property.tcpro_id "
+                + " WHERE column_property.ttpro_id = " + colRowTableId + "; ";
+        onPopulateTable(sqlQuery);
+    }
+
     private boolean isDbIdExists(long argDbId) {
         boolean retVal = false;
         //openDatabase();
@@ -292,6 +320,7 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblConstraintDetails = new javax.swing.JTable();
         jBtnSaveAll = new javax.swing.JButton();
+        jBtnDeleteRow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -309,6 +338,8 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
 
         jBtnSaveAll.setText("Save All");
 
+        jBtnDeleteRow.setText("Delete");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -323,6 +354,8 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
                         .addComponent(jComBoxTableName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBtnDeleteRow)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBtnSaveAll)))
                 .addContainerGap())
         );
@@ -336,7 +369,9 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnSaveAll)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnSaveAll)
+                    .addComponent(jBtnDeleteRow))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -379,6 +414,7 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnDeleteRow;
     private javax.swing.JButton jBtnSaveAll;
     private javax.swing.JComboBox<String> jComBoxTableName;
     private javax.swing.JLabel jLabel1;

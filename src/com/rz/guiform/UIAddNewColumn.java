@@ -425,15 +425,17 @@ public class UIAddNewColumn extends javax.swing.JFrame {
         String idValue = jTblColumnDetails.getModel().getValueAt(row, column).toString();
         System.out.println("SELECTED VALUE: " + idValue);
         if (!isChildDataExists(idValue)) {
+            openDatabase();
+            sqlQuery = "DELETE FROM tbl_column_property WHERE tcpro_id = '" + idValue + "';";
+            sQLiteConnection.onExecuteRawQuery(sqlQuery);
+            closeDatabase();
+            int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
+            long colRowTableId = modelTableDataList.get(selectedIndex).getTableId();
+            sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowTableId + "; ";
+            onPopulateTable(sqlQuery);
+        } else {
+            System.out.println("Please delete child table data: " + idValue);
         }
-        /*openDatabase();
-        sqlQuery = "DELETE FROM tbl_column_property WHERE tcpro_id = '" + idValue + "';";
-        sQLiteConnection.onExecuteRawQuery(sqlQuery);
-        closeDatabase();
-        int selectedIndex = jComBoxTableName.getSelectedIndex() - 1;
-        long colRowTableId = modelTableDataList.get(selectedIndex).getTableId();
-        sqlQuery = " SELECT * FROM tbl_column_property WHERE ttpro_id = " + colRowTableId + "; ";
-        onPopulateTable(sqlQuery);*/
     }
 
     private boolean isChildDataExists(String argParentId) {
@@ -448,7 +450,7 @@ public class UIAddNewColumn extends javax.swing.JFrame {
                 if (resultSet.next()) {
                     rowSize = resultSet.getInt("total_row");
                     if (rowSize > 0) {
-                        System.out.println("Row size: " + rowSize);
+                        //System.out.println("Row size: " + rowSize);
                         retVal = true;
                     }
                 }

@@ -30,7 +30,7 @@ public class UIDashboard extends javax.swing.JFrame {
         //this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jMenuItemAddNewTable.addActionListener(new OnMenuItemActionListener());
         jMenuItemAddNewColumn.addActionListener(new OnMenuItemActionListener());
         jMenuItemAddNewConstraint.addActionListener(new OnMenuItemActionListener());
