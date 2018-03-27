@@ -10,6 +10,7 @@ import com.rz.librarycore.dbhandler.SQLiteConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import tools.Utils;
 
 /**
  *
@@ -33,7 +34,9 @@ public class SiteMeta {
         ResultSet resultSet = sQLiteConnection.onSqlQuery(sqlQuery);
         try {
             if (resultSet != null) {
-                System.err.println("DELETE FROM tbl_site_page_meta_store;");
+                System.out.println("|----|------------|");
+                System.out.println("");
+                System.out.println("DELETE FROM tbl_site_page_meta_store;");
                 while (resultSet.next()) {
                     String newId = RandomValue.getRandId(1111, 9999);
                     long colRowId = resultSet.getLong("spgmatr_pgmstore_id");
@@ -41,11 +44,19 @@ public class SiteMeta {
                     String colTblDetails = resultSet.getString("spgmatr_pgmstore_details");
                     String colColType = resultSet.getString("spgmatr_pgmstore_type");
                     String colTblGenre = resultSet.getString("spgmatr_pgmstore_meta_genre");
+
+                    colTblName = Utils.getDbFromat(colTblName);
+                    colTblDetails = Utils.getDbFromat(colTblDetails);
+                    colColType = Utils.getDbFromat(colColType);
+                    colTblGenre = Utils.getDbFromat(colTblGenre);
+
                     sqlQuery = "INSERT INTO tbl_site_page_meta_store VALUES (%s, %s, %s, %s, %s);";
                     sqlQuery = String.format(sqlQuery, newId, colTblName, colTblDetails, colColType, colTblGenre);
                     System.out.println(sqlQuery);
                     Thread.sleep(100);
                 }
+                System.out.println("");
+                System.out.println("|----|------------|");
             }
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.toString());
