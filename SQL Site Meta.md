@@ -33,19 +33,23 @@ INSERT INTO tbl_constraint_property VALUES ('15220838941543', '15220838949447', 
 
 ```sql_query_table_data
 DELETE FROM tbl_site_page_meta_store;
-INSERT INTO tbl_site_page_meta_store VALUES (15220846055371, 'github', 'GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.', 'description', 'normal');
-INSERT INTO tbl_site_page_meta_store VALUES (15220872829574, 'apple', 'Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support.', 'description', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337383272, 'Prothom Alo', 'Online Latest Bangla News/Article - Sports, Crime, Entertainment, , Business, Politics, Education, Opinion, Lifestyle, Photo, Video, Travel, National, World', 'description', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337387219, 'apple', 'Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support.', 'description', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337383553, 'github', 'GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.', 'description', 'normal');
+-- INSERT INTO tbl_site_page_meta_store VALUES (15221337395391, 'name', 'Details', 'description', 'normal');
 
+INSERT INTO tbl_site_page_meta_store VALUES (15221337393540, 'Prothom Alo', 'Prothom Alo, bangla news, current News, bangla newspaper, bangladesh newspaper, online paper, bangladeshi newspaper, bangla news paper, bangladesh newspapers, newspaper, all bangla news paper, bd news paper, news paper, bangladesh news paper, daily, bangla newspaper, daily news paper, bangladeshi news paper, bangla paper, all bangla newspaper, bangladesh news, daily newspaper, অনলাইন, পত্রিকা, বাংলাদেশ, আজকের পত্রিকা, আন্তর্জাতিক, অর্থনীতি, খেলা, বিনোদন, ফিচার, বিজ্ঞান ও প্রযুক্তি, চলচ্চিত্র, ঢালিউড, বলিউড, হলিউড, বাংলা গান, মঞ্চ, টেলিভিশন, নকশা, রস+আলো, ছুটির দিনে, অধুনা, স্বপ্ন নিয়ে, আনন্দ, অন্য আলো, সাহিত্য, গোল্লাছুট, প্রজন্ম ডট কম, বন্ধুসভা,কম্পিউটার, মোবাইল ফোন, অটোমোবাইল, মহাকাশ, গেমস, মাল্টিমিডিয়া, রাজনীতি, সরকার, অপরাধ, আইন ও বিচার, পরিবেশ, দুর্ঘটনা, সংসদ, রাজধানী, শেয়ার বাজার, বাণিজ্য, পোশাক শিল্প, ক্রিকেট, ফুটবল, লাইভ স্কোর', 'key', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337393830, 'apple', 'SFX9YPYY9PPXCU9KH', 'key', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337393319, 'github', 'php-dynamic-sqlite/dynamic_sqlite.php at master · TangChr/php-dynamic-sqlite · GitHub', 'key', 'normal');
+-- INSERT INTO tbl_site_page_meta_store VALUES (15221337391215, 'name', 'Details', 'key', 'normal');
 
-INSERT INTO tbl_site_page_meta_store VALUES (15220846055245, 'github', 'php-dynamic-sqlite/dynamic_sqlite.php at master · TangChr/php-dynamic-sqlite · GitHub', 'key', 'normal');
-INSERT INTO tbl_site_page_meta_store VALUES (15220872823543, 'apple', 'SFX9YPYY9PPXCU9KH', 'key', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337393253, 'Prothom Alo', 'Prothom Alo | Latest online bangla world news bd | Sports photo video live', 'title', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337398994, 'apple', 'Apple', 'title', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (15221337395639, 'github', 'php-dynamic-sqlite/dynamic_sqlite.php at master · TangChr/php-dynamic-sqlite · GitHub', 'title', 'normal');
+-- INSERT INTO tbl_site_page_meta_store VALUES (15221337397815, 'name', 'Details', 'title', 'normal');
 
-
-INSERT INTO tbl_site_page_meta_store VALUES (15220846058083, 'github', 'php-dynamic-sqlite/dynamic_sqlite.php at master · TangChr/php-dynamic-sqlite · GitHub', 'title', 'normal');
-INSERT INTO tbl_site_page_meta_store VALUES (15220872828734, 'apple', 'Apple', 'title', 'normal');
-
-INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'github', 'Details', 'description', 'normal');
-INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'github', 'Details', 'key', 'normal');
-INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'github', 'Details', 'title', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'name', 'Details', 'description', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'name', 'Details', 'key', 'normal');
+INSERT INTO tbl_site_page_meta_store VALUES (11212122, 'name', 'Details', 'title', 'normal');
 -- TABLE DATA END
 ```
