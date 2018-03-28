@@ -205,6 +205,7 @@ DELETE FROM tbl_column_property;
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045255247', 'video_id', 'BIGINT', '20', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045268869', 'video_title', 'VARCHAR', '255', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045265386', 'video_details', 'TEXT', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15220045257343, '15450045265386', 'video_episode', 'INTEGER', '4', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045268522', 'video_store_type', 'VARCHAR', '255', '0', null, 'Youtube or other');
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045263960', 'video_type', 'VARCHAR', '255', '0', null, 'Movie, cartoon etc');
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045269058', 'video_path', 'TEXT', null, '0', null, null);
@@ -214,8 +215,8 @@ INSERT INTO tbl_column_property VALUES (15220045257343, '15220045268471', 'video
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045268529', 'video_is_default', 'BOOLEAN', null, '0', null, 'Default videos are only show at play store publishing time');
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045269045', 'video_genre', 'TEXT', null, '0', null, null);
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045275123', 'video_status', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15220045257343, '15220045276102', 'video_view_counter', 'BIGINT', '20', '0', null, null);
 INSERT INTO tbl_column_property VALUES (15220045257343, '15220045274132', 'video_force_stop', 'BOOLEAN', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15220045257343, '15220045276102', 'video_view_counter', 'BIGINT', '20', '0', null, null);
 
 DELETE FROM tbl_constraint_property;
 INSERT INTO tbl_constraint_property VALUES ('15220045255247', '15220045279192', 'PRIMARY', null, null);
@@ -303,3 +304,20 @@ https://www.youtube.com/watch?v=UvZcYIGs9nY
 https://www.youtube.com/watch?v=baMJ0VnQDRw
 
 -- http://www.gifsfor.com/masturbation/page/3/
+
+
+
+http://img.youtube.com/vi/E6_GQThxLTQ/hqdefault.jpg
+http://img.youtube.com/vi/videoID/hqdefault.jpg
+
+
+Projapoti Biskut Full Movie in Bengali
+https://www.youtube.com/watch?v=gRkypKmuL-A
+Baalir Niche Jawler Shabda
+https://www.youtube.com/watch?v=KbfPYTMw0Iw
+
+
+
+
+
+

@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Rz%20Rasel/Documents/Project%20Java/Git-Java-SQL-Generator/SQL%20Site%20Meta.md</file>
+=======
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/src/com/rz/guiform/UIAddNewColumn.java</file>
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/SQL%20Site%20Meta.md</file>
             <file>file:/Users/developer/Desktop/Work%202017-09/SM%20Projects/SM%20Java%20Projects/Java-SQL-Generator-V-201801.00.3/src/com/rz/sitemeta/SiteMeta.java</file>
+>>>>>>> 4f38654c60805c7e7f9fe218da5673f614b5f3ea
         </group>
     </open-files>
 </project-private>
