@@ -162,3 +162,4 @@ public class ActDownloadAPK extends AppCompatActivity {
         startActivity(intent);
     }
 }
+//http://www.mysamplecode.com/2013/05/android-update-application.html
