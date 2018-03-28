@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Answer Form</string>
+    <string name="title">Download APP</string>
+    <string name="notification_description">Update App</string>
+    <string name="update_app_url">ddd</string>
+</resources>
