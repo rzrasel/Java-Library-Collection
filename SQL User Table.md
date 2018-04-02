@@ -95,3 +95,5 @@ INSERT INTO tbl_constraint_property VALUES ('15226627064281', '15226627074207', 
 -- -|END- USER_PROFILE table property end
 ```
 
+https://docs.moodle.org/dev/Database_schema_introduction
+
