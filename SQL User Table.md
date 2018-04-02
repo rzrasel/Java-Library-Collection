@@ -96,4 +96,5 @@ INSERT INTO tbl_constraint_property VALUES ('15226627064281', '15226627074207', 
 ```
 
 https://docs.moodle.org/dev/Database_schema_introduction
+https://docops.ca.com/ca-identity-manager/12-6-5/EN/configuring/relational-database-management/describe-a-database-in-a-directory-configuration-file/managed-object-descriptions-for-relational-database
 
