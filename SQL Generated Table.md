@@ -59,29 +59,6 @@ INSERT INTO tbtmp_country VALUES (id, 'Bangladesh', 'iso2', 'BGD', '050', 'conti
 INSERT INTO tbtmp_country VALUES (id, 'name', 'iso2', 'iso3', 'ncod', 'continent', 'cdat', 'mdate);
 INSERT INTO tbtmp_country VALUES (id, 'name', 'iso2', 'iso3', 'ncod', 'continent', 'cdat', 'mdate);
 -- |----|------------------------------------|
-DROP TABLE IF EXISTS tbtmp_registration;
-CREATE TABLE IF NOT EXISTS tbtmp_registration
-(
-    regi_rgi_id                     BIGINT(20)        NOT NULL,
-    regi_rgi_email                  VARCHAR(255)      NOT NULL,
-    regi_rgi_password               TEXT              NOT NULL,
-    regi_rgi_wifi_ip                VARCHAR(255)      NOT NULL,
-    regi_rgi_device_ip              VARCHAR(255)      NOT NULL,
-    regi_rgi_traced_ip              VARCHAR(255)      NOT NULL,
-    regi_rgi_type                   VARCHAR(255)      NOT NULL,
-    regi_rgi_build_id               VARCHAR(255)      NOT NULL,
-    regi_rgi_tele_device_id         VARCHAR(255)      NOT NULL,
-    regi_rgi_tele_device_serial     VARCHAR(255)      NOT NULL,
-    regi_rgi_fcm_id                 TEXT              NOT NULL,
-    regi_rgi_con_code               VARCHAR(255)      NOT NULL,
-    regi_rgi_package                VARCHAR(255)      NOT NULL,
-    regi_rgi_ver_code               VARCHAR(255)      NOT NULL,
-    regi_rgi_ver_name               VARCHAR(255)      NOT NULL,
-    regi_rgi_auth_key               TEXT              NOT NULL,
-    regi_rgi_date                   DATETIME          NOT NULL,
-    CONSTRAINT                      pk_regis_regi_rgi_id PRIMARY KEY (regi_rgi_id),
-    CONSTRAINT                      uk_regis_regi_rgi_id UNIQUE (regi_rgi_id)
-) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 DROP TABLE IF EXISTS tbtmp_user_device_key;
 CREATE TABLE IF NOT EXISTS tbtmp_user_device_key
 (
@@ -98,114 +75,35 @@ CREATE TABLE IF NOT EXISTS tbtmp_user_device_key
     udivkey_udkey_modified_by       BIGINT(20)        NOT NULL,
     CONSTRAINT                      pk_userd_udivkey_udkey_id PRIMARY KEY (udivkey_udkey_id)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
-DROP TABLE IF EXISTS tbtmp_user_profile;
-CREATE TABLE IF NOT EXISTS tbtmp_user_profile
-(
-    usrpro_user_id                  BIGINT(20)        NOT NULL,
-    usrpro_first_name               VARCHAR(255)      NOT NULL,
-    usrpro_mid_name                 VARCHAR(255)      NULL,
-    usrpro_last_name                VARCHAR(255)      NULL,
-    usrpro_regi_type                VARCHAR(255)      NULL
-) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
-DROP TABLE IF EXISTS tbtmp_user_role;
-CREATE TABLE IF NOT EXISTS tbtmp_user_role
-(
-    usrro_role_id                   BIGINT(20)        NOT NULL,
-    usrro_role_title                VARCHAR(255)      NOT NULL,
-    usrro_role_priority             INT(3)            NOT NULL,
-    usrro_role_is_default           BOOLEAN           NOT NULL,
-    usrro_role_create_date          DATETIME          NOT NULL,
-    usrro_role_modify_date          DATETIME          NOT NULL,
-    CONSTRAINT                      uk_userr_usrro_role_title UNIQUE (usrro_role_title),
-    CONSTRAINT                      pk_userr_usrro_role_id PRIMARY KEY (usrro_role_id)
-) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 ```
 ```sql_query_insert
 -- Forgot, Change,
 -- FCM Table -> FCM token, Build Number, package, version, last ip, last country, last city
 -- Login Log ->crood, snap shoot, tintin (movie)ulnlog
 DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15195441306806', 'country', 'tbtmp', 'cntry', null);
-INSERT INTO tbl_table_property VALUES ('15195441319233', 'registration', 'tbtmp', 'regi', null);
-INSERT INTO tbl_table_property VALUES ('15195441311295', 'user_login_log', 'tbtmp', 'ulnglog', null);
-INSERT INTO tbl_table_property VALUES ('15195441315436', 'user_profile', 'tbtmp', 'usrpro', null);
-INSERT INTO tbl_table_property VALUES ('15195441315095', 'user_role', 'tbtmp', 'usrro', null);
-
-DELETE FROM tbl_column_property;
--- -|START- USER_ROLE table property started
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441313936', 'role_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441315727', 'role_title', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441318106', 'role_priority', 'INT', '3', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441312323', 'role_is_default', 'BOOLEAN', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441311284', 'role_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315095, '15195441323673', 'role_modify_date', 'DATETIME', null, '0', null, null);
-
-DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15195441315727', '15195441328724', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15195441313936', '15195441322139', 'PRIMARY', null, null);
--- -|END- USER_ROLE table property end
-
-
-
--- -|START- USER_LOGIN_LOG table property started
--- -|END- USER_LOGIN_LOG table property end
-
-
-
--- -|START- REGISTRATION table property started
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441328549', 'rgi_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441329123', 'rgi_email', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441329196', 'rgi_password', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441321904', 'rgi_wifi_ip', 'VARCHAR', '255', '0', null, 'IP get by other online api');
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441333906', 'rgi_device_ip', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441333090', 'rgi_traced_ip', 'VARCHAR', '255', '0', null, 'IP traced by php host script');
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441335032', 'rgi_type', 'VARCHAR', '255', '0', null, 'email, fb, gplus');
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441339930', 'rgi_build_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441335784', 'rgi_tele_device_id', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441334695', 'rgi_tele_device_serial', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441333077', 'rgi_fcm_id', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441335120', 'rgi_con_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441334202', 'rgi_package', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441349129', 'rgi_ver_code', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441349512', 'rgi_ver_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441348432', 'rgi_auth_key', 'TEXT', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441319233, '15195441345749', 'rgi_date', 'DATETIME', null, '0', null, null);
-
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15195441328549', '15195441344505', 'PRIMARY', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15195441328549', '15195441349100', 'UNIQUE', null, null);
--- -|END- REGISTRATION table property end
-
--- -|START- USER_PROFILE table property started
-INSERT INTO tbl_column_property VALUES (15195441315436, '15195441359411', 'user_prof_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315436, '15195441359331', 'first_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315436, '15195441357317', 'mid_name', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315436, '15195441354644', 'last_name', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15195441315436, '15195441352769', 'regi_type', 'VARCHAR', '255', '1', null, 'email, fb, gplus');
-
--- DELETE FROM tbl_constraint_property;
--- -|END- USER_PROFILE table property end
+INSERT INTO tbl_table_property VALUES ('15226526266545', 'country', 'tbtmp', 'cntry', null);
 
 -- -|START- COUNTRY table property started
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441384976', 'ctry_id', 'BIGINT', '20', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441382802', 'ctry_name', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441382350', 'ctry_iso2', 'VARCHAR', '5', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441386333', 'ctry_iso3', 'VARCHAR', '5', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441396607', 'ctry_numeric_code', 'VARCHAR', '10', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441396416', 'ctry_capital', 'VARCHAR', '255', '1', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441392724', 'ctry_continent', 'VARCHAR', '255', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441394749', 'ctry_north', 'VARCHAR', '30', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441392306', 'ctry_south', 'VARCHAR', '30', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441399030', 'ctry_east', 'VARCHAR', '30', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441398898', 'ctry_west', 'VARCHAR', '30', '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441392442', 'ctry_create_date', 'DATETIME', null, '0', null, null);
-INSERT INTO tbl_column_property VALUES (15195441306806, '15195441398728', 'ctry_modify_date', 'DATETIME', null, '0', null, null);
+DELETE FROM tbl_column_property;
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526293807', 'ctry_id', 'BIGINT', '20', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526296291', 'ctry_name', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526296815', 'ctry_iso2', 'VARCHAR', '5', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526292415', 'ctry_iso3', 'VARCHAR', '5', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526295160', 'ctry_numeric_code', 'VARCHAR', '10', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526298803', 'ctry_capital', 'VARCHAR', '255', '1', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526303511', 'ctry_continent', 'VARCHAR', '255', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526305241', 'ctry_north', 'VARCHAR', '30', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526301974', 'ctry_south', 'VARCHAR', '30', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526309730', 'ctry_east', 'VARCHAR', '30', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526309099', 'ctry_west', 'VARCHAR', '30', '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526302130', 'ctry_create_date', 'DATETIME', null, '0', null, null);
+INSERT INTO tbl_column_property VALUES (15226526266545, '15226526302708', 'ctry_modify_date', 'DATETIME', null, '0', null, null);
 
--- DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15195441382350', '15195441404189', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15195441396607', '15195441409422', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15195441386333', '15195441404933', 'UNIQUE', null, null);
-INSERT INTO tbl_constraint_property VALUES ('15195441384976', '15195441403412', 'PRIMARY', null, null);
+DELETE FROM tbl_constraint_property;
+INSERT INTO tbl_constraint_property VALUES ('15226526293807', '15226526307171', 'PRIMARY', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15226526296815', '15226526304824', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15226526292415', '15226526302036', 'UNIQUE', null, null);
+INSERT INTO tbl_constraint_property VALUES ('15226526295160', '15226526315811', 'UNIQUE', null, null);
 -- -|END- COUNTRY table property end
 ```
 ```create_table_sql

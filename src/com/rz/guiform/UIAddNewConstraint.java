@@ -232,6 +232,7 @@ public class UIAddNewConstraint extends javax.swing.JFrame {
                     System.out.println(sqlQuery);
                     sQLiteConnection.onExecuteRawQuery(sqlQuery);
                 }
+                //System.out.println("SQL: " + sqlQuery);
             }
         }
         closeDatabase();

@@ -142,9 +142,7 @@ public class SQLGenerate {
                         }
                         if (colIsNull) {
                             defaultIsNull = "NULL";
-                        }
-                        else
-                        {
+                        } else {
                             defaultIsNull = "NOT NULL";
                         }
                         //gapSeparatorLen
@@ -197,12 +195,13 @@ public class SQLGenerate {
                     String colTblPrefix = resultSet.getString("ttpro_tbl_prefix");
                     String colColPrefix = resultSet.getString("ttpro_col_prefix");
 
-                    String colName = resultSet.getString("tcpro_col_name");
+                    String colNameSaved = resultSet.getString("tcpro_col_name");
                     String colConKey = resultSet.getString("tconp_key");
                     String colConPrefix = resultSet.getString("tconp_con_prefix");
+                    boolean colIsOnPrefix = resultSet.getBoolean("tcpro_no_prefix");
                     colTblName = removeSpace(colTblName, "_").toLowerCase();
                     colTblName = colTblPrefix + "_" + colTblName;
-                    colName = removeSpace(colName, "_").toLowerCase();
+                    String colName = removeSpace(colNameSaved, "_").toLowerCase();
                     colName = colColPrefix + "_" + colName;
                     if (colConPrefix == null || colConPrefix.isEmpty()) {
                         colConPrefix = removeSpace(colFixedTblName, "").toLowerCase();
@@ -211,6 +210,9 @@ public class SQLGenerate {
                     } else {
                         colConPrefix = removeSpace(colConPrefix, "_").toLowerCase();
                     }
+                    if (colIsOnPrefix) {
+                        colName = removeSpace(colNameSaved, "_").toLowerCase();
+                    }
                     System.out.println("KEY: " + colConPrefix);
                     String sqlData = "";
                     String constGap = repeat(":", 32 - "CONSTRAINT".length());
@@ -218,8 +220,21 @@ public class SQLGenerate {
                         sqlData = "    CONSTRAINT" + constGap + "pk_%s_%s PRIMARY KEY (%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
                     } else if (colConKey.equalsIgnoreCase("FOREIGN")) {
-                        sqlData = "    CONSTRAINT" + constGap + "fk_%s_%s FOREIGN KEY (%s) REFERENCES tbl_table(%s)";
-                        sqlData = String.format(sqlData, colConPrefix, colName, colName, colName);
+                        long colColId = resultSet.getLong("tcpro_id");
+                        sqlQuery = " SELECT * FROM tbl_column_property AS column_property "
+                                + " JOIN tbl_table_property As table_property ON table_property.ttpro_id = column_property.ttpro_id "
+                                + " WHERE column_property.tcpro_id = " + colColId;
+                        //System.out.println(sqlQuery);
+                        String colRefTblPrefix = "";
+                        String colRefTblName = "";
+                        ResultSet subResultSet = sQLiteConnection.onSqlQuery(sqlQuery);
+                        if (subResultSet.next()) {
+                            colRefTblPrefix = resultSet.getString("ttpro_tbl_prefix");
+                            colRefTblName = resultSet.getString("ttpro_tbl_name");
+                        }
+                        colRefTblName = colRefTblPrefix + "_" + colRefTblName;
+                        sqlData = "    CONSTRAINT" + constGap + "fk_%s_%s FOREIGN KEY (%s) REFERENCES %s(%s)";
+                        sqlData = String.format(sqlData, colConPrefix, colName, colName, colRefTblName, colName);
                     } else if (colConKey.equalsIgnoreCase("UNIQUE")) {
                         sqlData = "    CONSTRAINT" + constGap + "uk_%s_%s UNIQUE (%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
