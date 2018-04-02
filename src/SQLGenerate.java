@@ -221,20 +221,25 @@ public class SQLGenerate {
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
                     } else if (colConKey.equalsIgnoreCase("FOREIGN")) {
                         long colColId = resultSet.getLong("tcpro_id");
+                        long colTblNameRef = resultSet.getLong("tconp_ref_tbl");
                         sqlQuery = " SELECT * FROM tbl_column_property AS column_property "
                                 + " JOIN tbl_table_property As table_property ON table_property.ttpro_id = column_property.ttpro_id "
-                                + " WHERE column_property.tcpro_id = " + colColId;
+                                + " WHERE table_property.ttpro_id = " + colTblNameRef
+                                + " AND column_property.ttpro_id = " + colTblNameRef;
+                                //+ " WHERE column_property.tcpro_id = " + colColId;
                         //System.out.println(sqlQuery);
                         String colRefTblPrefix = "";
                         String colRefTblName = "";
                         ResultSet subResultSet = sQLiteConnection.onSqlQuery(sqlQuery);
                         if (subResultSet.next()) {
-                            colRefTblPrefix = resultSet.getString("ttpro_tbl_prefix");
-                            colRefTblName = resultSet.getString("ttpro_tbl_name");
+                            colRefTblPrefix = subResultSet.getString("ttpro_tbl_prefix");
+                            colRefTblName = subResultSet.getString("ttpro_tbl_name");
                         }
                         colRefTblName = colRefTblPrefix + "_" + colRefTblName;
+                        //System.out.println("REFERENCES: " + colRefTblName);
                         sqlData = "    CONSTRAINT" + constGap + "fk_%s_%s FOREIGN KEY (%s) REFERENCES %s(%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName, colRefTblName, colName);
+                        //System.out.println(sqlData);
                     } else if (colConKey.equalsIgnoreCase("UNIQUE")) {
                         sqlData = "    CONSTRAINT" + constGap + "uk_%s_%s UNIQUE (%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
