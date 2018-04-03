@@ -137,12 +137,30 @@ short description
 long description
 product code
 validate date
+page url
 contact
 
+https://www.000webhost.com/
+https://infinityfree.net/
+https://wbandapp.000webhostapp.com/
+http://fbapp.epizy.com/
+http://www.runphponline.com/
+http://www.writephponline.com/
+https://paiza.io/projects/PXYBcSJkDU441MlcceIJGw
+https://member3.dreamnix.com/account/account_screen
+https://ifastnet.com/register2.php
+
+http://www.pontikis.net/blog/auto_post_on_facebook_with_php
 
 https://medium.com/@JasonCromer/android-asynctask-http-request-tutorial-6b429d833e28
 https://docs.moodle.org/dev/Database_schema_introduction
 https://docops.ca.com/ca-identity-manager/12-6-5/EN/configuring/relational-database-management/describe-a-database-in-a-directory-configuration-file/managed-object-descriptions-for-relational-database
+
+http://danielsetzermann.com/facebook/how-to-create-a-mobile-facebook-page-tab/
+https://www.dreamgrow.com/how-to-set-up-a-custom-facebook-landing-page/
+https://www.youtube.com/watch?v=mBPvkdzJNV0
+https://www.youtube.com/watch?v=qmnTFSzOOH0
+https://developers.facebook.com/docs/pages/tabs
 
 DROP TABLE IF EXISTS tbl_user_role;
 CREATE TABLE IF NOT EXISTS tbl_user_role
@@ -200,3 +218,21 @@ CREATE TABLE IF NOT EXISTS tbl_user_registration
     CONSTRAINT                      fk_userr_usrpro_usrprof_id FOREIGN KEY (usrpro_usrprof_id) REFERENCES tbl_user_profile(usrpro_usrprof_id),
     CONSTRAINT                      pk_userr_uregi_regi_id PRIMARY KEY (uregi_regi_id)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+
+https://github.com/googlesamples/google-signin-unity
+https://developers.google.com/unity/
+https://docs.gamedonia.com/guides/google-sign-in
+https://support.gamesparks.net/support/discussions/topics/1000063337
+https://blog.playfab.com/blog/setting-up-google-sign-in
+https://docs.gamesparks.com/tutorials/social-authentication-and-player-profile/google--authentication.html
+
+SSL
+https://ifastnet.com/activate_3.php?username=b3_21882645&email=rzrasel@yahoo.com&hash=132f2c16adfe572462d683ee909f5496&autoinstall=&script_url=&domain=byethost3.com&logo=http://byet.org/images/bhlogonew.png&sql=sql110&script_username=&server_name=andapp.byethost3.com
+https://www.gogetssl.com/comodo-ssl/comodo-free-ssl/
+https://www.lifewire.com/cheap-ssl-certificates-and-recommendations-3469539
+
+https://www.ssls.com/lp/4.99-ssl-offer.html?gclid=EAIaIQobChMIidHHu4ee2gIV2CMrCh3Z5Q9WEAAYASAAEgJ2CfD_BwE
+
+
+
