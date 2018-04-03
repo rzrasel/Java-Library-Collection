@@ -31,6 +31,7 @@ public class HTTPSClient {
 
     public static void main(String[] args) {
         HTTPSClient httpsClient = new HTTPSClient();
+        //https://www.facebook.com/bdeshishop/posts/1495271907187374
         //httpsClient.HTTPURLConn("https://www.facebook.com/himelshop/posts/1489960441099898");
         httpsClient.HTTPURLConn("https://www.facebook.com/himelshop/posts/1489960441099898");
         httpsClient.HTTPReader();
