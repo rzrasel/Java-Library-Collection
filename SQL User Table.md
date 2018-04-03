@@ -1,4 +1,5 @@
 ### SQL Raw Query
+Validation email and password
 ```sql_raw_table
 DROP TABLE IF EXISTS tbl_user_profile;
 CREATE TABLE IF NOT EXISTS tbl_user_profile
@@ -81,8 +82,6 @@ INSERT INTO tbl_constraint_property VALUES ('15226985744212', '15226985751324', 
 INSERT INTO tbl_constraint_property VALUES ('15226985748196', '15226985752511', 'UNIQUE', null, null);
 -- -|END- USER_ROLE table property end
 
-
-
 -- -|START- USER_REGISTRATION table property started
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985753029', 'usrro_usrrole_id', 'BIGINT', '20', '0', '1', null);
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985753168', 'usrpro_usrprof_id', 'BIGINT', '20', '0', '1', null);
@@ -97,7 +96,7 @@ INSERT INTO tbl_column_property VALUES (15226985747318, '15226985764127', 'regi_
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985768344', 'regi_tele_device_id', 'VARCHAR', '255', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985762574', 'regi_tele_device_serial', 'VARCHAR', '255', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985761887', 'regi_fcm_id', 'TEXT', null, '0', '0', null);
-INSERT INTO tbl_column_property VALUES (15226985747318, '15226985771965', 'regi_con_code', 'VARCHAR', '255', '0', '0', null);
+INSERT INTO tbl_column_property VALUES (15226985747318, '15226985771965', 'regi_con_code', 'VARCHAR', '255', '0', '0', 'Confirmation code');
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985777266', 'regi_package', 'VARCHAR', '255', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985776286', 'regi_ver_code', 'VARCHAR', '255', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15226985747318, '15226985776098', 'regi_ver_name', 'VARCHAR', '255', '0', '0', null);
@@ -109,8 +108,6 @@ INSERT INTO tbl_constraint_property VALUES ('15226985753029', '15226985778429', 
 INSERT INTO tbl_constraint_property VALUES ('15226985753885', '15226985774984', 'PRIMARY', null, null);
 INSERT INTO tbl_constraint_property VALUES ('15226985753168', '15226985777681', 'FOREIGN', '15226923143693', null);
 -- -|END- USER_REGISTRATION table property end
-
-
 
 -- -|START- USER_PROFILE table property started
 INSERT INTO tbl_column_property VALUES (15226985742447, '15226985772672', 'usrro_usrrole_id', 'BIGINT', '20', '0', '1', null);
