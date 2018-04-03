@@ -56,6 +56,11 @@ CREATE TABLE IF NOT EXISTS tbl_user_role
     CONSTRAINT                      uk_userr_usrro_usrrole_title UNIQUE (usrro_usrrole_title)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 ```
+```sql_clear_table
+DELETE FROM tbl_table_property;
+DELETE FROM tbl_column_property;
+DELETE FROM tbl_constraint_property;
+```
 ```sql_raw_sql
 DELETE FROM tbl_table_property;
 INSERT INTO tbl_table_property VALUES ('15226985742447', 'user_profile', 'tbl', 'usrpro', 'User profile table');
@@ -126,6 +131,16 @@ INSERT INTO tbl_constraint_property VALUES ('15226985772672', '15226985791691', 
 -- -|END- USER_PROFILE table property end
 ```
 
+price
+title
+short description
+long description
+product code
+validate date
+contact
+
+
+https://medium.com/@JasonCromer/android-asynctask-http-request-tutorial-6b429d833e28
 https://docs.moodle.org/dev/Database_schema_introduction
 https://docops.ca.com/ca-identity-manager/12-6-5/EN/configuring/relational-database-management/describe-a-database-in-a-directory-configuration-file/managed-object-descriptions-for-relational-database
 
