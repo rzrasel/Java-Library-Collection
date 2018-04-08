@@ -128,6 +128,15 @@ INSERT INTO tbl_constraint_property VALUES ('15226985772672', '15226985791691', 
 -- -|END- USER_PROFILE table property end
 ```
 http://rzrasel.net/hmvc-temp/api-app-video/gopal-bhar
+https://design.tutsplus.com/tutorials/how-to-make-a-bangin-woofer-embedded-in-wood--psd-303
+
+Blender 2.7 Tutorial #50 : Camera Targets #b3d
+https://www.youtube.com/watch?v=DLAlgXRYn_4
+https://www.youtube.com/watch?v=jOqdTELcL24
+https://www.youtube.com/watch?v=N8NdjY_EBkY
+https://www.youtube.com/watch?v=ncDl7xdMv4Y
+
+
 
 price
 title
