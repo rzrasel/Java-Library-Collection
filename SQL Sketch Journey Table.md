@@ -41,11 +41,23 @@ CREATE TABLE IF NOT EXISTS sktjour_user_score
     usrpro_usrprof_id               BIGINT(20)        NOT NULL,
     usrscr_usrscor_id               BIGINT(20)        NOT NULL,
     usrscr_usrscor_level            INT(4)            NOT NULL,
-    usrscr_usrscor_meta             VARCHAR(255)      NOT NULL,
+    usrscr_usrscor_meta             VARCHAR(255)      NULL,
     usrscr_usrscor_score            INT(5)            NOT NULL,
+    usrscr_usrscor_net_ip           VARCHAR(255)      NOT NULL,
     usrscr_usrscor_date             DATETIME          NOT NULL,
     CONSTRAINT                      fk_users_usrpro_usrprof_id FOREIGN KEY (usrpro_usrprof_id) REFERENCES sktjour_user_profile(usrpro_usrprof_id),
     CONSTRAINT                      pk_users_usrscr_usrscor_id PRIMARY KEY (usrscr_usrscor_id)
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+-- Local / phone storage database
+DROP TABLE IF EXISTS dtbl_user_score;
+CREATE TABLE IF NOT EXISTS dtbl_user_score
+(
+    uscr_usrscor_id               BIGINT(20)        NOT NULL,
+    uscr_usrscor_level            INT(4)            NOT NULL,
+    uscr_usrscor_meta             VARCHAR(255)      NULL,
+    uscr_usrscor_score            INT(5)            NOT NULL,
+    uscr_usrscor_synced           BOOLEAN          NOT NULL,
+    CONSTRAINT                      pk_users_uscr_usrscor_id PRIMARY KEY (uscr_usrscor_id)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 ```
 ```sql_clear_table
@@ -104,7 +116,7 @@ INSERT INTO tbl_constraint_property VALUES ('15232894478560', '15232894474318', 
 INSERT INTO tbl_column_property VALUES (15232894459644, '15232894483537', 'usrpro_usrprof_id', 'BIGINT', '20', '0', '1', null);
 INSERT INTO tbl_column_property VALUES (15232894459644, '15232894487350', 'usrscor_id', 'BIGINT', '20', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15232894459644, '15232894481498', 'usrscor_level', 'INT', '4', '0', '0', null);
-INSERT INTO tbl_column_property VALUES (15232894459644, '15232894483676', 'usrscor_meta', 'VARCHAR', '255', '0', '0', null);
+INSERT INTO tbl_column_property VALUES (15232894459644, '15232894483676', 'usrscor_meta', 'VARCHAR', '255', '1', '0', null);
 INSERT INTO tbl_column_property VALUES (15232894459644, '15232894488987', 'usrscor_score', 'INT', '5', '0', '0', null);
 INSERT INTO tbl_column_property VALUES (15232894459644, '15232894489475', 'usrscor_date', 'DATETIME', null, '0', '0', null);
 
