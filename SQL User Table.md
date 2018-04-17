@@ -127,7 +127,7 @@ INSERT INTO tbl_constraint_property VALUES ('15226985788624', '15226985792205', 
 INSERT INTO tbl_constraint_property VALUES ('15226985772672', '15226985791691', 'FOREIGN', '15226923146879', null);
 -- -|END- USER_PROFILE table property end
 ```
-http://rzrasel.net/hmvc-temp/api-app-video/gopal-bhar
+https://rzrasel.net/hmvc-temp/api-app-video/gopal-bhar
 https://design.tutsplus.com/tutorials/how-to-make-a-bangin-woofer-embedded-in-wood--psd-303
 
 Blender 2.7 Tutorial #50 : Camera Targets #b3d
