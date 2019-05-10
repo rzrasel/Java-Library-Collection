@@ -18,7 +18,7 @@ public class DbIdGenerator {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         System.out.println("DATE TIME: [" + simpleDateFormat.format(date) + "]");
-        String newId = newId = RandomValue.getRandId(1111, 9999);
+        String newId = RandomValue.getRandId(1111, 9999);
         System.out.println("NEW ID: [" + newId + "]");
     }
 }
