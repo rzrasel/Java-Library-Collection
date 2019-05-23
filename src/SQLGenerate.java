@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import static java.util.Collections.list;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -83,6 +84,7 @@ public class SQLGenerate {
                         queryList.add(partOfSqlQuery);
                         finalSqlQuery += partOfSqlQuery;
                         //----System.out.println("DATA: " + colName);
+                        System.out.println("TABLE_LENGTH: " + colName + ": " + colName.length());
                         populatColumn(rowId, colColPrefix);
                         partOfSqlQuery = ") ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;";
                         queryList.add(partOfSqlQuery);
@@ -124,9 +126,25 @@ public class SQLGenerate {
                         String colType = resultSet.getString("tcpro_col_dtype").toUpperCase();
                         String colLength = resultSet.getString("tcpro_length");
                         boolean colIsNull = resultSet.getBoolean("tcpro_is_null");
-                        boolean colIsOnPrefix = resultSet.getBoolean("tcpro_no_prefix");
-                        colName = removeSpace(colName, "_");
-                        if (!colIsOnPrefix) {
+                        boolean colIsnNoPrefix = resultSet.getBoolean("tcpro_no_prefix");
+                        //colName = removeSpace(colName, "_");
+                        if (colIsnNoPrefix) {
+                            //System.out.println("DATA---------------: " + colName);
+                            HashMap<String, String> getColPrefix = getColumPrefix(colName);
+                            //System.out.println("DATA---------------: " + getColPrefix.size());
+                            String[] checkPartOfName = colName.split("[\\s|,|;|:|>]");
+                            if (checkPartOfName.length > 1) {
+                                int lastPart = checkPartOfName.length - 1;
+                                colName = checkPartOfName[lastPart];
+                            }
+                            colName = getColPrefix.get("column_prefix") + "_" + colName;
+                            //colName = argColPrefix + "_" + colName;
+                        } else {
+                            String[] checkPartOfName = colName.split("[\\s|,|;|:|>]");
+                            if (checkPartOfName.length > 1) {
+                                int lastPart = checkPartOfName.length - 1;
+                                colName = checkPartOfName[lastPart];
+                            }
                             colName = argColPrefix + "_" + colName;
                         }
                         colName = colName.toLowerCase();
@@ -149,12 +167,13 @@ public class SQLGenerate {
                         colType = colType + colLength;
                         partOfSqlQuery = repeat(":", 4)
                                 + colName
-                                + repeat(":", 32 - colName.length())
+                                + repeat(":", 40 - colName.length())
                                 + colType
                                 + repeat(":", 18 - colType.length())
                                 + defaultIsNull;
                         //queryList.add(partOfSqlQuery);
                         //------------------CHECK CONSTRAINT
+                        System.out.println("COLUMN_LENGTH: " + colName + ": " + colName.length());
                         hasNext = resultSet.next();
                         if (hasNext) {
                             partOfSqlQuery += ",";
@@ -198,7 +217,7 @@ public class SQLGenerate {
                     String colNameSaved = resultSet.getString("tcpro_col_name");
                     String colConKey = resultSet.getString("tconp_key");
                     String colConPrefix = resultSet.getString("tconp_con_prefix");
-                    boolean colIsOnPrefix = resultSet.getBoolean("tcpro_no_prefix");
+                    boolean colIsNoPrefix = resultSet.getBoolean("tcpro_no_prefix");
                     colTblName = removeSpace(colTblName, "_").toLowerCase();
                     colTblName = colTblPrefix + "_" + colTblName;
                     String colName = removeSpace(colNameSaved, "_").toLowerCase();
@@ -210,24 +229,48 @@ public class SQLGenerate {
                     } else {
                         colConPrefix = removeSpace(colConPrefix, "_").toLowerCase();
                     }
-                    if (colIsOnPrefix) {
-                        colName = removeSpace(colNameSaved, "_").toLowerCase();
+                    if (colIsNoPrefix) {
+                        //System.out.println("DATA---------------: " + colName);
+                        //System.out.println("DATA---------------: " + colNameSaved);
+                        HashMap<String, String> getColPrefix = getColumPrefix(colNameSaved);
+                        //System.out.println("DATA---------------: " + getColPrefix.size());
+                        //colName = getColPrefix.get("column_prefix") + "_" + colNameSaved;
+                        //colName = removeSpace(colNameSaved, "_").toLowerCase();
+                        //System.out.println("--------------->" + colName);
+                        String[] checkPartOfName = colNameSaved.split("[\\s|,|;|:|>]");
+                        if (checkPartOfName.length > 1) {
+                            int lastPart = checkPartOfName.length - 1;
+                            colName = checkPartOfName[lastPart];
+                        }
+                        //System.out.println("--------------->" + colName);
+                        colName = getColPrefix.get("column_prefix") + "_" + colName;
+                        //System.out.println("--------------->" + colName);
+                        colName = removeSpace(colName, "_").toLowerCase();
+                    } else {
+                        String[] checkPartOfName = colNameSaved.split("[\\s|,|;|:|>]");
+                        if (checkPartOfName.length > 1) {
+                            int lastPart = checkPartOfName.length - 1;
+                            colName = colColPrefix + "_" + checkPartOfName[lastPart];
+                        }
                     }
-                    System.out.println("KEY: " + colConPrefix);
+                    //System.out.println("KEY: " + colConPrefix);
                     String sqlData = "";
-                    String constGap = repeat(":", 32 - "CONSTRAINT".length());
+                    String constGap = repeat(":", 40 - "CONSTRAINT".length());
                     if (colConKey.equalsIgnoreCase("PRIMARY")) {
                         sqlData = "    CONSTRAINT" + constGap + "pk_%s_%s PRIMARY KEY (%s)";
+                        sqlData = String.format(sqlData, colConPrefix, colName, colName);
+                    } else if (colConKey.equalsIgnoreCase("UNIQUE")) {
+                        sqlData = "    CONSTRAINT" + constGap + "uk_%s_%s UNIQUE (%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName);
                     } else if (colConKey.equalsIgnoreCase("FOREIGN")) {
                         long colColId = resultSet.getLong("tcpro_id");
                         long colTblNameRef = resultSet.getLong("tconp_ref_tbl");
                         sqlQuery = " SELECT * FROM tbl_column_property AS column_property "
                                 + " JOIN tbl_table_property As table_property ON table_property.ttpro_id = column_property.ttpro_id "
-                                + " WHERE table_property.ttpro_id = " + colTblNameRef
-                                + " AND column_property.ttpro_id = " + colTblNameRef;
-                                //+ " WHERE column_property.tcpro_id = " + colColId;
-                        //System.out.println(sqlQuery);
+                                + " WHERE table_property.ttpro_id = " + colTblNameRef + " "
+                                + " AND column_property.ttpro_id = " + colTblNameRef + "; ";
+                        //+ " WHERE column_property.tcpro_id = " + colColId;
+                        System.out.println(sqlQuery);
                         String colRefTblPrefix = "";
                         String colRefTblName = "";
                         ResultSet subResultSet = sQLiteConnection.onSqlQuery(sqlQuery);
@@ -240,9 +283,6 @@ public class SQLGenerate {
                         sqlData = "    CONSTRAINT" + constGap + "fk_%s_%s FOREIGN KEY (%s) REFERENCES %s(%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName, colRefTblName, colName);
                         //System.out.println(sqlData);
-                    } else if (colConKey.equalsIgnoreCase("UNIQUE")) {
-                        sqlData = "    CONSTRAINT" + constGap + "uk_%s_%s UNIQUE (%s)";
-                        sqlData = String.format(sqlData, colConPrefix, colName, colName);
                     }
                     sqlData = sqlData.toString().replaceAll(":", " ");
                     queryList.add(sqlData);
@@ -260,6 +300,43 @@ public class SQLGenerate {
         if (argConstKey.equalsIgnoreCase("PRIMARY")) {
             //
         }
+        return retVal;
+    }
+
+    public HashMap<String, String> getColumPrefix(String argColumnName) {
+        //String retVal = null;
+        String colColName = argColumnName;
+        /*String[] checkPartOfName = colColName.split("[\\s|,|;|:|>]");
+         if (checkPartOfName.length > 1) {
+         int lastPart = checkPartOfName.length - 1;
+         colColName = checkPartOfName[lastPart];
+         }*/
+        HashMap<String, String> retVal = new HashMap<>();
+        String strSqlQuery = "SELECT * "
+                + " FROM tbl_table_property AS table_property "
+                + " JOIN tbl_column_property As column_property ON column_property.ttpro_id = table_property.ttpro_id "
+                + " JOIN tbl_constraint_property As constraint_property ON constraint_property.tcpro_id = column_property.tcpro_id "
+                + " WHERE "
+                + " column_property.tcpro_col_name = '" + colColName + "' "
+                + " AND (constraint_property.tconp_key = 'PRIMARY' "
+                + " OR constraint_property.tconp_key != 'FOREIGN')";
+        //System.out.println("SQL: " + strSqlQuery);
+        //closeDatabase();
+        //getColumPrefix(argColumnName);
+        ResultSet resultSet1 = sQLiteConnection.onSqlQuery(strSqlQuery);
+        try {
+            if (resultSet1.next()) {
+                //retVal = resultSet1.getString("ttpro_col_prefix");
+                retVal.put("table_id", resultSet1.getString("ttpro_id"));
+                retVal.put("column_prefix", resultSet1.getString("ttpro_col_prefix"));
+                //System.out.println("DATA---------------: " + resultSet1.getString("ttpro_col_prefix"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        sQLiteConnection.onCloseResultSet(resultSet1);
+        //System.out.println("==============: " + retVal + "_" + argColumnName);
         return retVal;
     }
 
@@ -288,29 +365,29 @@ public class SQLGenerate {
         System.out.println("\n");
         String printData = "";
         /*for (String item : queryList) {
-            printData = item.trim();
-            if (printData.endsWith(",")) {
-                printData = printData.substring(0, printData.length() - 1);
-            }
-            System.out.println(printData);
-        }*/
- /*int counter = 0;
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) {
-            counter++;
-            String element = iterator.next();
-            printData = element.trim();
-            if (printData.endsWith(",")) {
-                printData = printData.substring(0, printData.length() - 1);
-            }
-            if (iterator.hasNext()) {
-                if (!printData.startsWith("DROP") && !printData.startsWith("CREATE") && !printData.startsWith("(")) {
-                    //sb.append(", ");
-                    printData += ",";
-                }
-            }
-            System.out.println(printData);
-        }*/
+         printData = item.trim();
+         if (printData.endsWith(",")) {
+         printData = printData.substring(0, printData.length() - 1);
+         }
+         System.out.println(printData);
+         }*/
+        /*int counter = 0;
+         StringBuilder stringBuilder = new StringBuilder();
+         for (Iterator<String> iterator = queryList.iterator(); iterator.hasNext();) {
+         counter++;
+         String element = iterator.next();
+         printData = element.trim();
+         if (printData.endsWith(",")) {
+         printData = printData.substring(0, printData.length() - 1);
+         }
+         if (iterator.hasNext()) {
+         if (!printData.startsWith("DROP") && !printData.startsWith("CREATE") && !printData.startsWith("(")) {
+         //sb.append(", ");
+         printData += ",";
+         }
+         }
+         System.out.println(printData);
+         }*/
         boolean isAddComma = false;
         if (queryList.size() > 0) {
             String currentData = queryList.get(0);
@@ -332,15 +409,15 @@ public class SQLGenerate {
                     isAddComma = true;
                 }
                 /*if (!printData.endsWith(",")) {
-                    //printData = printData.substring(0, printData.length() - 1);
-                    if (!nextData.equals(");") && !printData.startsWith("DROP") && !printData.startsWith("CREATE") && !printData.startsWith("(")) {
-                        printData += ",";
-                    }
-                }
-                System.out.println(printData);
-                if (nextData.startsWith("DROP")) {
-                    //System.out.println(");");
-                }*/
+                 //printData = printData.substring(0, printData.length() - 1);
+                 if (!nextData.equals(");") && !printData.startsWith("DROP") && !printData.startsWith("CREATE") && !printData.startsWith("(")) {
+                 printData += ",";
+                 }
+                 }
+                 System.out.println(printData);
+                 if (nextData.startsWith("DROP")) {
+                 //System.out.println(");");
+                 }*/
                 System.out.println(printData);
                 currentData = nextData;
             }
@@ -363,55 +440,55 @@ public class SQLGenerate {
     }
 }
 /*
--- Metadata
--- col_prefix
--- col_is_null
--- constraint
--- reference
+ -- Metadata
+ -- col_prefix
+ -- col_is_null
+ -- constraint
+ -- reference
  */
- /*
-DELETE FROM tbl_table_property;
-INSERT INTO tbl_table_property VALUES ('15161836772723', 'registration_temp', 'tbl', 'regtm', '');
-INSERT INTO tbl_table_property VALUES ('15161836774627', 'user_profile', 'tbl', 'uspro', '');
-INSERT INTO tbl_table_property VALUES ('15161836775101', 'userrole', 'tbl', 'usrol', '');
-SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name;
+/*
+ DELETE FROM tbl_table_property;
+ INSERT INTO tbl_table_property VALUES ('15161836772723', 'registration_temp', 'tbl', 'regtm', '');
+ INSERT INTO tbl_table_property VALUES ('15161836774627', 'user_profile', 'tbl', 'uspro', '');
+ INSERT INTO tbl_table_property VALUES ('15161836775101', 'userrole', 'tbl', 'usrol', '');
+ SELECT * FROM tbl_table_property ORDER BY ttpro_tbl_name;
 
-##|----|----TABLE USER PROFILE
-DELETE FROM tbl_column_property;
-INSERT INTO tbl_column_property
-VALUES ('15161836774627', '15161837756926', 'user_id', 'BIGINT', '20', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836774627', '15161837756625', 'first_name', 'VARCHAR', '255', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836774627', '15161837755235', 'mid_name', 'VARCHAR', '255', '1', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836774627', '15161840676471', 'last_name', 'VARCHAR', '255', '1', '', '');
-SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
+ ##|----|----TABLE USER PROFILE
+ DELETE FROM tbl_column_property;
+ INSERT INTO tbl_column_property
+ VALUES ('15161836774627', '15161837756926', 'user_id', 'BIGINT', '20', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836774627', '15161837756625', 'first_name', 'VARCHAR', '255', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836774627', '15161837755235', 'mid_name', 'VARCHAR', '255', '1', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836774627', '15161840676471', 'last_name', 'VARCHAR', '255', '1', '', '');
+ SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
 
-DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15161837756926', '15161842565701', 'PRIMARY', '', '');
-SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
-##|----|----TABLE END
+ DELETE FROM tbl_constraint_property;
+ INSERT INTO tbl_constraint_property VALUES ('15161837756926', '15161842565701', 'PRIMARY', '', '');
+ SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
+ ##|----|----TABLE END
 
-##|----|----TABLE USER ROLE
-DELETE FROM tbl_column_property;
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161860599845', 'role_id', 'BIGINT', '20', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161860597350', 'role_title', 'VARCHAR', '255', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161860597802', 'role_priority', 'INT', '3', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161860732762', 'role_is_default', 'BOOLEAN', '', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161860735276', 'role_create_date', 'DATETIME', '', '0', '', '');
-INSERT INTO tbl_column_property
-VALUES ('15161836775101', '15161861391734', 'role_modify_date', 'DATETIME', '', '0', '', '');
-SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
+ ##|----|----TABLE USER ROLE
+ DELETE FROM tbl_column_property;
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161860599845', 'role_id', 'BIGINT', '20', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161860597350', 'role_title', 'VARCHAR', '255', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161860597802', 'role_priority', 'INT', '3', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161860732762', 'role_is_default', 'BOOLEAN', '', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161860735276', 'role_create_date', 'DATETIME', '', '0', '', '');
+ INSERT INTO tbl_column_property
+ VALUES ('15161836775101', '15161861391734', 'role_modify_date', 'DATETIME', '', '0', '', '');
+ SELECT * FROM tbl_column_property ORDER BY tcpro_col_name;
 
-DELETE FROM tbl_constraint_property;
-INSERT INTO tbl_constraint_property VALUES ('15161860599845', '15161863063756', 'PRIMARY', '', '');
-INSERT INTO tbl_constraint_property VALUES ('15161860597350', '15161863064221', 'UNIQUE', '', '');
-SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
-##|----|----TABLE END
+ DELETE FROM tbl_constraint_property;
+ INSERT INTO tbl_constraint_property VALUES ('15161860599845', '15161863063756', 'PRIMARY', '', '');
+ INSERT INTO tbl_constraint_property VALUES ('15161860597350', '15161863064221', 'UNIQUE', '', '');
+ SELECT * FROM tbl_constraint_property ORDER BY tconp_key DESC;
+ ##|----|----TABLE END
  */

@@ -155,8 +155,8 @@ public class SQLGenDBRawData {
                 }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
-            } catch (InterruptedException ex) {
-                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException e) {
+                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, e);
             }
             sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
@@ -219,14 +219,14 @@ public class SQLGenDBRawData {
                 }
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.toString());
-            } catch (InterruptedException ex) {
-                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException e) {
+                Logger.getLogger(SQLGenDBRawData.class.getName()).log(Level.SEVERE, null, e);
             }
             sQLiteConnection.onCloseResultSet(resultSet);
             closeDatabase();
         } else {
             closeDatabase();
-            getColumnProperty(argOldId, argNewId);
+            getConstraintProperty(argOldId, argNewId);
         }
     }
 
