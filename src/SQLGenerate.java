@@ -223,9 +223,15 @@ public class SQLGenerate {
                     String colName = removeSpace(colNameSaved, "_").toLowerCase();
                     colName = colColPrefix + "_" + colName;
                     if (colConPrefix == null || colConPrefix.isEmpty()) {
-                        colConPrefix = removeSpace(colFixedTblName, "").toLowerCase();
-                        colConPrefix = colConPrefix.replaceAll("\\_+", "");
-                        colConPrefix = colConPrefix.substring(0, 5);
+                        colConPrefix = removeSpace(colFixedTblName, " ").toLowerCase();
+                        colConPrefix = colConPrefix.replaceAll("[\\s|_]", " ");
+                        colConPrefix = getSuffix(colConPrefix, 2, "") + getSuffix(colConPrefix, 1, "");
+                        /*colConPrefix = removeSpace(colFixedTblName, "").toLowerCase();
+                         colConPrefix = colConPrefix.replaceAll("\\_+", "");*/
+                        int strLengt = 12;
+                        if (colConPrefix.length() > strLengt) {
+                            colConPrefix = colConPrefix.substring(0, strLengt);
+                        }
                     } else {
                         colConPrefix = removeSpace(colConPrefix, "_").toLowerCase();
                     }
@@ -283,6 +289,8 @@ public class SQLGenerate {
                         sqlData = "    CONSTRAINT" + constGap + "fk_%s_%s FOREIGN KEY (%s) REFERENCES %s(%s)";
                         sqlData = String.format(sqlData, colConPrefix, colName, colName, colRefTblName, colName);
                         //System.out.println(sqlData);
+                        //System.out.println(">>>>>>>>>>>>>>>>>>>>>>>" + colConPrefix);
+                        //
                     }
                     sqlData = sqlData.toString().replaceAll(":", " ");
                     queryList.add(sqlData);
@@ -425,6 +433,27 @@ public class SQLGenerate {
             //System.out.println(");");
         }
         //System.out.println(finalSqlQuery);
+    }
+
+    public String getSuffix(String argString, int argNumOfChar, String argJoinBy) {
+        String mainStr = argString.trim();
+        //System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" + mainStr);
+        String[] mainStrings = mainStr.split(" ");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < mainStrings.length; i++) {
+            String word = mainStrings[i];
+            //System.out.println(word.charAt(0));
+            if (word.length() > argNumOfChar) {
+                stringBuilder.append(word.substring(0, argNumOfChar));
+            } else {
+                stringBuilder.append(word);
+            }
+            if (i < mainStrings.length - 1) {
+                stringBuilder.append(argJoinBy);
+            }
+        }
+        //System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" + stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
     private String removeSpace(String argValue, String argReplaceBy) {
