@@ -137,7 +137,13 @@ public class SQLGenerate {
                                 int lastPart = checkPartOfName.length - 1;
                                 colName = checkPartOfName[lastPart];
                             }
-                            colName = getColPrefix.get("column_prefix") + "_" + colName;
+                            String columnPrefix = getColPrefix.get("column_prefix");
+                            /*System.out.println("DATA: " + columnPrefix + " " + colName);
+                            System.out.println("Line# " + new Exception().getStackTrace()[0].getLineNumber());*/
+                            colName = colName;
+                            if (columnPrefix != null) {
+                                colName = columnPrefix + "_" + colName;
+                            }
                             //colName = argColPrefix + "_" + colName;
                         } else {
                             String[] checkPartOfName = colName.split("[\\s|,|;|:|>]");
@@ -145,10 +151,13 @@ public class SQLGenerate {
                                 int lastPart = checkPartOfName.length - 1;
                                 colName = checkPartOfName[lastPart];
                             }
+                            /*System.out.println("DATA: " + argColPrefix + " " + colName);
+                            System.out.println("Line# " + new Exception().getStackTrace()[0].getLineNumber());*/
                             colName = argColPrefix + "_" + colName;
                         }
                         colName = colName.toLowerCase();
-                        //-----System.out.println("DATA: " + colName);
+                        /*System.out.println("DATA: " + colName);
+                         System.out.println("Line# " + new Exception().getStackTrace()[0].getLineNumber());*/
                         if (colLength != null) {
                             if (!colLength.isEmpty()) {
                                 colLength = "(" + colLength + ")";
